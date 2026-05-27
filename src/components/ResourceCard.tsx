@@ -8,6 +8,7 @@ interface ResourceCardProps {
   href?: string;
   category?: string;
   readingTime?: string;
+  whyItMatters?: string;
   icon?: LucideIcon;
   className?: string;
 }
@@ -18,6 +19,7 @@ export function ResourceCard({
   href = "#",
   category,
   readingTime = "5 min read",
+  whyItMatters,
   icon: Icon = BookOpen,
   className,
 }: ResourceCardProps) {
@@ -37,15 +39,23 @@ export function ResourceCard({
       <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
+      {whyItMatters && (
+        <p className="mt-3 text-xs leading-relaxed text-slate-600 line-clamp-2">
+          <span className="font-semibold text-teal-800">Why read this: </span>
+          {whyItMatters}
+        </p>
+      )}
       <div className="mt-4 flex items-center justify-between">
         <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" aria-hidden />
           {readingTime}
         </span>
-        <span className="inline-flex items-center gap-1 text-sm font-semibold text-teal-700 group-hover:gap-2 transition-all">
-          Read
-          <ArrowRight className="h-4 w-4" aria-hidden />
-        </span>
+        {href !== "#" && (
+          <span className="inline-flex items-center gap-1 text-sm font-semibold text-teal-700 group-hover:gap-2 transition-all">
+            Read guide
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </span>
+        )}
       </div>
     </>
   );
@@ -54,7 +64,7 @@ export function ResourceCard({
     return (
       <article
         className={cn(
-          "group flex flex-col rounded-2xl border border-border bg-white p-6 shadow-card",
+          "flex flex-col rounded-2xl border border-border bg-white p-6 shadow-card",
           className
         )}
       >

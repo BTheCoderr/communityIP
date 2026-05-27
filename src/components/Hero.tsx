@@ -1,5 +1,5 @@
 import { CTAButton } from "@/components/CTAButton";
-import { Shield, Sparkles } from "lucide-react";
+import { Shield } from "lucide-react";
 
 export function Hero() {
   return (
@@ -9,26 +9,27 @@ export function Hero() {
         <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-amber-100/50 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-800">
-              <Sparkles className="h-4 w-4" aria-hidden />
-              501(c)(3) nonprofit · Founded by patent professionals
-            </div>
-
-            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-slate-800 sm:text-5xl lg:text-[3.25rem] text-balance">
-              Your idea matters. You shouldn&apos;t have to figure out IP alone.
-            </h1>
-
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl text-balance">
-              Community IP helps underserved inventors and entrepreneurs learn
-              about patents, trademarks, and copyrights, then connect with
-              education, mentoring, and support options they can actually
-              access.
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-teal-700">
+              501(c)(3) nonprofit · IP access for underserved inventors
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-slate-800 sm:text-5xl lg:text-[3.25rem] text-balance">
+              Your idea matters.{" "}
+              <span className="text-teal-700">
+                You shouldn&apos;t have to figure out IP alone.
+              </span>
+            </h1>
+
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground sm:text-xl text-balance">
+              Learn about patents, trademarks, and copyrights — then get
+              connected with education, mentoring, and support options you can
+              actually access.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CTAButton href="/readiness-checker" size="lg">
                 Check if you&apos;re ready for IP help
               </CTAButton>
@@ -37,42 +38,35 @@ export function Hero() {
               </CTAButton>
             </div>
 
-            <p className="mt-6 flex items-start gap-2 text-sm text-muted-foreground">
+            <p className="mt-5 flex items-start gap-2 text-sm text-muted-foreground">
               <Shield className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" aria-hidden />
-              501(c)(3) nonprofit · Educational support and intake only · No
-              legal advice
+              Educational support and intake only · Not legal advice
             </p>
           </div>
 
-          <div className="relative">
-            <div className="rounded-3xl border border-border bg-white p-8 shadow-soft">
-              <p className="font-heading text-sm font-semibold uppercase tracking-wider text-teal-700">
-                The access gap is real
-              </p>
-              <div className="mt-6 space-y-6">
-                <StatRow
-                  stat="12.8%"
-                  label="of U.S. patent inventors are women"
-                />
-                <StatRow
-                  stat="3×"
-                  label="higher patent rate for white Americans vs. Black Americans"
-                />
-                <StatRow
-                  stat="10×"
-                  label="more likely to invent if born in the top 1% of earners"
-                />
-              </div>
-              <p className="mt-6 rounded-xl bg-warm-100 p-4 text-sm leading-relaxed text-slate-700">
-                Researchers call talented kids from low-income backgrounds who
-                never become inventors{" "}
-                <strong className="text-slate-800">&ldquo;Lost Einsteins.&rdquo;</strong>{" "}
-                Community IP exists to change that story.
-              </p>
-              <p className="mt-3 text-xs text-muted-foreground">
-                Sources: USPTO, Stanford Equality of Opportunity Project
-              </p>
+          <div className="rounded-3xl border border-border bg-white p-7 shadow-soft sm:p-8">
+            <p className="font-heading text-sm font-semibold uppercase tracking-wider text-teal-700">
+              Why this platform exists
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-slate-700">
+              Entire communities are locked out of intellectual property — not
+              for lack of talent, but for lack of guidance and affordable
+              access.
+            </p>
+            <div className="mt-6 space-y-4">
+              <StatRow stat="12.8%" label="of U.S. patent inventors are women" />
+              <StatRow
+                stat="3×"
+                label="patent rate gap by race (USPTO estimates)"
+              />
+              <StatRow
+                stat="Lost Einsteins"
+                label="Talented kids from low-income backgrounds who never become inventors"
+              />
             </div>
+            <p className="mt-5 text-xs text-muted-foreground">
+              Sources: USPTO, Stanford Equality of Opportunity Project
+            </p>
           </div>
         </div>
       </div>
@@ -82,8 +76,8 @@ export function Hero() {
 
 function StatRow({ stat, label }: { stat: string; label: string }) {
   return (
-    <div className="flex items-baseline gap-4 border-b border-border pb-4 last:border-0 last:pb-0">
-      <span className="font-heading text-3xl font-bold text-teal-700">
+    <div className="flex items-baseline gap-3 border-b border-border pb-4 last:border-0 last:pb-0">
+      <span className="shrink-0 font-heading text-2xl font-bold text-teal-700 sm:text-3xl">
         {stat}
       </span>
       <span className="text-sm leading-snug text-slate-600">{label}</span>

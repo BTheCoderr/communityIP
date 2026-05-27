@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -166,24 +167,56 @@ export function IntakeWizard() {
 
   if (submitted) {
     return (
-      <div className="mx-auto max-w-xl text-center">
+      <div className="mx-auto max-w-xl">
         <div className="rounded-3xl border border-teal-200 bg-white p-8 shadow-soft sm:p-10">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-            <CheckCircle2 className="h-8 w-8 text-teal-700" aria-hidden />
+          <div className="text-center">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
+              <CheckCircle2 className="h-8 w-8 text-teal-700" aria-hidden />
+            </div>
+            <h2 className="font-heading text-2xl font-bold text-slate-800">
+              Application received
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Save your reference number for your records
+            </p>
+            <p className="mt-2 font-heading text-3xl font-bold tracking-wide text-teal-700">
+              {referenceNumber}
+            </p>
           </div>
-          <h2 className="font-heading text-2xl font-bold text-slate-800">
-            Thank you — we received your application
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Your reference number is
+
+          <div className="mt-8 space-y-4 rounded-2xl bg-warm-50 p-5 text-left">
+            <p className="text-sm font-semibold text-slate-800">
+              What happens next
+            </p>
+            <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+              <li className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-bold text-teal-800">
+                  1
+                </span>
+                Our team reviews your submission within 5–7 business days.
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-bold text-teal-800">
+                  2
+                </span>
+                We may suggest educational resources, mentoring, or referrals
+                — subject to program capacity.
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-bold text-teal-800">
+                  3
+                </span>
+                You&apos;ll receive a follow-up by your preferred contact
+                method if we need more information.
+              </li>
+            </ol>
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-relaxed text-muted-foreground">
+            This submission does not create an attorney-client relationship
+            and does not guarantee services, funding, or representation.
           </p>
-          <p className="mt-1 font-heading text-2xl font-bold text-teal-700">
-            {referenceNumber}
-          </p>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            Our team will review your submission and follow up within 5–7
-            business days. This is not a guarantee of services or funding.
-          </p>
+
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <CTAButton href="/education" variant="secondary">
               Explore resources while you wait
@@ -248,8 +281,12 @@ export function IntakeWizard() {
                   className="mt-0.5"
                 />
                 <span className="text-sm leading-relaxed text-slate-700">
-                  I agree to the privacy policy and consent to Community IP
-                  storing my information for intake purposes.
+                  I agree to the{" "}
+                  <Link href="/legal" className="font-medium text-teal-700 underline underline-offset-2">
+                    privacy policy
+                  </Link>{" "}
+                  and consent to Community IP storing my information for intake
+                  purposes.
                 </span>
               </label>
             </div>
@@ -696,7 +733,13 @@ export function IntakeWizard() {
           </div>
         )}
 
-        <div className="mt-8 flex items-center justify-between gap-4">
+        <div className="mt-8 space-y-3">
+          {!canProceed() && (
+            <p className="text-center text-sm text-amber-700" role="status">
+              Please complete all required fields to continue.
+            </p>
+          )}
+          <div className="flex items-center justify-between gap-4">
           {step > 0 ? (
             <Button variant="ghost" onClick={handleBack} className="gap-2">
               <ArrowLeft className="h-4 w-4" aria-hidden />
@@ -715,6 +758,7 @@ export function IntakeWizard() {
               <ArrowRight className="h-4 w-4" aria-hidden />
             )}
           </Button>
+          </div>
         </div>
       </div>
     </div>

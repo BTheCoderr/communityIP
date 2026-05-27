@@ -101,111 +101,140 @@ interface Result {
   summary: string;
   nextStep: string;
   resources: { title: string; href: string }[];
+  profileLabel?: string;
+}
+
+const RESOURCE_LINKS = {
+  patentBasics: { title: "Patent Basics", href: "/education/patent-basics" },
+  trademarkBasics: { title: "Trademark Basics", href: "/education/trademark-basics" },
+  copyrightBasics: { title: "Copyright Basics", href: "/education/copyright-basics" },
+  beforeShare: { title: "Before You Share Your Idea", href: "/education/before-you-share" },
+  whatToPrepare: { title: "What to Prepare Before Asking for IP Help", href: "/education/what-to-prepare" },
+  comparison: { title: "Patent vs Trademark vs Copyright", href: "/education/patent-vs-trademark-vs-copyright" },
+} as const;
+
+function getProfileLabel(answers: Answers): string {
+  const labels: Record<string, string> = {
+    invention: "product or invention",
+    brand: "brand or business identity",
+    creative: "original creative work",
+    business: "business or startup concept",
+    unsure: "idea you're still defining",
+  };
+  return labels[answers.protect] || "project";
 }
 
 function getResult(answers: Answers): Result {
   const { protect, disclosed, helpType, concern, urgency } = answers;
+  const profileLabel = getProfileLabel(answers);
 
   if (protect === "unsure" || helpType === "unsure") {
     return {
       title: "Start with education",
+      profileLabel,
       summary:
-        "Based on your answers, learning the basics may be the best first step. Understanding patents, trademarks, and copyrights will help you ask better questions and make informed decisions — without rushing into anything.",
+        `You're working on a ${profileLabel} — and it's completely normal not to know which type of IP applies yet. Learning the basics first can help you ask better questions and make calmer, informed decisions.`,
       nextStep:
-        "Explore our Education Hub to learn what type of IP might apply to your situation, then apply for help when you're ready.",
+        "Browse the Education Hub, starting with our comparison guide. Apply for help anytime you'd like intake support.",
       resources: [
-        { title: "Patent vs Trademark vs Copyright", href: "/education" },
-        { title: "Before You Share Your Idea", href: "/education" },
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
+        RESOURCE_LINKS.comparison,
+        RESOURCE_LINKS.beforeShare,
+        RESOURCE_LINKS.whatToPrepare,
       ],
     };
   }
 
   if (disclosed === "yes" && protect === "invention") {
     return {
-      title: "Timing may matter — learn your options soon",
+      title: "Learn about disclosure before your next step",
+      profileLabel,
       summary:
-        "You've shared your invention publicly, which can affect patent options in some situations. We can't give legal advice, but we recommend learning about disclosure soon and connecting with support that fits your needs.",
+        "You shared that your invention has been public. Disclosure timing can be an important topic for inventors to understand — we can't assess your specific situation, but learning soon may help you have clearer conversations later.",
       nextStep:
-        "Read about public disclosure, then apply for help so our team can review your situation and suggest educational resources or referrals.",
+        "Read our guide on sharing ideas, then apply for help if you'd like our team to review your situation for educational routing.",
       resources: [
-        { title: "Before You Share Your Idea", href: "/education" },
-        { title: "Patent Basics", href: "/education" },
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
+        RESOURCE_LINKS.beforeShare,
+        RESOURCE_LINKS.patentBasics,
+        RESOURCE_LINKS.whatToPrepare,
       ],
     };
   }
 
   if (protect === "brand" || helpType === "trademark") {
     return {
-      title: "Brand protection may be your focus",
+      title: "Brand protection may be worth exploring",
+      profileLabel,
       summary:
-        "If you're building a business identity, trademark basics are a good place to start. Trademarks protect names, logos, and branding — different from patents, which protect inventions.",
+        "Based on your answers, trademark basics may be a helpful starting point. Trademarks relate to names, logos, and how customers recognize your business — a different path from patents.",
       nextStep:
-        "Learn trademark basics, then apply for help if you'd like our team to review your situation.",
+        "Read Trademark Basics, then apply for help if you'd like intake support tailored to your situation.",
       resources: [
-        { title: "Trademark Basics", href: "/education" },
-        { title: "Patent vs Trademark vs Copyright", href: "/education" },
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
+        RESOURCE_LINKS.trademarkBasics,
+        RESOURCE_LINKS.comparison,
+        RESOURCE_LINKS.whatToPrepare,
       ],
     };
   }
 
   if (protect === "creative" || helpType === "copyright") {
     return {
-      title: "Copyright may apply to your work",
+      title: "Copyright basics may be relevant",
+      profileLabel,
       summary:
-        "Original creative works — like writing, art, music, and software — may be protected by copyright. It's often simpler than patent protection, but understanding the basics still helps.",
+        "Original creative work — writing, art, music, software — often connects to copyright. It's a different process from patents, and understanding the basics can help you decide what to explore next.",
       nextStep:
-        "Start with our copyright guide, then apply if you'd like personalized intake support.",
+        "Start with Copyright Basics, then apply for help when you're ready for intake support.",
       resources: [
-        { title: "Copyright Basics", href: "/education" },
-        { title: "Patent vs Trademark vs Copyright", href: "/education" },
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
+        RESOURCE_LINKS.copyrightBasics,
+        RESOURCE_LINKS.comparison,
+        RESOURCE_LINKS.whatToPrepare,
       ],
     };
   }
 
   if (helpType === "funding" || concern === "cost") {
     return {
-      title: "You may be a fit for needs-based support",
+      title: "You may want to explore needs-based options",
+      profileLabel,
       summary:
-        "Community IP offers needs-based programs subject to available capacity and funding. We can't guarantee support, but our intake process helps us understand your situation and connect you with options that may fit.",
+        "Community IP offers needs-based programs subject to available capacity and funding. We can't guarantee support, but our intake process helps us understand your situation and share options that may fit.",
       nextStep:
-        "Apply for help and indicate your interest in needs-based support. Our team will review and follow up.",
+        "Apply for help and note your interest in needs-based support. Our team will review and follow up.",
       resources: [
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
-        { title: "Patent Basics", href: "/education" },
-        { title: "Before You Share Your Idea", href: "/education" },
+        RESOURCE_LINKS.whatToPrepare,
+        RESOURCE_LINKS.patentBasics,
+        RESOURCE_LINKS.beforeShare,
       ],
     };
   }
 
   if (urgency === "urgent") {
     return {
-      title: "Let's connect you with support soon",
+      title: "We'll note your timeline in intake review",
+      profileLabel,
       summary:
-        "You've indicated you need help quickly. While we can't guarantee immediate services, applying now helps our team prioritize your intake review and suggest next steps.",
+        "You indicated you need help soon. While we can't guarantee immediate services, applying now helps our team understand your timeline when reviewing your submission.",
       nextStep:
-        "Apply for help today. Include as much detail as you can about your situation and timeline.",
+        "Apply for help with as much detail as you can. Explore resources below while you wait.",
       resources: [
-        { title: "What to Prepare Before Asking for IP Help", href: "/education" },
-        { title: "Patent Basics", href: "/education" },
-        { title: "Before You Share Your Idea", href: "/education" },
+        RESOURCE_LINKS.whatToPrepare,
+        RESOURCE_LINKS.patentBasics,
+        RESOURCE_LINKS.beforeShare,
       ],
     };
   }
 
   return {
-    title: "You're ready to take the next step",
+    title: "You're ready for a thoughtful next step",
+    profileLabel,
     summary:
-      "Based on your answers, you have a clearer picture of what you're working on. Community IP can help you learn more and connect with education, mentoring, or support options — subject to program capacity.",
+      `Based on your answers about your ${profileLabel}, you have a clearer picture of where you are. Community IP can help you learn more and explore education, mentoring, or support options — subject to program capacity.`,
     nextStep:
-      "Apply for help so our team can review your situation and suggest appropriate resources or referrals.",
+      "Apply for help so our team can review your situation and suggest appropriate educational resources or referrals.",
     resources: [
-      { title: "Patent Basics", href: "/education" },
-      { title: "What to Prepare Before Asking for IP Help", href: "/education" },
-      { title: "Patent vs Trademark vs Copyright", href: "/education" },
+      RESOURCE_LINKS.patentBasics,
+      RESOURCE_LINKS.whatToPrepare,
+      RESOURCE_LINKS.comparison,
     ],
   };
 }
@@ -312,6 +341,9 @@ export function ReadinessChecker() {
             <h2 className="font-heading text-2xl font-bold text-slate-800">
               {result.title}
             </h2>
+            <p className="mt-1 text-sm text-teal-700">
+              Based on your answers about your {result.profileLabel}
+            </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               {result.summary}
             </p>
@@ -348,11 +380,21 @@ export function ReadinessChecker() {
               <CTAButton href="/apply" className="flex-1">
                 Apply for Help
               </CTAButton>
-              <Button variant="secondary" onClick={handleRestart}>
+              <CTAButton href="/education" variant="secondary" className="flex-1">
+                Browse Education Hub
+              </CTAButton>
+            </div>
+            <div className="mt-3">
+              <Button variant="ghost" onClick={handleRestart} className="w-full sm:w-auto">
                 Start over
               </Button>
             </div>
           </div>
+
+          <p className="text-center text-xs leading-relaxed text-muted-foreground">
+            These results are general educational suggestions — not legal advice
+            or a guarantee of services.
+          </p>
 
           <DisclaimerBanner />
         </div>

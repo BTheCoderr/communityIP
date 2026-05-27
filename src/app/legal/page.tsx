@@ -88,23 +88,22 @@ export default function LegalPage() {
             <SectionHeading title="Privacy & consent" />
             <div className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
               <p>
-                When you submit forms on this platform, you consent to Community
-                IP collecting and storing your information for intake, outreach,
-                and program administration purposes.
+                We collect information you submit through intake, volunteer, and
+                partnership forms to review your inquiry and provide educational
+                follow-up. We do not sell personal information.
               </p>
               <p>
-                We do not sell your personal information. Information may be
-                shared with screened volunteers or partner organizations solely
-                for the purpose of providing educational support or referrals
-                you have requested — subject to your consent.
-              </p>
-              <p>
-                <em>
-                  [Privacy policy placeholder: A full privacy policy will be
-                  published before the platform handles live submissions. It
-                  will cover data collection, storage, retention, third-party
-                  sharing, and your rights regarding personal information.]
-                </em>
+                Information may be shared with screened volunteers or partner
+                organizations only to provide support you have requested, and
+                only with your consent. You may request correction or deletion
+                of your data by contacting us at{" "}
+                <a
+                  href="mailto:hello@communityip.org"
+                  className="font-medium text-teal-700 underline underline-offset-2"
+                >
+                  hello@communityip.org
+                </a>
+                .
               </p>
             </div>
           </section>
@@ -126,8 +125,22 @@ export default function LegalPage() {
             <SectionHeading title="Contact" />
             <div className="mt-4 text-muted-foreground leading-relaxed">
               <p>
-                For questions about these disclaimers or your data, contact
-                Community IP through the contact information on our website.
+                For questions about these disclaimers or your data, contact us
+                at{" "}
+                <a
+                  href="mailto:hello@communityip.org"
+                  className="font-medium text-teal-700 underline underline-offset-2"
+                >
+                  hello@communityip.org
+                </a>{" "}
+                or visit our{" "}
+                <a
+                  href="/contact"
+                  className="font-medium text-teal-700 underline underline-offset-2"
+                >
+                  contact page
+                </a>
+                .
               </p>
               <p className="mt-3 text-sm">
                 Community IP is a 501(c)(3) nonprofit organization. ©{" "}

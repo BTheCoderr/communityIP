@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { InterestForm } from "@/components/forms/InterestForm";
 import {
   Building2,
   Rocket,
@@ -38,7 +36,7 @@ const partnerTypes = [
     icon: Users,
     title: "Community organizations",
     description:
-      "Bring IP education to the neighborhoods and communities you serve — especially women, BIPOC, and youth programs.",
+      "Bring IP education to the neighborhoods you serve — especially women, BIPOC, and youth programs.",
   },
   {
     icon: Landmark,
@@ -50,13 +48,13 @@ const partnerTypes = [
     icon: Building,
     title: "Corporate sponsors",
     description:
-      "Support events, mentoring programs, and operational capacity while demonstrating commitment to innovation equity.",
+      "Support events, mentoring programs, and operations while demonstrating commitment to innovation equity.",
   },
   {
     icon: Scale,
     title: "Law firms",
     description:
-      "Provide pro bono capacity, host CLE-eligible events, and connect attorneys with screened inventor cases.",
+      "Provide pro bono capacity, host education events, and connect attorneys with screened inventor intake.",
   },
 ];
 
@@ -64,20 +62,11 @@ export default function PartnersPage() {
   return (
     <div className="py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-700">
-            Partners
-          </p>
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl text-balance">
-            Help us expand IP access together
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Community IP is building a network of partners who share our belief
-            that every inventor deserves a fair shot. Whether you refer
-            inventors, co-host events, or provide funding — we want to hear
-            from you.
-          </p>
-        </div>
+        <PageHeader
+          eyebrow="Partners"
+          title="Help us expand IP access together"
+          description="Community IP is building a network of partners who share our belief that every inventor deserves a fair shot — through events, referrals, and shared resources."
+        />
 
         <section className="mt-16">
           <SectionHeading
@@ -107,19 +96,21 @@ export default function PartnersPage() {
 
         <section className="mt-20 rounded-3xl border border-teal-200 bg-teal-50 p-8 sm:p-10">
           <SectionHeading
-            title="Why partner with Community IP?"
-            description="We're a mission-driven 501(c)(3) accepted into Social Enterprise Greenhouse's 2025 Impact Accelerator — building the infrastructure to serve inventors at scale."
+            title="What collaboration could look like"
+            description="Partnership models vary — here are common ways organizations work with us."
           />
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
-              "Reach underserved inventors who aren't accessing traditional IP services",
-              "Co-brand education events and workshops",
-              "Refer inventors through a structured intake process",
-              "Demonstrate measurable social impact in innovation equity",
+              "Co-host IP education events or seminars",
+              "Refer inventors through our intake process",
+              "Provide venue, outreach, or in-kind support",
+              "Sponsor needs-based inventor programs",
+              "Connect volunteer professionals",
+              "Share impact stories and community reach",
             ].map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-3 text-sm text-teal-900"
+                className="flex items-start gap-3 rounded-xl bg-white/60 px-4 py-3 text-sm text-teal-900"
               >
                 <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-teal-600" />
                 {item}
@@ -130,38 +121,12 @@ export default function PartnersPage() {
 
         <section className="mt-20">
           <SectionHeading
-            eyebrow="Partner interest"
-            title="Let's explore a partnership"
-            description="This is a prototype form — submissions are not yet stored."
+            eyebrow="Get started"
+            title="Tell us about your organization"
+            description="Share your interest and we'll follow up to explore a fit."
           />
-          <div className="mt-8 max-w-xl space-y-5 rounded-3xl border border-border bg-white p-6 shadow-soft sm:p-8">
-            <div>
-              <Label htmlFor="org">Organization name</Label>
-              <Input id="org" className="mt-1.5" />
-            </div>
-            <div>
-              <Label htmlFor="contact">Contact name</Label>
-              <Input id="contact" className="mt-1.5" />
-            </div>
-            <div>
-              <Label htmlFor="p-email">Email</Label>
-              <Input id="p-email" type="email" className="mt-1.5" />
-            </div>
-            <div>
-              <Label htmlFor="p-type">Partnership type</Label>
-              <Input
-                id="p-type"
-                placeholder="e.g., Event co-host, Referral partner, Sponsor"
-                className="mt-1.5"
-              />
-            </div>
-            <div>
-              <Label htmlFor="p-message">Tell us about your interest</Label>
-              <Textarea id="p-message" className="mt-1.5" />
-            </div>
-            <Button type="button" className="w-full sm:w-auto">
-              Submit interest (prototype)
-            </Button>
+          <div className="mt-8">
+            <InterestForm type="partner" />
           </div>
         </section>
 
