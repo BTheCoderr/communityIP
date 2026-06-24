@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { ImpactMetric } from "@/components/ImpactMetric";
+import { MISSION_STATEMENT, PROGRAMS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,10 +23,10 @@ export default function AboutPage() {
             Closing the IP access gap, one inventor at a time
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Community IP is a 501(c)(3) nonprofit founded in 2024 by patent
-            professionals who saw too many talented inventors left behind — not
-            for lack of ideas, but for lack of access, guidance, and affordable
-            support.
+            {MISSION_STATEMENT} Founded in 2024 by patent professionals, Community
+            IP is a 501(c)(3) nonprofit closing the gap for inventors left
+            behind — not for lack of ideas, but for lack of access, guidance,
+            and affordable support.
           </p>
         </div>
 
@@ -64,14 +65,7 @@ export default function AboutPage() {
                 What we focus on
               </h3>
               <ul className="mt-6 space-y-4">
-                {[
-                  "Education — making IP literacy accessible to everyone",
-                  "Intake & routing — helping inventors find the right support",
-                  "Mentoring — connecting inventors with experienced guides",
-                  "Affordable services — low-cost options where available",
-                  "Needs-based funding — subject to available resources",
-                  "Community partnerships — reaching inventors where they are",
-                ].map((item) => (
+                {PROGRAMS.map((item) => (
                   <li
                     key={item}
                     className="flex items-start gap-3 text-sm text-slate-700"
@@ -115,6 +109,7 @@ export default function AboutPage() {
             description="Community IP is for inventors and entrepreneurs who have been historically underrepresented in intellectual property — and anyone who needs a supportive, educational first step."
           />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <CTAButton href="/board">Board of Directors</CTAButton>
             <CTAButton href="/for-inventors">For inventors</CTAButton>
             <CTAButton href="/volunteer" variant="secondary">
               Volunteer with us

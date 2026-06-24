@@ -1,5 +1,6 @@
 import { CTAButton } from "@/components/CTAButton";
 import { Shield } from "lucide-react";
+import { MISSION_STATEMENT } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -24,9 +25,9 @@ export function Hero() {
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground sm:text-xl text-balance">
-              Learn about patents, trademarks, and copyrights — then get
-              connected with education, mentoring, and support options you can
-              actually access.
+              {MISSION_STATEMENT} Learn about patents, trademarks, and
+              copyrights — then get connected with education, mentoring, and
+              support options you can actually access.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">

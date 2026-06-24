@@ -3,3 +3,57 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Legacy WordPress URL redirects
+[[redirects]]
+  from = "/2025/12/10/community-ip-awarded-microgrant-from-social-enterprise-greenhouse"
+  to = "/news/seg-microgrant-2025"
+  status = 301
+
+[[redirects]]
+  from = "/2025/12/10/community-ip-awarded-microgrant-from-social-enterprise-greenhouse/"
+  to = "/news/seg-microgrant-2025"
+  status = 301
+
+[[redirects]]
+  from = "/2025/03/03/new-post"
+  to = "/news/seg-accelerator-2025"
+  status = 301
+
+[[redirects]]
+  from = "/2025/03/03/new-post/"
+  to = "/news/seg-accelerator-2025"
+  status = 301
+
+[[redirects]]
+  from = "/2025/03/03/current-post"
+  to = "/news/lost-einsteins"
+  status = 301
+
+[[redirects]]
+  from = "/2025/03/03/current-post/"
+  to = "/news/lost-einsteins"
+  status = 301
+
+[[redirects]]
+  from = "/board-of-directors"
+  to = "/board"
+  status = 301
+
+[[redirects]]
+  from = "/board-of-directors/"
+  to = "/board"
+  status = 301
+
+# Apex → www (configure primary domain as www in Netlify UI)
+[[redirects]]
+  from = "https://communityip.org/*"
+  to = "https://www.communityip.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://communityip.org/*"
+  to = "https://www.communityip.org/:splat"
+  status = 301
+  force = true

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { Button } from "@/components/ui/button";
+import { SPOTFUND_URL } from "@/lib/site";
 import {
   GraduationCap,
   HeartHandshake,
@@ -86,9 +87,8 @@ export default function DonatePage() {
               Make a donation
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
-              Online giving through this platform is coming soon. Community IP
-              currently accepts contributions through Spotfund and direct
-              outreach.
+              Support Community IP through Spotfund — secure online giving for
+              our 501(c)(3) programs.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -97,11 +97,11 @@ export default function DonatePage() {
                 asChild
               >
                 <a
-                  href="https://www.communityip.org/"
+                  href={SPOTFUND_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Give via Community IP
+                  Contribute via Spotfund
                 </a>
               </Button>
               <CTAButton href="/partners" variant="secondary" size="lg">

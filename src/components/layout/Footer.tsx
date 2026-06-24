@@ -14,6 +14,8 @@ const footerLinks = {
   ],
   about: [
     { href: "/about", label: "About Us" },
+    { href: "/board", label: "Board of Directors" },
+    { href: "/news", label: "News" },
     { href: "/contact", label: "Contact" },
     { href: "/legal", label: "Legal & Disclaimers" },
   ],
@@ -34,8 +36,9 @@ export function Footer() {
               </span>
             </div>
             <p className="mb-4 max-w-xs text-sm leading-relaxed text-slate-400">
-              Helping underserved inventors and entrepreneurs understand
-              intellectual property and connect with support they can access.
+              Community IP&apos;s mission is to help underserved inventors
+              obtain intellectual property — through education, intake support,
+              and community programs.
             </p>
             <p className="text-xs font-medium text-teal-400">
               501(c)(3) nonprofit organization

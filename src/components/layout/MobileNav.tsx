@@ -63,7 +63,25 @@ export function MobileNav() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-2 space-y-2 border-t border-border pt-2">
+            {[
+          { href: "/contact", label: "Contact" },
+          { href: "/news", label: "News" },
+        ].map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={() => setOpen(false)}
+            className={cn(
+              "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+              pathname === link.href
+                ? "bg-teal-50 text-teal-800"
+                : "text-slate-700 hover:bg-teal-50 hover:text-teal-800"
+            )}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <div className="mt-2 space-y-2 border-t border-border pt-2">
               <Link
                 href="/readiness-checker"
                 onClick={() => setOpen(false)}

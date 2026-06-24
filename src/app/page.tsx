@@ -1,9 +1,11 @@
 import { Hero } from "@/components/Hero";
+import { MissionSection } from "@/components/MissionSection";
+import { AccessStatsSection } from "@/components/AccessStatsSection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StepCard } from "@/components/StepCard";
 import { GetInvolvedCards } from "@/components/GetInvolvedCards";
+import { NewsCard } from "@/components/NewsCard";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import {
   BookOpen,
   Users,
@@ -12,13 +14,18 @@ import {
   DollarSign,
   Route,
 } from "lucide-react";
+import { newsPosts } from "@/lib/news";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
 
-      {/* How Community IP helps — moved up for faster clarity */}
+      <MissionSection />
+
+      <AccessStatsSection />
+
+      {/* How Community IP helps */}
       <section className="border-y border-border bg-white py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
@@ -175,6 +182,33 @@ export default function HomePage() {
                 <p className="mt-1 text-sm text-teal-900">{item.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* News preview */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="News"
+            title="Latest from Community IP"
+            description="Program updates, partnerships, and stories from our work to expand IP access."
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[...newsPosts]
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              )
+              .slice(0, 3)
+              .map((post) => (
+                <NewsCard key={post.slug} post={post} />
+              ))}
+          </div>
+          <div className="mt-8 text-center">
+            <CTAButton href="/news" variant="secondary">
+              View all news
+            </CTAButton>
           </div>
         </div>
       </section>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { Mail, MapPin } from "lucide-react";
+import { CONTACT_EMAIL, ORG_ADDRESS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,41 +17,42 @@ export default function ContactPage() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <PageHeader
           eyebrow="Contact"
-          title="We'd love to hear from you"
-          description="Questions about our programs, partnerships, or how to get started? Reach out — we're a small team and do our best to respond promptly."
+          title="Contact us"
+          description="Questions about our programs, partnerships, or how to get started? Send us a message — we're a small team and do our best to respond promptly."
         />
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-border bg-white p-6 shadow-card">
             <Mail className="mb-3 h-6 w-6 text-teal-700" aria-hidden />
             <h2 className="font-heading font-bold text-slate-800">Email</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              For general inquiries, partnerships, or press:
-            </p>
             <a
-              href="mailto:hello@communityip.org"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="mt-2 inline-block text-sm font-semibold text-teal-700 hover:underline"
             >
-              hello@communityip.org
+              {CONTACT_EMAIL}
             </a>
           </div>
           <div className="rounded-2xl border border-border bg-white p-6 shadow-card">
             <MapPin className="mb-3 h-6 w-6 text-teal-700" aria-hidden />
             <h2 className="font-heading font-bold text-slate-800">Location</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Community IP serves inventors nationally. We&apos;re building
-              partnerships across Southern New England and beyond.
+              {ORG_ADDRESS.street}
+              <br />
+              {ORG_ADDRESS.city}, {ORG_ADDRESS.state} {ORG_ADDRESS.zip}
             </p>
           </div>
         </div>
 
-        <div className="mt-10 rounded-3xl border border-border bg-white p-6 shadow-soft sm:p-8">
+        <div className="mt-10">
+          <ContactForm />
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-border bg-warm-50 p-6 sm:p-8">
           <h2 className="font-heading text-lg font-bold text-slate-800">
             Looking for help with your idea?
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            For inventor support, start with our readiness checker or intake
-            form — that helps us route you faster.
+            For inventor support, use our readiness checker or intake form.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link
