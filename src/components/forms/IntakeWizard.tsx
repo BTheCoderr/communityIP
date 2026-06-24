@@ -13,11 +13,14 @@ import { Progress } from "@/components/ui/progress";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { CTAButton } from "@/components/CTAButton";
 import { generateReferenceNumber } from "@/lib/utils";
+import { NondisclosureAgreement } from "@/components/NondisclosureAgreement";
+import { NDA_AGREE_LABEL } from "@/lib/nondisclosure";
 
 const STEPS = [
   "Disclaimer",
   "Contact Info",
   "About You",
+  "Nondisclosure",
   "Your Idea",
   "Disclosure",
   "Help Needed",
@@ -54,6 +57,7 @@ interface FormData {
   additionalInfo: string;
   consentAccurate: boolean;
   consentContact: boolean;
+  consentNda: boolean;
 }
 
 const initialFormData: FormData = {
@@ -85,6 +89,7 @@ const initialFormData: FormData = {
   additionalInfo: "",
   consentAccurate: false,
   consentContact: false,
+  consentNda: false,
 };
 
 const supportOptions = [
@@ -138,14 +143,16 @@ export function IntakeWizard() {
       case 2:
         return !!formData.personaType;
       case 3:
-        return !!formData.ideaTitle && !!formData.ideaDescription;
+        return formData.consentNda;
       case 4:
-        return !!formData.publiclyDisclosed && !!formData.priorFilings;
+        return !!formData.ideaTitle && !!formData.ideaDescription;
       case 5:
-        return formData.supportTypes.length > 0;
+        return !!formData.publiclyDisclosed && !!formData.priorFilings;
       case 6:
-        return !!formData.urgency && !!formData.preferredSupport;
+        return formData.supportTypes.length > 0;
       case 7:
+        return !!formData.urgency && !!formData.preferredSupport;
+      case 8:
         return formData.consentAccurate && formData.consentContact;
       default:
         return true;
@@ -446,6 +453,39 @@ export function IntakeWizard() {
         {step === 3 && (
           <div className="space-y-5">
             <h2 className="font-heading text-xl font-bold text-slate-800">
+              Nondisclosure Agreement
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Before you describe your invention, please read and agree to this
+              Nondisclosure Agreement with Keeley DeAngelo, LLP.{" "}
+              <Link
+                href="/legal/nondisclosure"
+                className="font-medium text-teal-700 underline underline-offset-2"
+                target="_blank"
+              >
+                View full agreement
+              </Link>
+            </p>
+            <NondisclosureAgreement compact />
+            <label className="flex items-start gap-3 cursor-pointer rounded-xl border border-border bg-warm-50 p-4">
+              <Checkbox
+                checked={formData.consentNda}
+                onCheckedChange={(checked) =>
+                  updateField("consentNda", checked === true)
+                }
+                className="mt-0.5"
+              />
+              <span className="text-sm leading-relaxed text-slate-700">
+                <span className="font-semibold text-slate-800">AGREE — </span>
+                {NDA_AGREE_LABEL}
+              </span>
+            </label>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="space-y-5">
+            <h2 className="font-heading text-xl font-bold text-slate-800">
               Your idea or business
             </h2>
             <div>
@@ -505,7 +545,7 @@ export function IntakeWizard() {
           </div>
         )}
 
-        {step === 4 && (
+        {step === 5 && (
           <div className="space-y-5">
             <h2 className="font-heading text-xl font-bold text-slate-800">
               Public disclosure & prior filings
@@ -592,7 +632,7 @@ export function IntakeWizard() {
           </div>
         )}
 
-        {step === 5 && (
+        {step === 6 && (
           <div className="space-y-5">
             <h2 className="font-heading text-xl font-bold text-slate-800">
               What kind of help do you need?
@@ -632,7 +672,7 @@ export function IntakeWizard() {
           </div>
         )}
 
-        {step === 6 && (
+        {step === 7 && (
           <div className="space-y-5">
             <h2 className="font-heading text-xl font-bold text-slate-800">
               Urgency & preferences
@@ -691,7 +731,7 @@ export function IntakeWizard() {
           </div>
         )}
 
-        {step === 7 && (
+        {step === 8 && (
           <div className="space-y-6">
             <h2 className="font-heading text-xl font-bold text-slate-800">
               Review & submit

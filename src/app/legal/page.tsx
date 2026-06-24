@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 
@@ -41,6 +42,26 @@ export default function LegalPage() {
                 attorneys unless a separate written agreement explicitly
                 establishes an attorney-client relationship through an approved
                 pro bono program.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <SectionHeading title="Nondisclosure Agreement" />
+            <div className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
+              <p>
+                When you apply for help and disclose an invention idea for
+                evaluation, you may be asked to agree to a Nondisclosure
+                Agreement with Keeley DeAngelo, LLP. Read the full agreement
+                before submitting your intake form.
+              </p>
+              <p>
+                <Link
+                  href="/legal/nondisclosure"
+                  className="font-medium text-teal-700 underline underline-offset-2"
+                >
+                  View Nondisclosure Agreement
+                </Link>
               </p>
             </div>
           </section>
