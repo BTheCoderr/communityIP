@@ -7,6 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
+import {
+  submitNetlifyFormElement,
+  NETLIFY_FORM_ERROR,
+} from "@/lib/netlify-forms";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,31 +23,15 @@ export function ContactForm() {
     setError("");
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const ok = await submitNetlifyFormElement(form);
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(
-          formData as unknown as Record<string, string>
-        ).toString(),
-      });
+    setLoading(false);
 
-      if (response.ok) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        setError(
-          "Something went wrong. Please email hello@communityip.org directly."
-        );
-      }
-    } catch {
-      setError(
-        "Something went wrong. Please email hello@communityip.org directly."
-      );
-    } finally {
-      setLoading(false);
+    if (ok) {
+      setSubmitted(true);
+      form.reset();
+    } else {
+      setError(NETLIFY_FORM_ERROR);
     }
   };
 
@@ -68,6 +56,7 @@ export function ContactForm() {
     <form
       name="contact"
       method="POST"
+      action="/thank-you"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}

@@ -12,6 +12,8 @@ Configure email alerts once for all forms:
 
 Hidden detection forms live in `public/forms.html` (required at build time).
 
+Client-side submissions POST to `/forms.html` with `Content-Type: application/x-www-form-urlencoded` and a `form-name` field matching the Netlify form exactly. Success UI only appears after the POST succeeds (`response.ok`). Native form fallback uses `action="/thank-you"`.
+
 ---
 
 ## Contact (`/contact`) — form name: `contact`

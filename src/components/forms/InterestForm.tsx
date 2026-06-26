@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { submitNetlifyForm, NETLIFY_FORM_ERROR } from "@/lib/netlify-forms";
+import {
+  submitNetlifyFormElement,
+  NETLIFY_FORM_ERROR,
+} from "@/lib/netlify-forms";
 
 interface InterestFormProps {
   type: "volunteer" | "partner";
@@ -24,21 +27,14 @@ export function InterestForm({ type }: InterestFormProps) {
     setLoading(true);
     setError("");
 
-    const formData = new FormData(e.currentTarget);
-    const fields: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      if (key !== "form-name" && key !== "bot-field") {
-        fields[key] = String(value);
-      }
-    });
-
-    const ok = await submitNetlifyForm(formName, fields);
+    const form = e.currentTarget;
+    const ok = await submitNetlifyFormElement(form);
 
     setLoading(false);
 
     if (ok) {
       setSubmitted(true);
-      e.currentTarget.reset();
+      form.reset();
     } else {
       setError(NETLIFY_FORM_ERROR);
     }
@@ -67,6 +63,7 @@ export function InterestForm({ type }: InterestFormProps) {
     <form
       name={formName}
       method="POST"
+      action="/thank-you"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
