@@ -1,9 +1,30 @@
-/** Official mission from communityip.org */
+/**
+ * Site-wide constants — sourced from WordPress content (see content/wordpress.ts)
+ */
+export {
+  mission,
+  about,
+  donate,
+  contact,
+  board,
+} from "@/lib/content/wordpress";
+
+export { home, HERO_IMAGE } from "@/lib/content/home";
+export { DISCLAIMERS } from "@/lib/content/disclaimers";
+export {
+  coPresidents,
+  boardDirectors,
+  allBoardMembers,
+} from "@/lib/content/team";
+
 export const MISSION_STATEMENT =
   "Community IP's mission is to help underserved inventors obtain intellectual property.";
 
 export const MISSION_EXTENDED =
   "Community IP wants to change the access gap. Started by two patent professionals in 2024, our goal is to help the vast, untapped well of talent by providing intellectual-property support to inventors who are historically underrepresented.";
+
+export const MISSION_DEMOCRATIZE =
+  "Community IP will democratize access to intellectual property by offering expert patent services to innovators who might otherwise be unable to afford them — alongside education, mentoring, and needs-based support, subject to program capacity.";
 
 export const SPOTFUND_URL = "https://spot.fund/lrsnklsc";
 

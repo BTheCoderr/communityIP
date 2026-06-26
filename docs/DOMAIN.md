@@ -9,10 +9,8 @@ This guide moves the live domain from DreamHost WordPress to the Netlify Next.js
 3. Add both:
    - `communityip.org`
    - `www.communityip.org`
-4. Set **Primary domain** to `www.communityip.org`
+4. Set **Primary domain** to `www.communityip.org` (Netlify will redirect apex → www automatically)
 5. Enable **HTTPS** (Netlify will provision Let's Encrypt after DNS propagates)
-
-The repo's `netlify.toml` already redirects apex `communityip.org` → `www.communityip.org`.
 
 ## 2. DreamHost — switch web hosting to DNS only
 
@@ -56,6 +54,22 @@ Expected:
 - apex → Netlify load balancer or `75.2.60.5`
 
 In Netlify → **Domain management**, confirm both domains show **Verified** and **HTTPS** is active.
+
+The repo does **not** include apex↔www redirects — Netlify handles that from your **Primary domain** setting. Only one place should control that, or you get `ERR_TOO_MANY_REDIRECTS`.
+
+## Troubleshooting: “Redirected you too many times”
+
+This means apex (`communityip.org`) and `www` are redirecting to each other.
+
+1. Netlify → **Domain management** → **Set primary domain** to **one** hostname (recommended: `www.communityip.org`)
+2. Netlify will automatically redirect the other hostname to primary — do not duplicate that in `netlify.toml`
+3. Clear browser cache/cookies for `communityip.org` and retry
+4. Confirm with:
+   ```bash
+   curl -sI https://communityip.org | grep -i location
+   curl -sI https://www.communityip.org | grep -i location
+   ```
+   One should return `200`, the other a single `301` to the primary.
 
 ## 5. Test the live site
 

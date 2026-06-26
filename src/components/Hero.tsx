@@ -11,8 +11,8 @@ export function Hero() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
+        <div className="grid grid-cols-1 items-start gap-10 xl:grid-cols-2 xl:gap-14">
+          <div className="relative z-10 min-w-0">
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-teal-700">
               501(c)(3) nonprofit · IP access for underserved inventors
             </p>
@@ -45,7 +45,8 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-border bg-white p-7 shadow-soft sm:p-8">
+          <div className="min-w-0 xl:sticky xl:top-28">
+            <div className="rounded-3xl border border-border bg-white p-7 shadow-soft sm:p-8">
             <p className="font-heading text-sm font-semibold uppercase tracking-wider text-teal-700">
               Why this platform exists
             </p>
@@ -68,6 +69,7 @@ export function Hero() {
             <p className="mt-5 text-xs text-muted-foreground">
               Sources: USPTO, Stanford Equality of Opportunity Project
             </p>
+            </div>
           </div>
         </div>
       </div>

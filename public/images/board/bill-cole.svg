@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#EEF4F7"/>
+  <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0 L0 0 0 20" fill="none" stroke="#3D6982" stroke-opacity="0.15"/>
+  </pattern>
+  <rect width="400" height="400" fill="url(#g)"/>
+  <rect x="24" y="24" width="352" height="352" fill="none" stroke="#0F172A" stroke-opacity="0.2"/>
+  <text x="200" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#0F172A">BC</text>
+</svg>

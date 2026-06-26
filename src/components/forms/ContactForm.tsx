@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { DISCLAIMERS } from "@/lib/content/disclaimers";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -126,12 +127,7 @@ export function ContactForm() {
         {loading ? "Sending…" : "Send message"}
       </Button>
       <p className="text-xs text-muted-foreground">
-        This form is for general inquiries only — not legal advice. For inventor
-        support, use{" "}
-        <a href="/apply" className="font-medium text-teal-700 underline">
-          Apply for Help
-        </a>
-        .
+        {DISCLAIMERS.contactFormNote}
       </p>
     </form>
   );

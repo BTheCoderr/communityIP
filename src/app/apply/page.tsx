@@ -4,7 +4,7 @@ import { IntakeWizard } from "@/components/forms/IntakeWizard";
 export const metadata: Metadata = {
   title: "Apply for Help",
   description:
-    "Submit an intake application to Community IP. Educational support and intake only — not legal advice.",
+    "Submit an intake application to Community IP for education, intake support, mentoring, and patent filing assistance where appropriate.",
 };
 
 export default function ApplyPage() {

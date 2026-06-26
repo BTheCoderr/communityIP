@@ -23,18 +23,18 @@ export function AudienceCard({
     <Link
       href={href}
       className={cn(
-        "group flex flex-col rounded-2xl border border-border bg-white p-6 shadow-card transition-all hover:border-teal-200 hover:shadow-soft",
+        "group flex flex-col border-2 border-navy-900/10 bg-cream p-6 transition-colors hover:border-blueprint-600/30 hover:bg-cream-50",
         className
       )}
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition-colors group-hover:bg-teal-100">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center border border-navy-900/10 bg-blueprint-50 text-blueprint-700">
         <Icon className="h-6 w-6" aria-hidden />
       </div>
-      <h3 className="font-heading text-lg font-bold text-slate-800">{title}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+      <h3 className="font-display text-lg font-bold text-navy-900">{title}</h3>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-800/70">
         {description}
       </p>
-      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 group-hover:gap-2 transition-all">
+      <span className="mt-4 inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-blueprint-700 transition-all group-hover:gap-2">
         {cta}
         <ArrowRight className="h-4 w-4" aria-hidden />
       </span>

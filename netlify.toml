@@ -45,15 +45,5 @@
   to = "/board"
   status = 301
 
-# Apex → www (configure primary domain as www in Netlify UI)
-[[redirects]]
-  from = "https://communityip.org/*"
-  to = "https://www.communityip.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://communityip.org/*"
-  to = "https://www.communityip.org/:splat"
-  status = 301
-  force = true
+# Domain canonicalization (apex ↔ www) is handled in Netlify → Domain management → Primary domain.
+# Do NOT add apex↔www redirects here — conflicting rules cause ERR_TOO_MANY_REDIRECTS.

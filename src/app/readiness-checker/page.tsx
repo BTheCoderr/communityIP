@@ -4,7 +4,7 @@ import { ReadinessChecker } from "@/components/forms/ReadinessChecker";
 export const metadata: Metadata = {
   title: "IP Readiness Checker",
   description:
-    "Answer a few questions to understand what type of IP support might fit your situation. Educational only — not legal advice.",
+    "Answer a few questions to understand what type of IP support might fit your situation.",
 };
 
 export default function ReadinessCheckerPage() {
@@ -19,8 +19,8 @@ export default function ReadinessCheckerPage() {
             Not sure where to start? Let&apos;s find out together.
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Answer 7 quick questions to get a personalized recommendation. This
-            is educational guidance only — not legal advice.
+            Answer 7 quick questions to get a personalized recommendation to
+            help you decide what to explore next.
           </p>
         </div>
         <ReadinessChecker />

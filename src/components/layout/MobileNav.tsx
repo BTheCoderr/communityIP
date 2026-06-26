@@ -25,14 +25,14 @@ export function MobileNav() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-center rounded-xl border border-border bg-white p-2.5 hover:bg-teal-50"
+        className="flex items-center justify-center border-2 border-navy-900/15 bg-cream p-2.5 hover:bg-blueprint-50"
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
       >
         {open ? (
-          <X className="h-5 w-5 text-slate-700" aria-hidden />
+          <X className="h-5 w-5 text-navy-900" aria-hidden />
         ) : (
-          <Menu className="h-5 w-5 text-slate-700" aria-hidden />
+          <Menu className="h-5 w-5 text-navy-900" aria-hidden />
         )}
       </button>
 
@@ -40,12 +40,12 @@ export function MobileNav() {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-navy-900/30 backdrop-blur-sm"
             onClick={() => setOpen(false)}
             aria-label="Close menu overlay"
           />
           <nav
-            className="absolute right-0 top-full z-50 mt-2 w-[min(100vw-2rem,20rem)] rounded-2xl border border-border bg-white p-3 shadow-card"
+            className="absolute right-0 top-full z-50 mt-2 w-[min(100vw-2rem,20rem)] border-2 border-navy-900/10 bg-cream p-3 shadow-file"
             aria-label="Mobile"
           >
             {navLinks.map((link) => (
@@ -54,47 +54,47 @@ export function MobileNav() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                  "block px-4 py-3 text-sm font-medium transition-colors",
                   pathname === link.href
-                    ? "bg-teal-50 text-teal-800"
-                    : "text-slate-700 hover:bg-teal-50 hover:text-teal-800"
+                    ? "bg-blueprint-50 text-blueprint-800"
+                    : "text-navy-800 hover:bg-blueprint-50 hover:text-blueprint-800"
                 )}
               >
                 {link.label}
               </Link>
             ))}
             {[
-          { href: "/contact", label: "Contact" },
-          { href: "/news", label: "News" },
-        ].map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            className={cn(
-              "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
-              pathname === link.href
-                ? "bg-teal-50 text-teal-800"
-                : "text-slate-700 hover:bg-teal-50 hover:text-teal-800"
-            )}
-          >
-            {link.label}
-          </Link>
-        ))}
-        <div className="mt-2 space-y-2 border-t border-border pt-2">
+              { href: "/contact", label: "Contact" },
+              { href: "/news", label: "News" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "block px-4 py-3 text-sm font-medium transition-colors",
+                  pathname === link.href
+                    ? "bg-blueprint-50 text-blueprint-800"
+                    : "text-navy-800 hover:bg-blueprint-50 hover:text-blueprint-800"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="mt-2 space-y-2 border-t border-navy-900/10 pt-2">
               <Link
                 href="/readiness-checker"
                 onClick={() => setOpen(false)}
-                className="block rounded-xl border border-teal-200 px-4 py-3 text-center text-sm font-semibold text-teal-800 hover:bg-teal-50"
+                className="block border border-navy-900/15 px-4 py-3 text-center text-sm font-semibold text-navy-900 hover:bg-blueprint-50"
               >
                 IP Readiness Checker
               </Link>
               <Link
                 href="/apply"
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-teal-700 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-teal-800"
+                className="block bg-navy-900 px-4 py-3 text-center text-sm font-semibold text-cream hover:bg-navy-800"
               >
-                Get Help
+                Get IP Help
               </Link>
             </div>
           </nav>

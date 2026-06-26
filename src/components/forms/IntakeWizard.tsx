@@ -13,8 +13,14 @@ import { Progress } from "@/components/ui/progress";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { CTAButton } from "@/components/CTAButton";
 import { generateReferenceNumber } from "@/lib/utils";
+import {
+  submitNetlifyForm,
+  serializeIntakeFields,
+  NETLIFY_FORM_ERROR,
+} from "@/lib/netlify-forms";
 import { NondisclosureAgreement } from "@/components/NondisclosureAgreement";
 import { NDA_AGREE_LABEL } from "@/lib/nondisclosure";
+import { DISCLAIMERS } from "@/lib/content/disclaimers";
 
 const STEPS = [
   "Disclaimer",
@@ -109,6 +115,8 @@ export function IntakeWizard() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
   const [referenceNumber, setReferenceNumber] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const progress = submitted ? 100 : ((step + 1) / STEPS.length) * 100;
 
@@ -159,12 +167,30 @@ export function IntakeWizard() {
     }
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (step < STEPS.length - 1) {
       setStep(step + 1);
-    } else {
-      setReferenceNumber(generateReferenceNumber());
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    const ref = generateReferenceNumber();
+    const ok = await submitNetlifyForm(
+      "intake",
+      serializeIntakeFields(
+        formData as unknown as Record<string, unknown>,
+        ref
+      )
+    );
+
+    setLoading(false);
+
+    if (ok) {
+      setReferenceNumber(ref);
       setSubmitted(true);
+    } else {
+      setError(NETLIFY_FORM_ERROR);
     }
   };
 
@@ -258,10 +284,7 @@ export function IntakeWizard() {
                 Before you begin
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                This form helps Community IP understand your situation so we can
-                connect you with educational resources and support options. This
-                is not legal advice, and submitting this form does not create an
-                attorney-client relationship.
+                {DISCLAIMERS.intakeIntro}
               </p>
             </div>
             <DisclaimerBanner />
@@ -275,8 +298,7 @@ export function IntakeWizard() {
                   className="mt-0.5"
                 />
                 <span className="text-sm leading-relaxed text-slate-700">
-                  I understand this is educational and intake support only — not
-                  legal advice.
+                  {DISCLAIMERS.intakeConsentLabel}
                 </span>
               </label>
               <label className="flex items-start gap-3 cursor-pointer">
@@ -738,10 +760,8 @@ export function IntakeWizard() {
             </h2>
             <DisclaimerBanner />
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Community IP provides educational information and intake support.
-              We are not your attorneys. Submitting this application does not
-              guarantee services, funding, or pro bono representation. Our team
-              will review your submission and respond within 5–7 business days.
+              {DISCLAIMERS.formShort} {DISCLAIMERS.noGuarantee} Our team will
+              review your submission and respond within 5–7 business days.
             </p>
             <div className="space-y-4">
               <label className="flex items-start gap-3 cursor-pointer">
@@ -774,6 +794,11 @@ export function IntakeWizard() {
         )}
 
         <div className="mt-8 space-y-3">
+          {error && (
+            <p className="text-center text-sm text-red-600" role="alert">
+              {error}
+            </p>
+          )}
           {!canProceed() && (
             <p className="text-center text-sm text-amber-700" role="status">
               Please complete all required fields to continue.
@@ -790,10 +815,14 @@ export function IntakeWizard() {
           )}
           <Button
             onClick={handleNext}
-            disabled={!canProceed()}
+            disabled={!canProceed() || loading}
             className="gap-2"
           >
-            {step === STEPS.length - 1 ? "Submit application" : "Continue"}
+            {loading
+              ? "Submitting…"
+              : step === STEPS.length - 1
+                ? "Submit application"
+                : "Continue"}
             {step < STEPS.length - 1 && (
               <ArrowRight className="h-4 w-4" aria-hidden />
             )}

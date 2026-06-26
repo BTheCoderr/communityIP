@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { PageShell } from "@/components/layout/PageShell";
+import { StampLabel } from "@/components/brand/StampLabel";
 import {
   newsPosts,
   getNewsPost,
@@ -33,38 +35,44 @@ export default async function NewsArticlePage({
   if (!post) notFound();
 
   return (
-    <div className="py-12 sm:py-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <Link
-          href="/news"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:underline"
-        >
-          <ArrowLeft className="h-4 w-4" aria-hidden />
-          Back to News
-        </Link>
+    <PageShell narrow>
+      <Link
+        href="/news"
+        className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-blueprint-700 hover:underline"
+      >
+        <ArrowLeft className="h-4 w-4" aria-hidden />
+        Back to News
+      </Link>
 
-        <article className="mt-8">
-          <time
-            dateTime={post.date}
-            className="text-sm font-medium text-teal-700"
-          >
-            {formatNewsDate(post.date)}
-          </time>
-          <h1 className="mt-3 font-heading text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl text-balance">
-            {post.title}
-          </h1>
-          <div className="mt-8 space-y-5">
-            {post.body.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 40)}
-                className="leading-relaxed text-muted-foreground"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </article>
-      </div>
-    </div>
+      <article className="mt-8">
+        <StampLabel variant="community" className="mb-4">
+          Community update
+        </StampLabel>
+        <time
+          dateTime={post.date}
+          className="font-mono text-xs uppercase tracking-wider text-muted-foreground"
+        >
+          {formatNewsDate(post.date)}
+        </time>
+        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl text-balance">
+          {post.title}
+        </h1>
+        {post.author && (
+          <p className="mt-4 font-display text-base text-navy-800/80">
+            By {post.author}
+          </p>
+        )}
+        <div className="mt-8 space-y-5 border-t-2 border-navy-900/10 pt-8">
+          {post.body.map((paragraph) => (
+            <p
+              key={paragraph.slice(0, 40)}
+              className="leading-relaxed text-navy-800/80"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </article>
+    </PageShell>
   );
 }

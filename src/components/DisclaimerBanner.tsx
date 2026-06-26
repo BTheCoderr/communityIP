@@ -1,5 +1,6 @@
 import { AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DISCLAIMERS } from "@/lib/content/disclaimers";
 
 interface DisclaimerBannerProps {
   className?: string;
@@ -18,8 +19,7 @@ export function DisclaimerBanner({
           className
         )}
       >
-        Educational information only — not legal advice. No attorney-client
-        relationship is created.
+        {DISCLAIMERS.compact}
       </p>
     );
   }
@@ -27,24 +27,20 @@ export function DisclaimerBanner({
   return (
     <div
       className={cn(
-        "flex gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 sm:p-5",
+        "flex gap-3 border-2 border-stamp-600/30 bg-stamp-100/40 p-4 sm:p-5",
         className
       )}
       role="note"
       aria-label="Disclaimer"
     >
       <AlertCircle
-        className="mt-0.5 h-5 w-5 shrink-0 text-amber-600"
+        className="mt-0.5 h-5 w-5 shrink-0 text-stamp-600"
         aria-hidden
       />
-      <div className="text-sm leading-relaxed text-amber-900">
-        <p className="font-semibold">Important: This is not legal advice</p>
-        <p className="mt-1">
-          Community IP provides educational information and intake support only.
-          Nothing on this platform constitutes legal advice, and submitting a
-          form does not create an attorney-client relationship. We cannot
-          guarantee services, funding, or legal representation.
-        </p>
+      <div className="text-sm leading-relaxed text-navy-900">
+        <p className="font-semibold">Important information</p>
+        <p className="mt-1 text-navy-800/80">{DISCLAIMERS.full}</p>
+        <p className="mt-3 text-navy-800/70">{DISCLAIMERS.noGuarantee}</p>
       </div>
     </div>
   );

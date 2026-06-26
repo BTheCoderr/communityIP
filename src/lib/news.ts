@@ -4,6 +4,7 @@ export interface NewsPost {
   date: string;
   excerpt: string;
   body: string[];
+  author?: string;
   /** Legacy WordPress path for redirects */
   legacyPath?: string;
 }
@@ -33,13 +34,14 @@ export const newsPosts: NewsPost[] = [
     body: [
       "Community IP has just been accepted into the Social Enterprise Greenhouse (SEG) 2025 Spring Accelerator Program. This program works with social enterprises that understand the needs of their beneficiaries and have high potential for impact.",
       "With this course, Community IP will work with Brown University and receive guidance from experienced social entrepreneurs, business leaders and community mentors. We will also compete for sector grants, and have priority access to SEG's loan fund.",
-      "The program will require 6–8 hours of work for 12 weeks. We are ready and excited to participate!",
+      "The program will require 6–8 hours of work for 12 weeks starting this month. We are ready and excited to participate!",
     ],
   },
   {
     slug: "lost-einsteins",
     title: "Lost Einsteins: It's Not Enough to Be Smart",
     date: "2025-03-03",
+    author: "Regina DeAngelo",
     legacyPath: "/2025/03/03/current-post",
     excerpt:
       "Access and exposure matter as much as talent — why Community IP exists to close the IP gap.",

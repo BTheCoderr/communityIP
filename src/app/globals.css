@@ -2,25 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 215 28% 17%;
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-    --primary: 174 72% 26%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 38 92% 95%;
-    --secondary-foreground: 32 81% 29%;
-    --muted: 40 15% 94%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 32 95% 44%;
-    --accent-foreground: 0 0% 100%;
-    --border: 40 10% 90%;
-    --ring: 174 72% 26%;
-    --radius: 0.75rem;
+    --background: 40 33% 96%;
+    --foreground: 222 47% 11%;
+    --card: 40 40% 98%;
+    --card-foreground: 222 47% 11%;
+    --primary: 200 35% 38%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 40 33% 97%;
+    --muted: 210 18% 93%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 24 65% 48%;
+    --accent-foreground: 40 33% 97%;
+    --border: 210 20% 86%;
+    --ring: 200 35% 38%;
+    --radius: 0.25rem;
+    --navy: 222 47% 11%;
+    --cream: 40 33% 96%;
+    --blueprint: 200 35% 38%;
+    --stamp: 24 65% 48%;
   }
 
   * {
@@ -32,7 +36,7 @@
   }
 
   body {
-    @apply bg-warm-50 text-slate-800 antialiased;
+    @apply bg-cream text-navy-900 antialiased;
   }
 
   h1,
@@ -41,17 +45,51 @@
   h4,
   h5,
   h6 {
-    @apply font-heading;
+    @apply font-display;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-teal-700 ring-offset-2;
+    @apply outline-none ring-2 ring-blueprint-600 ring-offset-2 ring-offset-cream;
   }
 }
 
 @layer components {
-  .section-padding {
-    @apply py-14 sm:py-16;
+  .blueprint-grid {
+    background-color: hsl(var(--cream));
+    background-image:
+      linear-gradient(rgba(61, 105, 130, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 105, 130, 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .blueprint-grid-dense {
+    background-image:
+      linear-gradient(rgba(61, 105, 130, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 105, 130, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(61, 105, 130, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 105, 130, 0.12) 1px, transparent 1px);
+    background-size: 12px 12px, 12px 12px, 48px 48px, 48px 48px;
+  }
+
+  .patent-file {
+    @apply relative border-2 border-navy-900/20 bg-cream-50 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)];
+  }
+
+  .patent-file::before {
+    content: "";
+    @apply absolute -top-3 left-6 h-6 w-16 border-2 border-b-0 border-navy-900/20 bg-cream-100;
+  }
+
+  .stamp-label {
+    @apply inline-flex rotate-[-2deg] items-center border-2 border-current px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em];
+  }
+
+  .editorial-rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-navy-900/20 to-transparent;
+  }
+
+  .section-editorial {
+    @apply py-20 sm:py-28;
   }
 }
 

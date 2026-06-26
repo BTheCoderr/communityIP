@@ -5,11 +5,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Community IP — IP Access for Every Inventor",
+    default: "Community IP — Helping Overlooked Inventors Protect Ideas",
     template: "%s | Community IP",
   },
   description:
-    "Community IP helps underserved inventors and entrepreneurs learn about patents, trademarks, and copyrights, and connect with education, mentoring, and support options.",
+    "Community IP helps underserved inventors understand intellectual property, connect with support, and take the next step toward protecting their ideas.",
 };
 
 export default function RootLayout({

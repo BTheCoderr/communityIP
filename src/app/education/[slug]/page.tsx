@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { CTAButton } from "@/components/CTAButton";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
+import { DISCLAIMERS } from "@/lib/content/disclaimers";
 import { educationResources, getResourceBySlug } from "@/lib/education";
 import { ArrowLeft, Clock } from "lucide-react";
 
@@ -94,8 +95,7 @@ export default async function EducationArticlePage({
             Ready for a next step?
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            This guide is educational only. For personalized intake support,
-            take the readiness checker or apply for help.
+            {DISCLAIMERS.educationFooter}
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <CTAButton href="/readiness-checker">Take the readiness checker</CTAButton>

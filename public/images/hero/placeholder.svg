@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Hero image placeholder">
+  <rect width="800" height="600" fill="#EEF4F7"/>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0 L0 0 0 24" fill="none" stroke="#3D6982" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#0F172A" stroke-opacity="0.15" stroke-width="2"/>
+  <circle cx="400" cy="260" r="80" fill="none" stroke="#3D6982" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="280" y="380" width="240" height="60" rx="4" fill="none" stroke="#3D6982" stroke-width="1.5"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#0F172A" opacity="0.7">Inventor at work</text>
+  <text x="400" y="500" text-anchor="middle" font-family="monospace" font-size="12" fill="#3D6982" letter-spacing="2">HERO IMAGE PLACEHOLDER</text>
+  <text x="400" y="530" text-anchor="middle" font-family="monospace" font-size="10" fill="#3D6982" opacity="0.7">Replace with boy maker photo from WordPress</text>
+</svg>

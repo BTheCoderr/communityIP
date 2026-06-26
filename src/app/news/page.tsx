@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { PageShell } from "@/components/layout/PageShell";
 import { PageHeader } from "@/components/PageHeader";
-import { NewsCard } from "@/components/NewsCard";
-import { newsPosts } from "@/lib/news";
+import { CommunityUpdates } from "@/components/home/CommunityUpdates";
 
 export const metadata: Metadata = {
   title: "News",
@@ -9,24 +9,16 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
-  const sorted = [...newsPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
   return (
-    <div className="py-12 sm:py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <>
+      <PageShell>
         <PageHeader
           eyebrow="News"
-          title="Updates from Community IP"
-          description="Stories about our programs, partnerships, and mission to expand IP access for underserved inventors."
+          title="Updates from the movement"
+          description="Stories about our programs, partnerships, and mission to expand IP access for underserved inventors — migrated from the original Community IP blog."
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sorted.map((post) => (
-            <NewsCard key={post.slug} post={post} />
-          ))}
-        </div>
-      </div>
-    </div>
+      </PageShell>
+      <CommunityUpdates />
+    </>
   );
 }

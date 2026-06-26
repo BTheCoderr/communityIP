@@ -66,7 +66,7 @@ export const educationResources: EducationResource[] = [
       },
       {
         heading: "Common first steps",
-        body: "Many entrepreneurs start by searching whether similar names or marks already exist, then learning about registration options. Community IP can point you toward educational resources and intake support — not legal advice.",
+        body: "Many entrepreneurs start by searching whether similar names or marks already exist, then learning about registration options. Community IP can help you understand options and connect with intake support when appropriate.",
       },
     ],
   },
@@ -112,7 +112,7 @@ export const educationResources: EducationResource[] = [
       },
       {
         heading: "Why timing can matter",
-        body: "For some inventions, public disclosure may affect patent options in certain countries or situations. Community IP cannot give legal advice on your specific case, but we can help you understand why this topic comes up and connect you with educational resources.",
+        body: "For some inventions, public disclosure may affect patent options in certain countries or situations. Community IP can help you understand why this topic matters and what questions to ask before sharing further.",
       },
       {
         heading: "Practical habits",
@@ -149,20 +149,20 @@ export const educationResources: EducationResource[] = [
     slug: "patent-vs-trademark-vs-copyright",
     title: "Patent vs Trademark vs Copyright",
     description:
-      "The most common question we hear — what's the difference, and which one (if any) applies to you?",
+      "Patents, trademarks, and copyrights protect different kinds of work. Understanding the difference can help you decide what questions to ask and what next step may be appropriate.",
     whyItMatters:
-      "Choosing the wrong type of IP to focus on wastes time and money. This overview helps you orient before diving deeper.",
+      "Choosing the wrong type of IP to focus on can waste time and resources. This overview helps you orient before diving deeper.",
     category: "Getting started",
     icon: Scale,
     readingTime: "7 min read",
     sections: [
       {
         heading: "Quick comparison",
-        body: "Patents generally protect inventions. Trademarks protect brand identifiers like names and logos. Copyright protects original creative expression. Many businesses use more than one type over time.",
+        body: "Patents can protect eligible inventions, products, systems, methods, and improvements. Trademarks protect brand identifiers like names and logos. Copyright protects original creative expression. Many businesses use more than one type over time.",
       },
       {
-        heading: "Which might apply to you?",
-        body: "Built a new device or process? Start with patent basics. Launching a brand or business name? Look at trademarks. Created art, writing, music, or code? Copyright may be relevant. Still unsure? Take the IP Readiness Checker.",
+        heading: "Which may apply to you?",
+        body: "Built a new device or process? Start with patent basics. Launching a brand or business name? Look at trademarks. Created art, writing, music, or code? Copyright may be relevant. Still unsure? Take the IP Readiness Checker or apply for intake support.",
       },
       {
         heading: "You can use more than one",

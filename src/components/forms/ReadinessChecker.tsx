@@ -392,8 +392,8 @@ export function ReadinessChecker() {
           </div>
 
           <p className="text-center text-xs leading-relaxed text-muted-foreground">
-            These results are general educational suggestions — not legal advice
-            or a guarantee of services.
+            These results are general suggestions to help you explore next
+            steps — not a legal opinion on your specific situation.
           </p>
 
           <DisclaimerBanner />
