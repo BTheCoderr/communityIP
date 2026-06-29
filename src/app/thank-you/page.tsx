@@ -28,13 +28,13 @@ export default async function ThankYouPage({
   return (
     <PageShell narrow>
       <div className="mx-auto max-w-xl py-16 text-center">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-          <CheckCircle2 className="h-8 w-8 text-teal-700" aria-hidden />
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-community-100">
+          <CheckCircle2 className="h-8 w-8 text-community-700" aria-hidden />
         </div>
-        <h1 className="font-display text-3xl font-bold text-navy-900">
+        <h1 className="font-display text-3xl font-bold text-forest-900">
           Thank you
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-navy-800/75">
+        <p className="mt-4 text-base leading-relaxed text-forest-800/75">
           {label
             ? `Your ${label} was received. Our team will follow up as soon as we can.`
             : "Your submission was received. Our team will follow up as soon as we can."}
@@ -43,7 +43,7 @@ export default async function ThankYouPage({
           <CTAButton href="/">Return home</CTAButton>
           <Link
             href="/contact"
-            className="inline-flex items-center text-sm font-medium text-blueprint-700 hover:underline"
+            className="inline-flex items-center text-sm font-medium text-community-700 hover:underline"
           >
             Contact us
           </Link>

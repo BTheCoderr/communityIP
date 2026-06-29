@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blueprint-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-community-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-navy-900 text-cream hover:bg-navy-800 shadow-file",
+        default: "bg-community-700 text-cream hover:bg-community-800 shadow-file",
         secondary:
-          "bg-cream text-navy-900 border-2 border-navy-900/20 hover:border-navy-900/40 hover:bg-cream-100",
-        accent: "bg-stamp-600 text-cream hover:bg-stamp-600/90 shadow-stamp",
-        ghost: "hover:bg-blueprint-50 text-blueprint-700",
-        link: "text-blueprint-700 underline-offset-4 hover:underline",
+          "bg-cream text-forest-900 border-2 border-community-700/20 hover:border-community-700/40 hover:bg-community-50",
+        accent: "bg-sage-600 text-cream hover:bg-sage-700 shadow-stamp",
+        ghost: "hover:bg-community-50 text-community-700",
+        link: "text-community-700 underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6 py-2",

@@ -25,7 +25,7 @@ export function AccessGapReport() {
         <div className="mt-14 grid gap-8 border-t-2 border-navy-900/15 pt-14 lg:grid-cols-2">
           <div className="relative">
             <p className="font-display text-7xl font-bold tabular-nums text-navy-900 sm:text-8xl lg:text-9xl">
-              20<span className="text-stamp-600">%</span>
+              20<span className="text-community-600">%</span>
             </p>
             <p className="mt-4 max-w-sm font-display text-2xl font-semibold leading-snug text-navy-800">
               Only 20% of inventors are people of color.
@@ -35,13 +35,13 @@ export function AccessGapReport() {
             </p>
             {/* Visual bar */}
             <div className="mt-8 h-3 w-full max-w-md overflow-hidden bg-navy-900/10">
-              <div className="h-full w-[20%] bg-stamp-600" />
+              <div className="h-full w-[20%] bg-community-600" />
             </div>
           </div>
 
           <div className="relative">
             <p className="font-display text-7xl font-bold tabular-nums text-navy-900 sm:text-8xl lg:text-9xl">
-              12.8<span className="text-blueprint-600">%</span>
+              12.8<span className="text-sage-600">%</span>
             </p>
             <p className="mt-4 max-w-sm font-display text-2xl font-semibold leading-snug text-navy-800">
               Only 12.8% of inventors are women.
@@ -50,7 +50,7 @@ export function AccessGapReport() {
               Source: USPTO Progress and Potential report
             </p>
             <div className="mt-8 h-3 w-full max-w-md overflow-hidden bg-navy-900/10">
-              <div className="h-full w-[12.8%] bg-blueprint-600" />
+              <div className="h-full w-[12.8%] bg-sage-600" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export function AccessGapReport() {
           </blockquote>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-navy-800/75">
             The study&apos;s authors call these kids{" "}
-            <span className="font-annotate text-2xl text-stamp-600">
+            <span className="font-annotate text-2xl text-community-600">
               Lost Einsteins
             </span>
             — talented young people who never get the access or exposure to

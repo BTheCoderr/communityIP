@@ -13,14 +13,8 @@ export const home = {
   nonprofitTag: "501(c)(3) nonprofit · IP access for underserved inventors",
 } as const;
 
-/**
- * Homepage hero image — swap src when the original WordPress "boy maker" image is available.
- *
- * TODO: Replace placeholder with original Community IP boy maker image from WordPress.
- *       Drop the file in public/images/hero/ and update `src` below.
- */
 export const HERO_IMAGE = {
-  src: "/images/hero/placeholder.svg",
-  alt: "Young inventor working on a project — placeholder until original Community IP hero image is added",
-  placeholder: true as const,
+  src: "/images/hero/inventor-workbench.jpg",
+  alt: "Young inventor building and testing a prototype at a worktable",
+  placeholder: false as const,
 } as const;

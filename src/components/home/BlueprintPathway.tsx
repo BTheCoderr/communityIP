@@ -32,7 +32,7 @@ const steps = [
 
 export function BlueprintPathway() {
   return (
-    <section className="relative overflow-hidden border-b border-navy-900/10 bg-navy-900 py-20 text-cream sm:py-28">
+    <section className="relative overflow-hidden border-b border-community-700/10 bg-community-700 py-20 text-cream sm:py-28">
       <BlueprintGrid dense className="absolute inset-0 opacity-[0.08]" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-xl">

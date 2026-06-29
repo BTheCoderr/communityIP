@@ -42,9 +42,9 @@ export function InterestForm({ type }: InterestFormProps) {
 
   if (submitted) {
     return (
-      <div className="max-w-xl border-2 border-blueprint-600/20 bg-blueprint-50 p-8 text-center">
+      <div className="max-w-xl border-2 border-community-600/20 bg-community-50 p-8 text-center">
         <CheckCircle2
-          className="mx-auto h-10 w-10 text-blueprint-700"
+          className="mx-auto h-10 w-10 text-community-700"
           aria-hidden
         />
         <h3 className="mt-4 font-display text-lg font-bold text-navy-900">

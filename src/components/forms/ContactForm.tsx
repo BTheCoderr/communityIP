@@ -37,12 +37,12 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-3xl border border-teal-200 bg-teal-50 p-8 text-center">
+      <div className="rounded-3xl border border-community-200 bg-community-50 p-8 text-center">
         <CheckCircle2
-          className="mx-auto h-10 w-10 text-teal-700"
+          className="mx-auto h-10 w-10 text-community-700"
           aria-hidden
         />
-        <h3 className="mt-4 font-heading text-lg font-bold text-slate-800">
+        <h3 className="mt-4 font-heading text-lg font-bold text-forest-900">
           Message sent
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
+import { Logo } from "@/components/brand/Logo";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 const navLinks = [
@@ -14,28 +15,16 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-navy-900/10 bg-cream/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b-2 border-community-700/10 bg-cream/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
-        <Link href="/" className="group flex min-w-0 items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-navy-900 bg-navy-900 font-mono text-xs font-bold text-cream shadow-stamp transition-transform group-hover:-rotate-1">
-            CIP
-          </div>
-          <div className="min-w-0 leading-tight">
-            <span className="block font-display text-base font-bold text-navy-900">
-              Community IP
-            </span>
-            <span className="hidden font-mono text-[10px] uppercase tracking-wider text-muted-foreground sm:block">
-              Invention access movement
-            </span>
-          </div>
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-sm px-2.5 py-2 text-sm font-medium text-navy-800 transition-colors hover:bg-blueprint-50 hover:text-blueprint-800 xl:px-3"
+              className="rounded-sm px-2.5 py-2 text-sm font-medium text-forest-800 transition-colors hover:bg-community-50 hover:text-community-700 xl:px-3"
             >
               {link.label}
             </Link>

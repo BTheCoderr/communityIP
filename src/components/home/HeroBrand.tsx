@@ -7,21 +7,21 @@ import { HeroImage } from "@/components/home/HeroImage";
 
 export function HeroBrand() {
   return (
-    <section className="relative overflow-hidden border-b-2 border-navy-900/10 bg-cream">
+    <section className="relative overflow-hidden border-b-2 border-community-700/10 bg-cream">
       <BlueprintGrid dense className="absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <div className="grid grid-cols-1 items-start gap-12 xl:grid-cols-2 xl:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 xl:grid-cols-2 xl:gap-16">
           <div className="relative z-10 min-w-0">
             <StampLabel variant="access" className="mb-6">
               Access to IP
             </StampLabel>
-            <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-navy-900 sm:text-5xl lg:text-[3.75rem]">
+            <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-forest-900 sm:text-5xl lg:text-[3.75rem]">
               {home.headlineLine1}
-              <span className="mt-2 block text-blueprint-700">
+              <span className="mt-2 block text-community-700">
                 {home.headlineLine2}
               </span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-800/80 sm:text-xl">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-forest-800/80 sm:text-xl">
               {home.subheadline}
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
