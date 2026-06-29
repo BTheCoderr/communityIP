@@ -1,31 +1,38 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { AUDIENCE_PATHS } from "@/lib/content/audiences";
+import { ArrowRight } from "lucide-react";
 
 export function GetInvolvedCards({ className }: { className?: string }) {
   return (
-    <div className={cn("grid gap-px bg-community-700/10 sm:grid-cols-2", className)}>
+    <div
+      className={cn(
+        "grid gap-5 sm:grid-cols-2 lg:gap-6",
+        className
+      )}
+    >
       {AUDIENCE_PATHS.map((card) => (
         <Link
           key={card.title}
           href={card.href}
-          className="group flex flex-col bg-cream p-8 transition-colors hover:bg-community-50"
+          className="nonprofit-card group flex flex-col"
         >
-          <span className="stamp-label mb-5 w-fit border-sage-600/50 bg-sage-100/40 text-[9px] text-sage-700">
-            {card.stamp}
-          </span>
           <card.icon
-            className="mb-4 h-7 w-7 text-community-600/80"
+            className="mb-4 h-6 w-6 text-community-600"
             aria-hidden
           />
-          <h3 className="font-display text-xl font-bold text-forest-900">
+          <h3 className="font-display text-xl font-semibold text-forest-900">
             {card.title}
           </h3>
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-forest-800/70">
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-forest-800/75">
             {card.description}
           </p>
-          <span className="mt-5 font-mono text-xs uppercase tracking-wider text-community-700 group-hover:underline">
-            {card.cta} →
+          <span className="link-arrow mt-5 text-sm">
+            {card.cta}
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden
+            />
           </span>
         </Link>
       ))}

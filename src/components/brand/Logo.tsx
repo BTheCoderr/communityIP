@@ -1,46 +1,47 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { LogoMark } from "@/components/brand/LogoMark";
 
 interface LogoProps {
   variant?: "default" | "light";
   className?: string;
-  iconOnly?: boolean;
   linked?: boolean;
+  responsive?: boolean;
 }
 
 export function Logo({
   variant = "default",
   className,
-  iconOnly = false,
   linked = true,
 }: LogoProps) {
-  const src =
-    variant === "light"
-      ? "/brand/community-ip-logo-light.svg"
-      : iconOnly
-        ? "/brand/community-ip-icon.svg"
-        : "/brand/community-ip-logo.svg";
-
-  const width = iconOnly ? 40 : variant === "light" ? 240 : 220;
-  const height = iconOnly ? 40 : 52;
-
-  const image = (
-    <Image
-      src={src}
-      alt="Community IP"
-      width={width}
-      height={height}
-      className={cn("h-auto w-auto", iconOnly ? "h-10 w-10" : "h-11 sm:h-12", className)}
-      priority
-    />
+  const content = (
+    <span
+      className={cn(
+        "inline-flex min-w-0 items-center gap-2 sm:gap-2.5",
+        className
+      )}
+    >
+      <LogoMark variant={variant} />
+      <span
+        className={cn(
+          "font-display text-sm font-semibold leading-tight tracking-[0.03em] sm:text-base sm:tracking-[0.05em] lg:text-lg",
+          variant === "light" ? "text-cream" : "text-community-700"
+        )}
+      >
+        Community IP
+      </span>
+    </span>
   );
 
-  if (!linked) return image;
+  if (!linked) return content;
 
   return (
-    <Link href="/" className="group inline-flex shrink-0 items-center">
-      {image}
+    <Link
+      href="/"
+      className="inline-flex min-w-0 shrink-0 items-center"
+      aria-label="Community IP — Home"
+    >
+      {content}
     </Link>
   );
 }

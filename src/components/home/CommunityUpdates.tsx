@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { newsPosts, formatNewsDate } from "@/lib/news";
-import { StampLabel } from "@/components/brand/StampLabel";
 import { CTAButton } from "@/components/CTAButton";
+import { ArrowRight } from "lucide-react";
 
 export function CommunityUpdates() {
   const posts = [...newsPosts].sort(
@@ -9,19 +9,16 @@ export function CommunityUpdates() {
   );
 
   return (
-    <section className="section-editorial bg-cream-50 border-b border-navy-900/10">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section className="section-editorial border-b border-community-700/10 bg-cream">
+      <div className="section-wide">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <StampLabel variant="community" className="mb-4">
-              Community
-            </StampLabel>
-            <h2 className="font-display text-3xl font-bold text-navy-900 sm:text-4xl">
-              Updates from the movement
+            <p className="eyebrow">News</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">
+              Updates from Community IP
             </h2>
-            <p className="mt-3 max-w-lg text-navy-800/75">
-              Program milestones, partnerships, and stories — not a corporate
-              blog.
+            <p className="mt-3 max-w-lg text-forest-800/75">
+              Program milestones, partnerships, and community stories.
             </p>
           </div>
           <CTAButton href="/news" variant="secondary">
@@ -29,30 +26,32 @@ export function CommunityUpdates() {
           </CTAButton>
         </div>
 
-        <div className="mt-12 divide-y-2 divide-navy-900/10">
+        <div className="mt-10 divide-y divide-community-700/10">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/news/${post.slug}`}
-              className="group grid gap-4 py-8 transition-colors hover:bg-cream sm:grid-cols-[8rem_1fr] sm:gap-10 sm:py-10"
+              className="group grid gap-3 py-8 transition-colors hover:bg-white/60 sm:grid-cols-[7rem_1fr] sm:gap-8 sm:py-9"
             >
+              <time
+                dateTime={post.date}
+                className="text-sm text-muted-foreground"
+              >
+                {formatNewsDate(post.date)}
+              </time>
               <div>
-                <time
-                  dateTime={post.date}
-                  className="font-mono text-xs uppercase tracking-wider text-muted-foreground"
-                >
-                  {formatNewsDate(post.date)}
-                </time>
-              </div>
-              <div>
-                <h3 className="font-display text-xl font-bold text-navy-900 group-hover:text-blueprint-700 sm:text-2xl">
+                <h3 className="font-display text-xl font-semibold text-forest-900 group-hover:text-community-700 sm:text-2xl">
                   {post.title}
                 </h3>
-                <p className="mt-2 max-w-2xl text-base leading-relaxed text-navy-800/70">
+                <p className="mt-2 max-w-2xl leading-relaxed text-forest-800/75">
                   {post.excerpt}
                 </p>
-                <span className="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-blueprint-700 group-hover:underline">
-                  Read update →
+                <span className="link-arrow mt-4 text-sm">
+                  Read update
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
                 </span>
               </div>
             </Link>

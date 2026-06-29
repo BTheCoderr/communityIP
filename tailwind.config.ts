@@ -34,7 +34,6 @@ const config: Config = {
         },
         border: "hsl(var(--border))",
         ring: "hsl(var(--ring))",
-        /* Community IP green brand palette */
         community: {
           DEFAULT: "#1B6B44",
           50: "#F0F7F4",
@@ -67,7 +66,6 @@ const config: Config = {
           100: "#FAFAF7",
           200: "#F0F2EE",
         },
-        /* Legacy aliases — remapped to Community IP greens */
         navy: {
           DEFAULT: "#14532D",
           800: "#0F4124",
@@ -100,19 +98,19 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['"IBM Plex Sans"', "system-ui", "sans-serif"],
-        display: ['"Fraunces"', "Georgia", "serif"],
-        annotate: ['"Caveat"', "cursive"],
+        sans: ['"Source Sans 3"', "system-ui", "sans-serif"],
+        display: ['"Source Serif 4"', "Georgia", "serif"],
+        annotate: ['"Source Sans 3"', "system-ui", "sans-serif"],
         mono: ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        file: "6px 6px 0 0 rgba(20, 83, 45, 0.12)",
-        stamp: "3px 3px 0 0 rgba(20, 83, 45, 0.15)",
+        soft: "0 1px 3px 0 rgba(20, 83, 45, 0.06), 0 1px 2px -1px rgba(20, 83, 45, 0.06)",
+        card: "0 4px 14px -2px rgba(20, 83, 45, 0.08)",
       },
     },
   },

@@ -22,10 +22,8 @@ export default function ContactPage() {
       />
 
       <div className="mt-10">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-community-600">
-          How can we help?
-        </p>
-        <h2 className="mt-3 font-display text-2xl font-bold text-forest-900">
+        <p className="eyebrow">How can we help?</p>
+        <h2 className="mt-3 font-display text-2xl font-semibold text-forest-900">
           Choose your path
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-forest-800/75">
