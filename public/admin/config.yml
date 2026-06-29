@@ -1,0 +1,218 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+local_backend: true
+
+site_url: https://www.communityip.org
+display_url: https://www.communityip.org
+logo_url: /brand/community-ip-icon.svg
+
+collections:
+  - name: homepage
+    label: Homepage
+    files:
+      - name: home
+        label: Homepage
+        file: src/content/home.json
+        fields:
+          - { label: Headline (line 1), name: headlineLine1, widget: string }
+          - { label: Headline (line 2), name: headlineLine2, widget: string }
+          - { label: Subheadline, name: subheadline, widget: text }
+          - { label: Primary button label, name: ctaPrimary, widget: string }
+          - { label: Secondary button label, name: ctaSecondary, widget: string }
+          - { label: Nonprofit tagline, name: nonprofitTag, widget: string }
+          - label: Hero image
+            name: heroImage
+            widget: object
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+
+  - name: site
+    label: Site Settings
+    files:
+      - name: site
+        label: Site Settings
+        file: src/content/site.json
+        fields:
+          - label: Mission
+            name: mission
+            widget: object
+            fields:
+              - { label: Statement, name: statement, widget: text }
+              - { label: Extended, name: extended, widget: text }
+              - { label: Democratize paragraph, name: democratize, widget: text }
+              - { label: Nonprofit note, name: nonprofitNote, widget: string }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Email, name: email, widget: string }
+              - label: Address
+                name: address
+                widget: object
+                fields:
+                  - { label: Street, name: street, widget: string }
+                  - { label: City, name: city, widget: string }
+                  - { label: State, name: state, widget: string }
+                  - { label: ZIP, name: zip, widget: string }
+              - { label: Form note, name: formNote, widget: text }
+          - label: Board page
+            name: board
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: Donate / Spotfund
+            name: donate
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Spotfund URL, name: spotfundUrl, widget: string }
+              - { label: Spotfund campaign note, name: spotfundCampaignNote, widget: text }
+              - { label: Spotfund closing, name: spotfundClosing, widget: text }
+              - { label: Primary CTA label, name: ctaPrimary, widget: string }
+              - { label: Secondary CTA label, name: ctaSecondary, widget: string }
+          - label: Programs (About page list)
+            name: programs
+            widget: list
+            field: { label: Program, name: program, widget: string }
+          - label: Social links
+            name: social
+            widget: object
+            fields:
+              - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+              - { label: Facebook URL, name: facebook, widget: string, required: false }
+              - { label: Twitter / X URL, name: twitter, widget: string, required: false }
+              - { label: Instagram URL, name: instagram, widget: string, required: false }
+          - label: Research statistics
+            name: accessStats
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Intro paragraph, name: intro, widget: text }
+              - { label: Lost Einsteins summary, name: lostEinsteins, widget: text }
+              - label: Metrics
+                name: metrics
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+                  - { label: Source, name: source, widget: string }
+
+  - name: about
+    label: About Page
+    files:
+      - name: about
+        label: About Page
+        file: src/content/about.json
+        fields:
+          - { label: Page title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: text }
+          - label: Story paragraphs
+            name: story
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - { label: Who we serve, name: whoWeServe, widget: text }
+          - { label: Programs section title, name: programsSectionTitle, widget: string }
+
+  - name: research
+    label: Research Page
+    files:
+      - name: research
+        label: Research Page
+        file: src/content/research.json
+        fields:
+          - { label: Page eyebrow, name: pageEyebrow, widget: string }
+          - { label: Page title, name: pageTitle, widget: string }
+          - { label: Page description, name: pageDescription, widget: text }
+          - { label: Report eyebrow, name: reportEyebrow, widget: string }
+          - { label: Report title, name: reportTitle, widget: string }
+          - { label: Lost Einsteins source line, name: lostEinsteinsSource, widget: string }
+          - { label: Lost Einsteins quote, name: lostEinsteinsQuote, widget: text }
+          - { label: Lost Einsteins note, name: lostEinsteinsNote, widget: text }
+          - { label: Credibility title, name: credibilityTitle, widget: string }
+          - { label: Credibility body (paragraph 1), name: credibilityBody1, widget: text }
+          - { label: Credibility body (paragraph 2), name: credibilityBody2, widget: text }
+
+  - name: team
+    label: Co-Presidents
+    files:
+      - name: team
+        label: Co-Presidents
+        file: src/content/team.json
+        fields:
+          - label: Co-Presidents
+            name: coPresidents
+            widget: list
+            fields:
+              - { label: ID (slug), name: id, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Photo, name: image, widget: image }
+              - { label: Bio, name: bio, widget: text, required: false }
+              - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+              - { label: Sort order, name: order, widget: number, value_type: int, min: 1 }
+
+  - name: board
+    label: Board Members
+    files:
+      - name: board
+        label: Board Members
+        file: src/content/board.json
+        fields:
+          - label: Board members
+            name: members
+            widget: list
+            fields:
+              - { label: ID (slug), name: id, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Photo, name: image, widget: image }
+              - { label: Bio, name: bio, widget: text, required: false }
+              - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+              - { label: Sort order, name: order, widget: number, value_type: int, min: 1 }
+
+  - name: news
+    label: News / Blog
+    folder: src/content/news
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers, and hyphens only'] }
+      - { label: Publish date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Featured image, name: featuredImage, widget: image, required: false }
+      - { label: Legacy WordPress path (redirects), name: legacyPath, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: disclaimers
+    label: Disclaimers
+    files:
+      - name: disclaimers
+        label: Disclaimers & Legal Snippets
+        file: src/content/disclaimers.json
+        fields:
+          - { label: Full disclaimer, name: full, widget: text }
+          - { label: Form short line, name: formShort, widget: text }
+          - { label: Hero line, name: heroLine, widget: string }
+          - { label: No guarantee, name: noGuarantee, widget: text }
+          - { label: Compact (footer), name: compact, widget: text }
+          - { label: CTA heading, name: ctaHeading, widget: string }
+          - { label: CTA body, name: ctaBody, widget: text }
+          - { label: CTA legal line, name: ctaLegal, widget: text }
+          - { label: Education footer, name: educationFooter, widget: text }
+          - { label: Intake intro, name: intakeIntro, widget: text }
+          - { label: Intake consent label, name: intakeConsentLabel, widget: text }
+          - { label: Contact form note, name: contactFormNote, widget: text }

@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { newsPosts, formatNewsDate } from "@/lib/news";
+import { getAllNewsPosts, formatNewsDate } from "@/lib/news";
 import { CTAButton } from "@/components/CTAButton";
 import { ArrowRight } from "lucide-react";
 
 export function CommunityUpdates() {
-  const posts = [...newsPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const posts = getAllNewsPosts();
 
   return (
     <section className="section-editorial border-b border-community-700/10 bg-cream">

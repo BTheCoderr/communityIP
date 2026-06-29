@@ -12,7 +12,7 @@ Configure email alerts once for all forms:
 
 Hidden detection forms live in `public/forms.html` (required at build time).
 
-Client-side submissions POST to `/forms.html` with `Content-Type: application/x-www-form-urlencoded` and a `form-name` field matching the Netlify form exactly. Success UI only appears after the POST succeeds (`response.ok`). Native form fallback uses `action="/thank-you"`.
+**Content editing** uses Decap CMS at `/admin` — see README.md → “Editing Community IP content”. Form submissions stay in Netlify Forms (not the CMS).
 
 ---
 

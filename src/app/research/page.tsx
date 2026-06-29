@@ -3,11 +3,11 @@ import { PageHeader } from "@/components/PageHeader";
 import { AccessGapReport } from "@/components/home/AccessGapReport";
 import { CredibilitySection } from "@/components/home/CredibilitySection";
 import { PageShell } from "@/components/layout/PageShell";
+import { research } from "@/lib/content/cms";
 
 export const metadata: Metadata = {
   title: "Research",
-  description:
-    "Research on the intellectual property access gap — who gets to invent, and why Community IP exists.",
+  description: research.pageDescription,
 };
 
 export default function ResearchPage() {
@@ -15,9 +15,9 @@ export default function ResearchPage() {
     <PageShell>
       <div className="pb-4 pt-8 sm:pt-12">
         <PageHeader
-          eyebrow="Research"
-          title="The IP access gap"
-          description="Community IP exists because invention opportunity is not evenly distributed. These findings shape our nonprofit mission."
+          eyebrow={research.pageEyebrow}
+          title={research.pageTitle}
+          description={research.pageDescription}
         />
       </div>
       <AccessGapReport />

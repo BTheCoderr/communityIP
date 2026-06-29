@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { StampLabel } from "@/components/brand/StampLabel";
 import {
-  newsPosts,
+  getAllNewsPosts,
   getNewsPost,
   formatNewsDate,
 } from "@/lib/news";
 
 export function generateStaticParams() {
-  return newsPosts.map((p) => ({ slug: p.slug }));
+  return getAllNewsPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -58,11 +59,22 @@ export default async function NewsArticlePage({
           {post.title}
         </h1>
         {post.author && (
-          <p className="mt-4 font-display text-base text-navy-800/80">
+          <p className="mt-4 text-base text-forest-800/80">
             By {post.author}
           </p>
         )}
-        <div className="mt-8 space-y-5 border-t-2 border-navy-900/10 pt-8">
+        {post.featuredImage && (
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-xl">
+            <Image
+              src={post.featuredImage}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        )}
+        <div className="mt-8 space-y-5 border-t border-community-700/10 pt-8">
           {post.body.map((paragraph) => (
             <p
               key={paragraph.slice(0, 40)}

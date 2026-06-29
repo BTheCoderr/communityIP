@@ -1,8 +1,8 @@
-# Community IP 2.0 — Clickable MVP Prototype
+# Community IP
 
-A polished, mobile-first Next.js prototype for Community IP — the digital front door for underserved inventors seeking IP education and intake support.
+Public nonprofit website for Community IP — helping underserved inventors access intellectual property education and support.
 
-**Frontend prototype only.** No backend, database, auth, or payments connected yet.
+**Live:** https://www.communityip.org
 
 ## Run locally
 
@@ -13,65 +13,115 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Deploy to Netlify
+## Deploy
 
-Connected via Git — push to `main` to trigger a deploy.
+Push to `main` on GitHub — Netlify builds automatically (`netlify.toml`).
 
-Build settings (also in `netlify.toml`):
-- **Build command:** `npm run build`
-- **Plugin:** `@netlify/plugin-nextjs`
+## Editing Community IP content
 
-## Pages
+Regina and the team can update site copy, images, news posts, and team profiles in a WordPress-like editor powered by **[Decap CMS](https://decapcms.org/)**.
 
-| Route | Description |
-|-------|-------------|
-| `/` | Homepage |
-| `/for-inventors` | Inventor landing |
-| `/readiness-checker` | IP Readiness Checker quiz |
-| `/apply` | Multi-step intake form |
-| `/education` | Education Hub index |
-| `/education/[slug]` | Individual guides |
-| `/volunteer` | Volunteer page |
-| `/partners` | Partners page |
-| `/donate` | Donate page |
-| `/about` | About |
-| `/contact` | Contact |
-| `/legal` | Disclaimers |
+### Access the editor
 
-## Updating content
+1. Go to **[https://www.communityip.org/admin](https://www.communityip.org/admin)** (or `/admin` on any deploy preview).
+2. Log in with **Netlify Identity** (invite-only — ask an admin to invite you from Netlify → Site configuration → Identity).
+3. Edit content and click **Publish** — changes commit to GitHub and trigger a new Netlify deploy.
 
-Content is stored in simple data files so Regina and the team can edit without touching components:
+**First-time Netlify setup (admin only):**
 
-| What to update | File |
-|----------------|------|
-| **Disclaimer language** | `src/lib/content/disclaimers.ts` |
-| **Homepage copy** | `src/lib/content/home.ts` |
-| **Homepage hero image** | `src/lib/content/home.ts` → `HERO_IMAGE.src` (file in `public/images/hero/`) |
-| **Team / co-presidents / board** | `src/lib/content/team.ts` + photos in `public/team/` |
-| **Mission, about, donate, contact** | `src/lib/content/wordpress.ts` |
-| **Blog posts & bylines** | `src/lib/news.ts` (set `author` field) |
-| **Education articles** | `src/lib/education.ts` |
+- Netlify → **Identity** → Enable Identity
+- Identity → **Registration** → Invite only
+- Identity → **Services** → Enable **Git Gateway**
+- Invite Regina’s email from the Identity tab
 
-### Hero image (boy maker)
+### What you can edit in `/admin`
 
-1. Save the WordPress image to `public/images/hero/boy-maker.jpg` (or similar)
-2. Edit `HERO_IMAGE` in `src/lib/content/home.ts`:
-   ```ts
-   src: "/images/hero/boy-maker.jpg",
-   placeholder: false,
-   ```
-3. Redeploy
+| Collection | What it controls |
+|------------|------------------|
+| **Homepage** | Headlines, CTAs, hero image & alt text |
+| **Site Settings** | Mission, contact info, donate/Spotfund link, programs, social links, research stats |
+| **About Page** | Title, story paragraphs, who we serve |
+| **Research Page** | Page intro, report copy, credibility section |
+| **Co-Presidents** | Names, photos, bios, LinkedIn, sort order |
+| **Board Members** | Same fields for board directors |
+| **News / Blog** | Title, date, author, excerpt, body, featured image |
+| **Disclaimers** | Legal snippets site-wide |
 
-### Team headshots
+### Update homepage copy or hero image
 
-Drop JPGs in `public/team/` matching filenames in `src/lib/content/team.ts` (e.g. `ashley-gregory.jpg`).
+1. Open `/admin` → **Homepage**
+2. Edit text fields or click **Hero image → Image** to upload a new photo (saved to `public/uploads/`)
+3. Publish — site rebuilds in ~2 minutes
 
-### Forms
+### Add or edit a blog / news post
 
-Submissions go to **Netlify → Forms**. Configure email notifications to `hello@communityip.org`. See `docs/FORMS.md`.
+1. `/admin` → **News / Blog** → **New News / Blog** (or open an existing post)
+2. Fill in title, slug, date, author, excerpt, and body (Markdown supported)
+3. Optional: add a **Featured image**
+4. Publish
 
-Future option: [Decap CMS](https://decapcms.org/) / Netlify CMS for browser-based editing.
+### Update board members or headshots
+
+1. `/admin` → **Co-Presidents** or **Board Members**
+2. Edit a person or add a new list item
+3. Upload a photo via the **Photo** field (or keep an existing path like `/team/name.jpg`)
+4. Set **Sort order** to control display order
+5. Publish
+
+### Edit research page content
+
+1. `/admin` → **Research Page** — page header, report labels, Lost Einsteins quote block, credibility copy
+2. `/admin` → **Site Settings → Research statistics** — headline, intro, metrics list
+
+### Content file locations (for developers)
+
+| File | Purpose |
+|------|---------|
+| `src/content/home.json` | Homepage |
+| `src/content/site.json` | Mission, contact, donate, social, stats |
+| `src/content/about.json` | About page |
+| `src/content/research.json` | Research page |
+| `src/content/disclaimers.json` | Legal snippets |
+| `src/content/team.json` | Co-presidents |
+| `src/content/board.json` | Board members |
+| `src/content/news/*.md` | News posts |
+| `public/uploads/` | CMS-uploaded images |
+
+### Netlify Forms (separate from CMS)
+
+Form submissions are **not** edited in Decap CMS. They are handled by **Netlify Forms**:
+
+| Form name | Page |
+|-----------|------|
+| `contact` | `/contact` |
+| `intake` | `/apply` |
+| `volunteer-interest` | `/volunteer` |
+| `partner-interest` | `/partners` |
+
+- View submissions: Netlify → **Forms**
+- Email notifications: Netlify → **Forms** → **Form notifications** (configure `hello@communityip.org` and any other recipients)
+- Detection forms: `public/forms.html` (do not remove)
+
+See `docs/FORMS.md` for technical details.
+
+### Local CMS testing (optional)
+
+```bash
+npx decap-server
+npm run dev
+```
+
+Visit `/admin` with `local_backend: true` in `public/admin/config.yml`.
+
+## Site map
+
+- **Home** `/`
+- **About** `/about`
+- **Research** `/research`
+- **Contact** `/contact`
+
+Action paths (not main nav): Get IP Help, Volunteer, Partner, Donate — linked from homepage cards and footer.
 
 ## Legal note
 
-Submitting a form does not create an attorney-client relationship. See `src/lib/content/disclaimers.ts` for site-wide language.
+Submitting a form does not create an attorney-client relationship. Disclaimer text is editable in `/admin` → Disclaimers.

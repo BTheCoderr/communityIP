@@ -57,3 +57,14 @@
   from = "/readiness-checker/*"
   to = "/apply"
   status = 301
+
+# Decap CMS admin
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
+  to = "/admin/index.html"
+  status = 200

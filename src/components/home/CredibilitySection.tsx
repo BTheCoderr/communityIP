@@ -1,4 +1,5 @@
 import { CTAButton } from "@/components/CTAButton";
+import { research } from "@/lib/content/cms";
 
 export function CredibilitySection() {
   return (
@@ -8,17 +9,11 @@ export function CredibilitySection() {
           <div>
             <p className="eyebrow">About Community IP</p>
             <h2 className="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl text-balance">
-              Built by patent professionals who saw the gap
+              {research.credibilityTitle}
             </h2>
-            <p className="prose-lead mt-5">
-              Started by patent professionals in 2024, Community IP works to
-              democratize access to intellectual property for inventors who
-              might otherwise be unable to afford support.
-            </p>
+            <p className="prose-lead mt-5">{research.credibilityBody1}</p>
             <p className="mt-4 leading-relaxed text-forest-800/75">
-              Accepted into Social Enterprise Greenhouse&apos;s 2025 Impact
-              Accelerator. Growing partnerships with universities, incubators,
-              and community organizations across Rhode Island and beyond.
+              {research.credibilityBody2}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CTAButton href="/board">Board of Directors</CTAButton>

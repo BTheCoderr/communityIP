@@ -1,12 +1,12 @@
-import { ACCESS_STATS } from "@/lib/site";
+import { ACCESS_STATS, research } from "@/lib/content/cms";
 
 export function AccessGapReport() {
   return (
     <section className="section-editorial border-b border-community-700/10 bg-white">
       <div className="section-wide">
-        <p className="eyebrow">Access gap report · 2024–2025</p>
+        <p className="eyebrow">{research.reportEyebrow}</p>
         <h2 className="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">
-          Who gets to invent?
+          {research.reportTitle}
         </h2>
 
         <div className="mt-12 grid gap-10 border-t border-community-700/10 pt-12 lg:grid-cols-2 lg:gap-16">
@@ -43,23 +43,16 @@ export function AccessGapReport() {
 
         <div className="mt-14 rounded-2xl border border-community-700/10 bg-community-50 p-8 sm:p-10">
           <p className="text-sm font-semibold text-community-700">
-            Lost Einsteins · Stanford Equality of Opportunity Project, 2017
+            {research.lostEinsteinsSource}
           </p>
           <blockquote className="mt-5 font-display text-xl font-medium leading-relaxed text-forest-900 sm:text-2xl text-balance">
-            &ldquo;The top 5% highest-scoring low-income kids were less likely to
-            eventually become inventors than below-average math students from
-            affluent families.&rdquo;
+            &ldquo;{research.lostEinsteinsQuote}&rdquo;
           </blockquote>
           <p className="mt-5 max-w-3xl leading-relaxed text-forest-800/80">
-            The study&apos;s authors call these kids{" "}
-            <strong className="font-semibold text-community-700">
-              Lost Einsteins
-            </strong>
-            — talented young people who never get the access or exposure to
-            become inventors.
+            {research.lostEinsteinsNote}
           </p>
           <p className="mt-6 text-xs text-muted-foreground">
-            Sources: USPTO · Stanford Equality of Opportunity Project
+            {ACCESS_STATS.lostEinsteins}
           </p>
         </div>
 

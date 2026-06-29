@@ -49,7 +49,7 @@ export default function AboutPage() {
               Programs
             </StampLabel>
             <h3 className="font-display text-lg font-bold text-navy-900">
-              What we focus on
+              {about.programsSectionTitle}
             </h3>
             <ul className="mt-6 space-y-4">
               {PROGRAMS.map((item) => (

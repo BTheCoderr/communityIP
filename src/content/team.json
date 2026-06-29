@@ -1,0 +1,22 @@
+{
+  "coPresidents": [
+    {
+      "id": "ashley-gregory",
+      "name": "Ashley Gregory",
+      "role": "Co-President",
+      "image": "/team/ashley-gregory.jpg",
+      "bio": "",
+      "linkedin": "https://www.linkedin.com/in/ashleygregory97/",
+      "order": 1
+    },
+    {
+      "id": "scott-keeley",
+      "name": "Scott Keeley",
+      "role": "Co-President",
+      "image": "/team/scott-keeley.jpg",
+      "bio": "",
+      "linkedin": "https://www.linkedin.com/in/scott-keeley-7a1a4089/",
+      "order": 2
+    }
+  ]
+}
