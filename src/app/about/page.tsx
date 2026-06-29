@@ -35,8 +35,8 @@ export default function AboutPage() {
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow="Our story"
-              title="Built by people who've seen the gap firsthand"
+              eyebrow={about.storyEyebrow}
+              title={about.storyTitle}
             />
             <div className="mt-6 space-y-4 leading-relaxed text-navy-800/75">
               {about.story.map((paragraph) => (
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Leadership"
           title="Co-Presidents"
-          description="Community IP is led by patent professionals committed to expanding access to intellectual property for underserved inventors."
+          description={about.coPresidentsIntro}
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {coPresidents.map((member) => (
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Governance"
           title="Board of Directors"
-          description="Community IP is guided by leaders committed to expanding intellectual property access for underserved inventors and entrepreneurs."
+          description={about.boardIntro}
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {boardDirectors.map((member) => (

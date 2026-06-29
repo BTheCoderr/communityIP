@@ -1,6 +1,8 @@
 import { ACCESS_STATS, research } from "@/lib/content/cms";
 
 export function AccessGapReport() {
+  const { lostEinsteinsSection } = research;
+
   return (
     <section className="section-editorial border-b border-community-700/10 bg-white">
       <div className="section-wide">
@@ -10,46 +12,37 @@ export function AccessGapReport() {
         </h2>
 
         <div className="mt-12 grid gap-10 border-t border-community-700/10 pt-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="font-display text-6xl font-semibold tabular-nums text-forest-900 sm:text-7xl">
-              20<span className="text-community-600">%</span>
-            </p>
-            <p className="mt-4 max-w-sm text-xl font-medium leading-snug text-forest-800">
-              Only 20% of inventors are people of color.
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Source: USPTO / industry estimates
-            </p>
-            <div className="mt-6 h-2 w-full max-w-md overflow-hidden rounded-full bg-community-100">
-              <div className="h-full w-[20%] rounded-full bg-community-600" />
+          {research.chartSections.map((chart) => (
+            <div key={chart.caption}>
+              <p className="font-display text-6xl font-semibold tabular-nums text-forest-900 sm:text-7xl">
+                {chart.value.replace("%", "")}
+                <span className="text-community-600">%</span>
+              </p>
+              <p className="mt-4 max-w-sm text-xl font-medium leading-snug text-forest-800">
+                {chart.caption}
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Source: {chart.source}
+              </p>
+              <div className="mt-6 h-2 w-full max-w-md overflow-hidden rounded-full bg-community-100">
+                <div
+                  className="h-full rounded-full bg-community-600"
+                  style={{ width: `${chart.percent}%` }}
+                />
+              </div>
             </div>
-          </div>
-
-          <div>
-            <p className="font-display text-6xl font-semibold tabular-nums text-forest-900 sm:text-7xl">
-              12.8<span className="text-sage-600">%</span>
-            </p>
-            <p className="mt-4 max-w-sm text-xl font-medium leading-snug text-forest-800">
-              Only 12.8% of inventors are women.
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Source: USPTO Progress and Potential report
-            </p>
-            <div className="mt-6 h-2 w-full max-w-md overflow-hidden rounded-full bg-community-100">
-              <div className="h-full w-[12.8%] rounded-full bg-sage-600" />
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="mt-14 rounded-2xl border border-community-700/10 bg-community-50 p-8 sm:p-10">
           <p className="text-sm font-semibold text-community-700">
-            {research.lostEinsteinsSource}
+            {lostEinsteinsSection.source}
           </p>
           <blockquote className="mt-5 font-display text-xl font-medium leading-relaxed text-forest-900 sm:text-2xl text-balance">
-            &ldquo;{research.lostEinsteinsQuote}&rdquo;
+            &ldquo;{lostEinsteinsSection.quote}&rdquo;
           </blockquote>
           <p className="mt-5 max-w-3xl leading-relaxed text-forest-800/80">
-            {research.lostEinsteinsNote}
+            {lostEinsteinsSection.note}
           </p>
           <p className="mt-6 text-xs text-muted-foreground">
             {ACCESS_STATS.lostEinsteins}
@@ -72,6 +65,17 @@ export function AccessGapReport() {
             </div>
           ))}
         </div>
+
+        {research.sources.length > 0 && (
+          <div className="mt-10 border-t border-community-700/10 pt-8">
+            <p className="text-sm font-semibold text-forest-900">Sources</p>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+              {research.sources.map((source) => (
+                <li key={source}>{source}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

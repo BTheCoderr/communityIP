@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
+import { contactPage } from "@/lib/site";
 import {
   submitNetlifyFormElement,
   NETLIFY_FORM_ERROR,
@@ -16,6 +17,7 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const labels = contactPage.formLabels;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,10 +45,10 @@ export function ContactForm() {
           aria-hidden
         />
         <h3 className="mt-4 font-heading text-lg font-bold text-forest-900">
-          Message sent
+          {labels.successTitle}
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
-          Thank you for reaching out. Our team will respond as soon as we can.
+          {labels.successMessage}
         </p>
       </div>
     );
@@ -71,16 +73,16 @@ export function ContactForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <Label htmlFor="firstName">First name</Label>
+          <Label htmlFor="firstName">{labels.firstName}</Label>
           <Input id="firstName" name="firstName" required className="mt-1.5" />
         </div>
         <div>
-          <Label htmlFor="lastName">Last name</Label>
+          <Label htmlFor="lastName">{labels.lastName}</Label>
           <Input id="lastName" name="lastName" required className="mt-1.5" />
         </div>
       </div>
       <div>
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">{labels.email}</Label>
         <Input
           id="email"
           name="email"
@@ -90,20 +92,20 @@ export function ContactForm() {
         />
       </div>
       <div>
-        <Label htmlFor="phone">Phone (optional)</Label>
+        <Label htmlFor="phone">{labels.phone}</Label>
         <Input id="phone" name="phone" type="tel" className="mt-1.5" />
       </div>
       <div>
-        <Label htmlFor="message">Message *</Label>
+        <Label htmlFor="message">{labels.message}</Label>
         <Textarea
           id="message"
           name="message"
           required
           maxLength={180}
-          placeholder="How can we help?"
+          placeholder={labels.messagePlaceholder}
           className="mt-1.5"
         />
-        <p className="mt-1 text-xs text-muted-foreground">Max 180 characters</p>
+        <p className="mt-1 text-xs text-muted-foreground">{labels.messageHelp}</p>
       </div>
 
       {error && (
@@ -113,7 +115,7 @@ export function ContactForm() {
       )}
 
       <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-        {loading ? "Sending…" : "Send message"}
+        {loading ? "Sending…" : labels.submit}
       </Button>
       <p className="text-xs text-muted-foreground">
         {DISCLAIMERS.contactFormNote}

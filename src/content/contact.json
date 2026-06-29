@@ -1,0 +1,31 @@
+{
+  "title": "Contact us",
+  "intro": "Questions about our programs, partnerships, or how to get started? Send us a message — we're a small team and do our best to respond promptly.",
+  "pathSectionTitle": "Choose your path",
+  "pathSectionDescription": "Community IP serves inventors, volunteers, partners, and funders. Use the path that fits you, or send a general message below.",
+  "instructions": "For inventor support, use Apply for Help. For donations, visit our Support page or Spotfund campaign.",
+  "emailLabel": "Email",
+  "locationLabel": "Location",
+  "formSectionTitle": "Contact Community IP",
+  "formSectionDescription": "For general questions not covered by the paths above.",
+  "formNote": "For inventor support, use Apply for Help. Submitting a form does not create an attorney-client relationship.",
+  "donateSupportText": "Want to support our mission? Visit the Donate page or contribute directly via Spotfund.",
+  "address": {
+    "street": "62 Baxter St",
+    "city": "Charlestown",
+    "state": "RI",
+    "zip": "02813"
+  },
+  "formLabels": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email *",
+    "phone": "Phone (optional)",
+    "message": "Message *",
+    "messagePlaceholder": "How can we help?",
+    "messageHelp": "Max 180 characters",
+    "submit": "Send message",
+    "successTitle": "Message sent",
+    "successMessage": "Thank you for reaching out. Our team will respond as soon as we can."
+  }
+}

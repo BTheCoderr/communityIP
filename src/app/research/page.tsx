@@ -7,7 +7,7 @@ import { research } from "@/lib/content/cms";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: research.pageDescription,
+  description: research.intro,
 };
 
 export default function ResearchPage() {
@@ -17,7 +17,7 @@ export default function ResearchPage() {
         <PageHeader
           eyebrow={research.pageEyebrow}
           title={research.pageTitle}
-          description={research.pageDescription}
+          description={research.intro}
         />
       </div>
       <AccessGapReport />

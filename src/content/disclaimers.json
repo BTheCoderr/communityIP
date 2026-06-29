@@ -1,9 +1,9 @@
 {
-  "full": "Submitting a form through this website does not create an attorney-client relationship. Community IP may provide education, intake support, mentoring, and, where appropriate, patent filing assistance through licensed patent practitioners. Any formal representation or patent services must be confirmed separately in writing. Please do not submit confidential or time-sensitive information unless and until Community IP confirms that it is appropriate to do so.",
-  "formShort": "Submitting this form does not create an attorney-client relationship. Formal services, if available, are confirmed separately.",
+  "shortForm": "Submitting this form does not create an attorney-client relationship. Formal services, if available, are confirmed separately.",
+  "longForm": "Submitting a form through this website does not create an attorney-client relationship. Community IP may provide education, intake support, mentoring, and, where appropriate, patent filing assistance through licensed patent practitioners. Any formal representation or patent services must be confirmed separately in writing. Please do not submit confidential or time-sensitive information unless and until Community IP confirms that it is appropriate to do so.",
+  "footer": "Submitting a form does not create an attorney-client relationship. Services, if available, are confirmed separately.",
   "heroLine": "Submitting a form does not create an attorney-client relationship.",
   "noGuarantee": "Community IP cannot guarantee funding, services, filing assistance, or any particular outcome.",
-  "compact": "Submitting a form does not create an attorney-client relationship. Services, if available, are confirmed separately.",
   "ctaHeading": "Not sure what you need yet? That's okay.",
   "ctaBody": "Start with a question. We'll help you find a sensible next step.",
   "ctaLegal": "Submitting a form does not create an attorney-client relationship. Services, if available, are confirmed separately.",

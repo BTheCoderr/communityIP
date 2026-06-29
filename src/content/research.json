@@ -1,12 +1,61 @@
 {
   "pageEyebrow": "Research",
   "pageTitle": "The IP access gap",
-  "pageDescription": "Community IP exists because invention opportunity is not evenly distributed. These findings shape our nonprofit mission.",
+  "intro": "Community IP exists because invention opportunity is not evenly distributed. These findings shape our nonprofit mission.",
   "reportEyebrow": "Access gap report · 2024–2025",
   "reportTitle": "Who gets to invent?",
-  "lostEinsteinsSource": "Lost Einsteins · Stanford Equality of Opportunity Project, 2017",
-  "lostEinsteinsQuote": "The top 5% highest-scoring low-income kids were less likely to eventually become inventors than below-average math students from affluent families.",
-  "lostEinsteinsNote": "The study's authors call these kids Lost Einsteins — talented young people who never get the access or exposure to become inventors.",
+  "chartSections": [
+    {
+      "value": "20%",
+      "caption": "Only 20% of inventors are people of color.",
+      "source": "USPTO / industry estimates",
+      "percent": 20
+    },
+    {
+      "value": "12.8%",
+      "caption": "Only 12.8% of inventors are women.",
+      "source": "USPTO Progress and Potential report",
+      "percent": 12.8
+    }
+  ],
+  "accessStats": {
+    "headline": "Only 20% of inventors are people of color. Only 12.8% are women.",
+    "intro": "Entire sectors of the population are under-represented in intellectual property. These creative people are capable of doing something world-changing, but lack the time or resources to develop their inventions.",
+    "lostEinsteins": "Even the best students at under-resourced schools don't have the success of mediocre students of higher income. A 2017 paper by Stanford University's Equality of Opportunity Project found that the top 5% highest-scoring low-income kids were less likely to eventually become inventors than below-average math students from affluent families. The study's authors call these kids \"Lost Einsteins.\"",
+    "metrics": [
+      {
+        "value": "12.8%",
+        "label": "of all inventors named on U.S. patents are women",
+        "source": "USPTO Progress and Potential report"
+      },
+      {
+        "value": "3×",
+        "label": "more likely for white Americans to invent than Black Americans",
+        "source": "Harvard University research cited by USPTO"
+      },
+      {
+        "value": "10×",
+        "label": "more likely to invent if born in the top 1% of earners vs. below-median income",
+        "source": "USPTO / Equality of Opportunity Project"
+      },
+      {
+        "value": "~20%",
+        "label": "of inventors are people of color",
+        "source": "Community IP / industry estimates"
+      }
+    ]
+  },
+  "sources": [
+    "USPTO Progress and Potential report",
+    "Harvard University research cited by USPTO",
+    "Stanford Equality of Opportunity Project, 2017",
+    "USPTO National Strategy for Inclusive Innovation"
+  ],
+  "lostEinsteinsSection": {
+    "source": "Lost Einsteins · Stanford Equality of Opportunity Project, 2017",
+    "quote": "The top 5% highest-scoring low-income kids were less likely to eventually become inventors than below-average math students from affluent families.",
+    "note": "The study's authors call these kids Lost Einsteins — talented young people who never get the access or exposure to become inventors."
+  },
   "credibilityTitle": "Built by patent professionals who saw the gap",
   "credibilityBody1": "Started by patent professionals in 2024, Community IP works to democratize access to intellectual property for inventors who might otherwise be unable to afford support.",
   "credibilityBody2": "Accepted into Social Enterprise Greenhouse's 2025 Impact Accelerator. Growing partnerships with universities, incubators, and community organizations across Rhode Island and beyond."
