@@ -6,25 +6,33 @@ interface LogoProps {
   variant?: "default" | "light";
   className?: string;
   linked?: boolean;
-  responsive?: boolean;
+  /** Slightly smaller wordmark for tight mobile headers */
+  compact?: boolean;
 }
 
 export function Logo({
   variant = "default",
   className,
   linked = true,
+  compact = false,
 }: LogoProps) {
-  const content = (
+  const brand = (
     <span
       className={cn(
-        "inline-flex min-w-0 items-center gap-2 sm:gap-2.5",
+        "inline-flex shrink-0 items-center gap-2.5 overflow-visible",
         className
       )}
     >
-      <LogoMark variant={variant} />
+      <LogoMark
+        variant={variant}
+        className={cn(compact ? "h-8 w-8" : "h-9 w-9 sm:h-10 sm:w-10")}
+      />
       <span
         className={cn(
-          "font-display text-sm font-semibold leading-tight tracking-[0.03em] sm:text-base sm:tracking-[0.05em] lg:text-lg",
+          "whitespace-nowrap font-display font-semibold leading-none",
+          compact
+            ? "text-[0.8125rem] tracking-[0.02em]"
+            : "text-[0.9375rem] tracking-[0.03em] sm:text-base sm:tracking-[0.04em] lg:text-lg",
           variant === "light" ? "text-cream" : "text-community-700"
         )}
       >
@@ -33,15 +41,17 @@ export function Logo({
     </span>
   );
 
-  if (!linked) return content;
+  if (!linked) {
+    return brand;
+  }
 
   return (
     <Link
       href="/"
-      className="inline-flex min-w-0 shrink-0 items-center"
+      className="inline-flex shrink-0 items-center overflow-visible"
       aria-label="Community IP — Home"
     >
-      {content}
+      {brand}
     </Link>
   );
 }

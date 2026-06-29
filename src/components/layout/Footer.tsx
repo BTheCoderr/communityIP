@@ -24,11 +24,16 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-community-800/20 bg-community-800 text-cream/85">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-16">
-          <div className="max-w-sm">
-            <Logo variant="light" linked={false} className="mb-5" />
+    <footer className="overflow-visible border-t border-community-800/20 bg-community-800 text-cream/85">
+      <div className="mx-auto max-w-6xl overflow-visible px-4 py-12 sm:px-6 sm:py-16">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-12">
+          <div className="w-full shrink-0 overflow-visible sm:max-w-md lg:min-w-[15rem] lg:max-w-[18rem]">
+            <Link
+              href="/"
+              className="mb-5 inline-flex shrink-0 items-center overflow-visible"
+            >
+              <Logo variant="light" linked={false} />
+            </Link>
             <p className="text-sm leading-relaxed text-cream/65">
               Community IP helps underserved inventors obtain intellectual
               property through education, intake support, and community
@@ -39,7 +44,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid flex-1 gap-8 sm:grid-cols-3 sm:gap-6">
+          <div className="grid min-w-0 flex-1 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
               <h3 className="mb-3 text-sm font-semibold text-cream">
                 Get involved

@@ -12,21 +12,22 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-community-700/10 bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4">
-        <div className="min-w-0 shrink-0">
-          <Logo />
+    <header className="sticky top-0 z-50 overflow-visible border-b border-community-700/10 bg-cream/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3.5 sm:gap-4 sm:px-6 sm:py-4">
+        <div className="flex shrink-0 items-center overflow-visible pr-1">
+          <Logo compact className="sm:hidden" />
+          <Logo className="hidden sm:inline-flex" />
         </div>
 
         <nav
-          className="hidden items-center gap-1 lg:flex lg:flex-1 lg:justify-center"
+          className="hidden shrink items-center gap-0.5 lg:flex lg:flex-1 lg:justify-center"
           aria-label="Main"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-forest-800 transition-colors hover:bg-community-50 hover:text-community-700"
+              className="rounded-lg px-2.5 py-2 text-sm font-medium text-forest-800 transition-colors hover:bg-community-50 hover:text-community-700 xl:px-3"
             >
               {link.label}
             </Link>
