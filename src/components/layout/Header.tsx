@@ -5,12 +5,9 @@ import { MobileNav } from "@/components/layout/MobileNav";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/for-inventors", label: "For Inventors" },
-  { href: "/education", label: "Education" },
-  { href: "/volunteer", label: "Volunteer" },
-  { href: "/partners", label: "Partners" },
-  { href: "/donate", label: "Donate" },
   { href: "/about", label: "About" },
+  { href: "/research", label: "Research" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {

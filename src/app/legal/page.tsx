@@ -86,9 +86,9 @@ export default function LegalPage() {
               Intake review does not constitute acceptance into any program.
             </p>
             <p>
-              IP Readiness Checker results are general suggestions based on your
-              answers. They should not be relied upon as a substitute for
-              professional advice on your specific situation.
+              Educational content on this site is general information only. It
+              should not be relied upon as a substitute for professional advice
+              on your specific situation.
             </p>
           </div>
         </section>

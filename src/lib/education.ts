@@ -41,7 +41,7 @@ export const educationResources: EducationResource[] = [
       },
       {
         heading: "When to learn more",
-        body: "If you have a product, device, or process you believe is new and useful, patent basics are worth understanding early — especially before publicly sharing details. Take our IP Readiness Checker or apply for intake support when you're ready for personalized guidance.",
+        body: "If you have a product, device, or process you believe is new and useful, patent basics are worth understanding early — especially before publicly sharing details. Apply for intake support when you're ready for personalized guidance.",
       },
     ],
   },
@@ -141,7 +141,7 @@ export const educationResources: EducationResource[] = [
       },
       {
         heading: "Know what you're asking for",
-        body: "Are you looking for education, mentoring, affordable services, or needs-based support? It's okay to say \"I'm not sure\" — that's what the readiness checker and intake form are for.",
+        body: "Are you looking for education, mentoring, affordable services, or needs-based support? It's okay to say \"I'm not sure\" — that's what our intake form is for.",
       },
     ],
   },
@@ -162,7 +162,7 @@ export const educationResources: EducationResource[] = [
       },
       {
         heading: "Which may apply to you?",
-        body: "Built a new device or process? Start with patent basics. Launching a brand or business name? Look at trademarks. Created art, writing, music, or code? Copyright may be relevant. Still unsure? Take the IP Readiness Checker or apply for intake support.",
+        body: "Built a new device or process? Start with patent basics. Launching a brand or business name? Look at trademarks. Created art, writing, music, or code? Copyright may be relevant. Still unsure? Apply for intake support.",
       },
       {
         heading: "You can use more than one",

@@ -44,18 +44,18 @@ export default function EducationPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-3xl border border-teal-200 bg-teal-50 p-8 sm:p-10">
-          <h2 className="font-heading text-2xl font-bold text-slate-800">
+        <div className="mt-16 rounded-3xl border border-community-200 bg-community-50 p-8 sm:p-10">
+          <h2 className="font-heading text-2xl font-bold text-forest-900">
             Ready for personalized guidance?
           </h2>
           <p className="mt-2 max-w-xl text-muted-foreground">
-            After reading, take the IP Readiness Checker to get a suggested next
-            step — or apply for help so our team can review your situation.
+            After reading, apply for help so our team can review your situation
+            and suggest next steps.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="/readiness-checker">Take the readiness checker</CTAButton>
-            <CTAButton href="/apply" variant="secondary">
-              Apply for help
+            <CTAButton href="/apply">Get IP Help</CTAButton>
+            <CTAButton href="/contact" variant="secondary">
+              Contact Community IP
             </CTAButton>
           </div>
         </div>

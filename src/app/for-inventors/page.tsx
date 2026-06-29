@@ -22,10 +22,10 @@ export default function ForInventorsPage() {
     <div className="py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-700">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-community-700">
             For Inventors
           </p>
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl text-balance">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-forest-900 sm:text-5xl text-balance">
             You have an idea. We help you figure out what comes next.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -35,11 +35,11 @@ export default function ForInventorsPage() {
             traditional law firm.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="/readiness-checker" size="lg">
-              Check if you&apos;re ready for IP help
+            <CTAButton href="/apply" size="lg">
+              Get IP Help
             </CTAButton>
-            <CTAButton href="/apply" variant="secondary" size="lg">
-              Apply for help
+            <CTAButton href="/education" variant="secondary" size="lg">
+              Browse education
             </CTAButton>
           </div>
         </div>
@@ -54,27 +54,27 @@ export default function ForInventorsPage() {
               icon={Lightbulb}
               title="I have an invention"
               description="You've created or are developing a product, device, or process and want to understand patent options and next steps."
-              href="/readiness-checker"
-              cta="Start the readiness checker"
+              href="/apply"
+              cta="Get IP Help"
             />
             <AudienceCard
               icon={Store}
               title="I have a brand or business name"
               description="You're building a business identity and want to learn about trademark protection for your name, logo, or brand."
-              href="/readiness-checker"
-              cta="Check trademark readiness"
+              href="/education/trademark-basics"
+              cta="Learn trademark basics"
             />
             <AudienceCard
               icon={Palette}
               title="I created original work"
               description="You've made creative work — art, writing, music, software — and want to understand copyright basics."
-              href="/readiness-checker"
-              cta="Explore copyright options"
+              href="/education/copyright-basics"
+              cta="Learn copyright basics"
             />
             <AudienceCard
               icon={HelpCircle}
               title="I'm not sure what I need"
-              description="That's okay. Most people start here. Our readiness checker and education hub help you learn before you commit."
+              description="That's okay. Most people start here. Our education resources and intake team help you learn before you commit."
               href="/education"
               cta="Browse free resources"
             />
@@ -100,7 +100,7 @@ export default function ForInventorsPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-xl border border-border bg-white px-4 py-3 text-sm font-medium text-slate-700"
+                className="rounded-xl border border-border bg-white px-4 py-3 text-sm font-medium text-forest-800"
               >
                 {item}
               </div>
@@ -109,25 +109,22 @@ export default function ForInventorsPage() {
         </section>
 
         <section className="mt-20">
-          <SectionHeading
-            eyebrow="Your path"
-            title="How to get started"
-          />
+          <SectionHeading eyebrow="Your path" title="How to get started" />
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             <StepCard
               step={1}
-              title="Take the readiness checker"
-              description="Answer a few questions to understand what type of IP support might fit your situation."
-            />
-            <StepCard
-              step={2}
               title="Learn the basics"
               description="Visit our Education Hub for plain-language guides on patents, trademarks, and copyrights."
             />
             <StepCard
-              step={3}
+              step={2}
               title="Apply for help"
               description="Submit an intake form so our team can review your situation and suggest next steps."
+            />
+            <StepCard
+              step={3}
+              title="Connect with support"
+              description="When available, we may connect you with mentoring, workshops, or needs-based support."
             />
           </div>
         </section>

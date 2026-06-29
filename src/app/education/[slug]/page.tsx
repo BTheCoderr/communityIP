@@ -98,9 +98,9 @@ export default async function EducationArticlePage({
             {DISCLAIMERS.educationFooter}
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="/readiness-checker">Take the readiness checker</CTAButton>
-            <CTAButton href="/apply" variant="secondary">
-              Apply for help
+            <CTAButton href="/apply">Get IP Help</CTAButton>
+            <CTAButton href="/contact" variant="secondary">
+              Contact Community IP
             </CTAButton>
           </div>
         </div>

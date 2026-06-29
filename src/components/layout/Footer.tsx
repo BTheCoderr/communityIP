@@ -3,22 +3,20 @@ import { DISCLAIMERS } from "@/lib/content/disclaimers";
 import { Logo } from "@/components/brand/Logo";
 
 const footerLinks = {
-  explore: [
-    { href: "/for-inventors", label: "For Inventors" },
-    { href: "/readiness-checker", label: "IP Readiness Checker" },
-    { href: "/education", label: "Education Hub" },
-    { href: "/apply", label: "Apply for Help" },
-  ],
   getInvolved: [
-    { href: "/volunteer", label: "Volunteer" },
-    { href: "/partners", label: "Partners" },
-    { href: "/donate", label: "Donate" },
+    { href: "/apply", label: "Get IP Help" },
+    { href: "/volunteer", label: "Volunteer with Community IP" },
+    { href: "/partners", label: "Partner with Community IP" },
+    { href: "/donate", label: "Support the Mission" },
   ],
-  about: [
-    { href: "/about", label: "About Us" },
+  organization: [
+    { href: "/about", label: "About" },
+    { href: "/research", label: "Research" },
     { href: "/board", label: "Board of Directors" },
     { href: "/news", label: "News" },
-    { href: "/contact", label: "Contact" },
+  ],
+  connect: [
+    { href: "/contact", label: "Contact Community IP" },
     { href: "/legal", label: "Legal & Disclaimers" },
     { href: "/legal/nondisclosure", label: "Nondisclosure Agreement" },
   ],
@@ -45,24 +43,6 @@ export function Footer() {
 
           <div>
             <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">
-              Explore
-            </h3>
-            <ul className="space-y-2.5">
-              {footerLinks.explore.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-cream/60 transition-colors hover:text-cream"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">
               Get Involved
             </h3>
             <ul className="space-y-2.5">
@@ -81,10 +61,28 @@ export function Footer() {
 
           <div>
             <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">
-              About
+              Organization
             </h3>
             <ul className="space-y-2.5">
-              {footerLinks.about.map((link) => (
+              {footerLinks.organization.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-cream/60 transition-colors hover:text-cream"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">
+              Connect
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.connect.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

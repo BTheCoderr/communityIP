@@ -47,3 +47,13 @@
 
 # Domain canonicalization (apex ↔ www) is handled in Netlify → Domain management → Primary domain.
 # Do NOT add apex↔www redirects here — conflicting rules cause ERR_TOO_MANY_REDIRECTS.
+
+[[redirects]]
+  from = "/readiness-checker"
+  to = "/apply"
+  status = 301
+
+[[redirects]]
+  from = "/readiness-checker/*"
+  to = "/apply"
+  status = 301

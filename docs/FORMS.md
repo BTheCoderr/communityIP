@@ -40,7 +40,7 @@ Fields: orgName, contactName, email, role, message
 
 | Feature | Notes |
 |---------|--------|
-| **Readiness checker** | Browser-only quiz, no submission |
+| **Readiness checker** | Retired — `/readiness-checker` redirects to `/apply` |
 | **Spotfund donate** | External link to spot.fund/lrsnklsc |
 
 ## Direct email

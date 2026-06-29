@@ -8,12 +8,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/for-inventors", label: "For Inventors" },
-  { href: "/education", label: "Education" },
-  { href: "/volunteer", label: "Volunteer" },
-  { href: "/partners", label: "Partners" },
-  { href: "/donate", label: "Donate" },
   { href: "/about", label: "About" },
+  { href: "/research", label: "Research" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function MobileNav() {
@@ -63,32 +60,7 @@ export function MobileNav() {
                 {link.label}
               </Link>
             ))}
-            {[
-              { href: "/contact", label: "Contact" },
-              { href: "/news", label: "News" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "block px-4 py-3 text-sm font-medium transition-colors",
-                  pathname === link.href
-                    ? "bg-community-50 text-community-800"
-                    : "text-forest-800 hover:bg-community-50 hover:text-community-800"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
             <div className="mt-2 space-y-2 border-t border-community-700/10 pt-2">
-              <Link
-                href="/readiness-checker"
-                onClick={() => setOpen(false)}
-                className="block border border-community-700/15 px-4 py-3 text-center text-sm font-semibold text-forest-900 hover:bg-community-50"
-              >
-                IP Readiness Checker
-              </Link>
               <Link
                 href="/apply"
                 onClick={() => setOpen(false)}
