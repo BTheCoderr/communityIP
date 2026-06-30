@@ -28,9 +28,9 @@ export function Footer() {
     <footer className="overflow-visible border-t border-community-800/20 bg-community-800 text-cream/85">
       <div className="mx-auto max-w-6xl overflow-visible px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-12">
-          <div className="shrink-0 overflow-visible sm:max-w-md lg:max-w-sm">
-            <BrandLogo variant="light" className="mb-5" />
-            <p className="text-sm leading-relaxed text-cream/65">
+          <div className="shrink-0 overflow-visible">
+            <BrandLogo variant="light" className="mb-5 block" />
+            <p className="max-w-md text-sm leading-relaxed text-cream/65">
               {mission.statement}
             </p>
             <p className="mt-4 text-xs font-medium uppercase tracking-wide text-sage-200">
