@@ -14,7 +14,7 @@ local_backend: true
 
 site_url: https://www.communityip.org
 display_url: https://www.communityip.org
-logo_url: /brand/community-ip-icon.svg
+logo_url: /brand/community-ip-full-logo-light.svg
 
 collections:
   - name: site

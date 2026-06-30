@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Community IP helps underserved inventors understand intellectual property, connect with support, and take the next step toward protecting their ideas.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/brand/community-ip-icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
     title: "Community IP — Helping Overlooked Inventors Protect Ideas",
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     siteName: "Community IP",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Young inventor building and testing a prototype at a worktable",
+        alt: "Community IP — Helping underserved inventors obtain intellectual property",
       },
     ],
     locale: "en_US",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Community IP",
     description:
       "Helping underserved inventors understand and protect their ideas.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 

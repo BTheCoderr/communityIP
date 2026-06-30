@@ -1,12 +1,23 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/brand/LogoMark";
+
+/** Original Community IP horizontal logo — icon between COMMUNITY and IP */
+const LOGO_ASSETS = {
+  default: {
+    full: "/brand/community-ip-full-logo.svg",
+    mark: "/brand/community-ip-logo-mark.svg",
+  },
+  light: {
+    full: "/brand/community-ip-full-logo-light.svg",
+    mark: "/brand/community-ip-logo-mark-light.svg",
+  },
+} as const;
 
 export interface BrandLogoProps {
   variant?: "default" | "light";
   className?: string;
   linked?: boolean;
-  /** Icon only — use on very tight mobile headers when full label won't fit */
+  /** Icon-only mark for very narrow mobile headers */
   iconOnly?: boolean;
 }
 
@@ -16,27 +27,27 @@ export function BrandLogo({
   linked = true,
   iconOnly = false,
 }: BrandLogoProps) {
+  const assets = LOGO_ASSETS[variant];
+
   const brand = (
     <span
       className={cn(
-        "inline-flex shrink-0 items-center gap-2.5 overflow-visible sm:gap-3",
+        "inline-flex shrink-0 items-center overflow-visible",
         className
       )}
     >
-      <LogoMark
-        variant={variant}
-        className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={iconOnly ? assets.mark : assets.full}
+        alt="Community IP"
+        width={iconOnly ? 64 : 440}
+        height={iconOnly ? 72 : 80}
+        className={cn(
+          "block shrink-0 object-contain object-left",
+          iconOnly ? "h-9 w-9 sm:h-10 sm:w-10" : "h-9 w-auto sm:h-10 md:h-11"
+        )}
+        decoding="async"
       />
-      {!iconOnly ? (
-        <span
-          className={cn(
-            "shrink-0 whitespace-nowrap font-display text-sm font-semibold leading-none tracking-wide sm:text-base lg:text-lg",
-            variant === "light" ? "text-cream" : "text-community-700"
-          )}
-        >
-          Community IP
-        </span>
-      ) : null}
     </span>
   );
 

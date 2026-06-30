@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" fill="none" role="img" aria-label="Community IP">
+  <!-- Tree-in-lightbulb mark (center) -->
+  <g transform="translate(188 4)">
+    <path
+      d="M32 6c-10.5 0-19 8.5-19 19 0 6.2 3 11.7 7.6 15.2V58h22.8v-7.8c4.6-3.5 7.6-9 7.6-15.2 0-10.5-8.5-19-19-19z"
+      fill="rgba(20,83,45,0.08)"
+      stroke="#14532D"
+      stroke-width="1.4"
+    />
+    <path d="M32 44V32" stroke="#6B9478" stroke-width="2" stroke-linecap="round" />
+    <path
+      d="M32 32c-4.2-3.2-8.4-2-10.4 1.2M32 32c4.2-3.2 8.4-2 10.4 1.2M32 37c-5.2-2-8.4 0-9.4 3.2M32 37c5.2-2 8.4 0 9.4 3.2"
+      stroke="#8FAF9A"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <ellipse cx="22" cy="30" rx="2.8" ry="4.8" fill="#8FAF9A" transform="rotate(-28 22 30)" />
+    <ellipse cx="42" cy="30" rx="2.8" ry="4.8" fill="#8FAF9A" transform="rotate(28 42 30)" />
+    <ellipse cx="27" cy="24" rx="2.4" ry="4" fill="#8FAF9A" transform="rotate(-18 27 24)" />
+    <ellipse cx="37" cy="24" rx="2.4" ry="4" fill="#8FAF9A" transform="rotate(18 37 24)" />
+    <ellipse cx="32" cy="19" rx="2.4" ry="4" fill="#8FAF9A" />
+    <rect x="26" y="58" width="12" height="3" rx="1" fill="#14532D" fill-opacity="0.45" />
+    <rect x="27.5" y="62" width="9" height="2.5" rx="1" fill="#14532D" fill-opacity="0.3" />
+    <rect x="29" y="65.5" width="6" height="2" rx="1" fill="#14532D" fill-opacity="0.22" />
+  </g>
+  <!-- Wordmark -->
+  <text
+    x="4"
+    y="58"
+    font-family="Georgia, 'Times New Roman', 'Source Serif 4', serif"
+    font-size="26"
+    font-weight="400"
+    letter-spacing="0.16em"
+    fill="#14532D"
+  >
+    COMMUNITY
+  </text>
+  <text
+    x="292"
+    y="58"
+    font-family="Georgia, 'Times New Roman', 'Source Serif 4', serif"
+    font-size="26"
+    font-weight="400"
+    letter-spacing="0.16em"
+    fill="#14532D"
+  >
+    IP
+  </text>
+</svg>
