@@ -1,6 +1,5 @@
 import { CTAButton } from "@/components/CTAButton";
 import { home } from "@/lib/content/home";
-import { DISCLAIMERS } from "@/lib/content/disclaimers";
 import { HeroImage } from "@/components/home/HeroImage";
 
 export function HeroBrand() {
@@ -17,6 +16,11 @@ export function HeroBrand() {
               </span>
             </h1>
             <p className="prose-lead mt-6 max-w-xl">{home.subheadline}</p>
+            {home.practitionerNote ? (
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-forest-800/75">
+                {home.practitionerNote}
+              </p>
+            ) : null}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CTAButton href={home.ctaPrimary.href} size="lg">
                 {home.ctaPrimary.label}
@@ -25,9 +29,6 @@ export function HeroBrand() {
                 {home.ctaSecondary.label}
               </CTAButton>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              {DISCLAIMERS.heroLine}
-            </p>
           </div>
 
           <div className="mx-auto w-full min-w-0 max-w-xl lg:max-w-none">

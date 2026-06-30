@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ResourceCard } from "@/components/ResourceCard";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { educationResources } from "@/lib/education";
 
 export const metadata: Metadata = {
@@ -60,9 +59,6 @@ export default function EducationPage() {
           </div>
         </div>
 
-        <div className="mt-10">
-          <DisclaimerBanner />
-        </div>
       </div>
     </div>
   );

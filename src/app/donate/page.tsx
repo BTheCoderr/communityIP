@@ -4,7 +4,6 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { StampLabel } from "@/components/brand/StampLabel";
 import { donate, SPOTFUND_URL } from "@/lib/site";
 import {
@@ -14,6 +13,8 @@ import {
   Settings,
   ArrowRight,
 } from "lucide-react";
+
+const impactIcons = [GraduationCap, HeartHandshake, Users, Settings] as const;
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -41,45 +42,23 @@ export default function DonatePage() {
       <section className="mt-16">
         <SectionHeading eyebrow="Your impact" title="What your donation helps fund" />
         <div className="mt-10 grid gap-px bg-navy-900/10 sm:grid-cols-2">
-          {[
-            {
-              icon: GraduationCap,
-              title: "Education workshops",
-              description:
-                "Free IP seminars and resources for inventors, students, and community groups.",
-            },
-            {
-              icon: HeartHandshake,
-              title: "Needs-based IP support",
-              description:
-                "Financial assistance for qualifying inventors facing IP costs — subject to funding and eligibility.",
-            },
-            {
-              icon: Users,
-              title: "Mentoring access",
-              description:
-                "Connecting inventors with volunteer professionals for guidance through the IP journey.",
-            },
-            {
-              icon: Settings,
-              title: "Program operations",
-              description:
-                "Intake, events, volunteer coordination, and the platform that makes IP access scalable.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="bg-cream p-8">
-              <item.icon
-                className="mb-4 h-7 w-7 text-stamp-600"
-                aria-hidden
-              />
-              <h3 className="font-display text-lg font-bold text-navy-900">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-800/70">
-                {item.description}
-              </p>
-            </div>
-          ))}
+          {donate.impactItems.map((item, index) => {
+            const Icon = impactIcons[index] ?? Settings;
+            return (
+              <div key={item.title} className="bg-cream p-8">
+                <Icon
+                  className="mb-4 h-7 w-7 text-stamp-600"
+                  aria-hidden
+                />
+                <h3 className="font-display text-lg font-bold text-navy-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-navy-800/70">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -129,10 +108,6 @@ export default function DonatePage() {
           ))}
         </div>
       </section>
-
-      <div className="mt-12">
-        <DisclaimerBanner />
-      </div>
     </PageShell>
   );
 }

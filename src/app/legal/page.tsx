@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
 
 export const metadata: Metadata = {
@@ -20,21 +19,13 @@ export default function LegalPage() {
       <h1 className="font-display text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl">
         Disclaimers & policies
       </h1>
-      <p className="mt-6 text-lg text-navy-800/75">
-        Community IP is a 501(c)(3) nonprofit. Licensed patent practitioners,
-        including patent attorney Ashley Gregory, may be involved in education,
-        intake support, mentoring, and patent filing assistance where
-        appropriate.
-      </p>
+      <p className="mt-6 text-lg text-navy-800/75">{DISCLAIMERS.legalIntro}</p>
 
       <div className="mt-10 space-y-10">
-        <DisclaimerBanner />
-
         <section>
-          <SectionHeading title="What Community IP provides" />
+          <SectionHeading title="Licensed practitioners & representation" />
           <div className="mt-4 space-y-3 leading-relaxed text-navy-800/75">
-            <p>{DISCLAIMERS.full}</p>
-            <p>{DISCLAIMERS.noGuarantee}</p>
+            <p>{DISCLAIMERS.legalPractitionerNotice}</p>
           </div>
         </section>
 
@@ -59,32 +50,10 @@ export default function LegalPage() {
         </section>
 
         <section>
-          <SectionHeading title="No attorney-client relationship from this site" />
-          <div className="mt-4 space-y-3 leading-relaxed text-navy-800/75">
-            <p>
-              Submitting an intake form, contact form, volunteer interest form,
-              or any other form on this website does not create an
-              attorney-client relationship between you and Community IP or any
-              of its volunteers, staff, or partners.
-            </p>
-            <p>
-              Any formal representation or patent services must be confirmed
-              separately in writing. Please do not submit confidential or
-              time-sensitive information unless and until Community IP confirms
-              that it is appropriate to do so.
-            </p>
-          </div>
-        </section>
-
-        <section>
           <SectionHeading title="No guarantees" />
           <div className="mt-4 space-y-3 leading-relaxed text-navy-800/75">
             <p>{DISCLAIMERS.noGuarantee}</p>
-            <p>
-              Program availability depends on capacity, funding, volunteer
-              availability, and eligibility criteria that may change over time.
-              Intake review does not constitute acceptance into any program.
-            </p>
+            <p>{DISCLAIMERS.legalNoGuaranteesDetail}</p>
             <p>
               Educational content on this site is general information only. It
               should not be relied upon as a substitute for professional advice

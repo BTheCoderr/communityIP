@@ -3,7 +3,6 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { GetInvolvedCards } from "@/components/GetInvolvedCards";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { Mail, MapPin } from "lucide-react";
 import { contact, CONTACT_EMAIL } from "@/lib/site";
 
@@ -76,10 +75,6 @@ export default function ContactPage() {
       </div>
 
       <p className="mt-8 text-sm text-forest-800/75">{contact.donateSupportText}</p>
-
-      <div className="mt-10">
-        <DisclaimerBanner />
-      </div>
     </PageShell>
   );
 }

@@ -3,7 +3,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AudienceCard } from "@/components/AudienceCard";
 import { StepCard } from "@/components/StepCard";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import {
   Lightbulb,
   Store,
@@ -129,9 +128,6 @@ export default function ForInventorsPage() {
           </div>
         </section>
 
-        <div className="mt-16">
-          <DisclaimerBanner />
-        </div>
       </div>
     </div>
   );

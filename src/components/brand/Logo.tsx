@@ -1,12 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/brand/LogoMark";
 
 interface LogoProps {
   variant?: "default" | "light";
   className?: string;
   linked?: boolean;
-  /** Slightly smaller wordmark for tight mobile headers */
+  /** Icon-only mark for tight mobile headers */
   compact?: boolean;
 }
 
@@ -16,28 +16,38 @@ export function Logo({
   linked = true,
   compact = false,
 }: LogoProps) {
+  const iconSrc = "/brand/community-ip-icon.svg";
+  const fullSrc =
+    variant === "light"
+      ? "/brand/community-ip-logo-light.svg"
+      : "/brand/community-ip-logo.svg";
+
   const brand = (
     <span
       className={cn(
-        "inline-flex shrink-0 items-center gap-2.5 overflow-visible",
+        "inline-flex shrink-0 items-center overflow-visible",
         className
       )}
     >
-      <LogoMark
-        variant={variant}
-        className={cn(compact ? "h-8 w-8" : "h-9 w-9 sm:h-10 sm:w-10")}
-      />
-      <span
-        className={cn(
-          "whitespace-nowrap font-display font-semibold leading-none",
-          compact
-            ? "text-[0.8125rem] tracking-[0.02em]"
-            : "text-[0.9375rem] tracking-[0.03em] sm:text-base sm:tracking-[0.04em] lg:text-lg",
-          variant === "light" ? "text-cream" : "text-community-700"
-        )}
-      >
-        Community IP
-      </span>
+      {compact ? (
+        <Image
+          src={iconSrc}
+          alt="Community IP"
+          width={40}
+          height={40}
+          className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
+          priority
+        />
+      ) : (
+        <Image
+          src={fullSrc}
+          alt="Community IP"
+          width={200}
+          height={50}
+          className="h-9 w-auto max-w-none shrink-0 sm:h-10"
+          priority
+        />
+      )}
     </span>
   );
 

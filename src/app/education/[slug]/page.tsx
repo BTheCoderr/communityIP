@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
 import { educationResources, getResourceBySlug } from "@/lib/education";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -103,10 +102,6 @@ export default async function EducationArticlePage({
               Contact Community IP
             </CTAButton>
           </div>
-        </div>
-
-        <div className="mt-8">
-          <DisclaimerBanner />
         </div>
       </div>
     </div>

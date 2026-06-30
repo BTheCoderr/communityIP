@@ -50,6 +50,7 @@ export const DISCLAIMERS = {
   full: disclaimersJson.longForm,
   formShort: disclaimersJson.shortForm,
   compact: disclaimersJson.footer,
+  intakeIntro: disclaimersJson.intakeBeforeBegin,
 };
 
 export const coPresidents: TeamMember[] = [...teamJson.coPresidents].sort(

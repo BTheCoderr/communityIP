@@ -58,6 +58,12 @@ collections:
               - { label: Spotfund closing, name: spotfundClosing, widget: text }
               - { label: Primary CTA label, name: ctaPrimary, widget: string }
               - { label: Secondary CTA label, name: ctaSecondary, widget: string }
+              - label: Impact items
+                name: impactItems
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
           - label: Board page header
             name: board
             widget: object
@@ -75,6 +81,7 @@ collections:
           - { label: Hero title, name: heroTitle, widget: string }
           - { label: Hero subtitle, name: heroSubtitle, widget: string }
           - { label: Hero subheadline, name: subheadline, widget: text }
+          - { label: Licensed practitioners note, name: practitionerNote, widget: text, required: false }
           - { label: Nonprofit tagline, name: nonprofitTag, widget: string }
           - label: Hero image
             name: heroImage
@@ -130,6 +137,14 @@ collections:
               - { label: Link text, name: linkText, widget: string }
               - { label: Primary CTA label, name: primaryCta, widget: string }
               - { label: Secondary CTA label, name: secondaryCta, widget: string }
+          - label: Final CTA section
+            name: finalCta
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Body, name: body, widget: text }
+              - { label: Primary button label, name: primaryLabel, widget: string }
+              - { label: Secondary button label, name: secondaryLabel, widget: string }
 
   - name: about
     label: About Page
@@ -306,12 +321,13 @@ collections:
           - { label: Short form disclaimer, name: shortForm, widget: text }
           - { label: Long form disclaimer, name: longForm, widget: text }
           - { label: Footer disclaimer, name: footer, widget: text }
-          - { label: Hero line, name: heroLine, widget: string }
           - { label: No guarantee, name: noGuarantee, widget: text }
-          - { label: CTA heading, name: ctaHeading, widget: string }
-          - { label: CTA body, name: ctaBody, widget: text }
-          - { label: CTA legal line, name: ctaLegal, widget: text }
-          - { label: Education footer, name: educationFooter, widget: text }
-          - { label: Intake intro, name: intakeIntro, widget: text }
+          - { label: Intake before-you-begin notice, name: intakeBeforeBegin, widget: text }
           - { label: Intake consent label, name: intakeConsentLabel, widget: text }
           - { label: Contact form note, name: contactFormNote, widget: text }
+          - { label: Volunteer form note, name: volunteerFormNote, widget: text }
+          - { label: Education footer, name: educationFooter, widget: text }
+          - { label: Intake submitted note, name: intakeSubmittedNote, widget: text }
+          - { label: Legal page intro, name: legalIntro, widget: text }
+          - { label: Legal practitioner notice, name: legalPractitionerNotice, widget: text }
+          - { label: Legal no-guarantees detail, name: legalNoGuaranteesDetail, widget: text }

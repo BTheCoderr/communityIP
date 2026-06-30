@@ -10,6 +10,7 @@ import {
   submitNetlifyFormElement,
   NETLIFY_FORM_ERROR,
 } from "@/lib/netlify-forms";
+import { DISCLAIMERS } from "@/lib/content/disclaimers";
 
 interface InterestFormProps {
   type: "volunteer" | "partner";
@@ -155,8 +156,8 @@ export function InterestForm({ type }: InterestFormProps) {
       </Button>
       <p className="text-xs leading-relaxed text-muted-foreground">
         {type === "volunteer"
-          ? "All volunteers are subject to screening and approval. Submitting this form does not create any professional obligation or attorney-client relationship."
-          : "Submitting this form does not create a binding partnership agreement. Our team will follow up to discuss options."}
+          ? `${DISCLAIMERS.volunteerFormNote} All volunteers are subject to screening and approval.`
+          : `${DISCLAIMERS.shortForm} Our team will follow up to discuss options.`}
       </p>
     </form>
   );

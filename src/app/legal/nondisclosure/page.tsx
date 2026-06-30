@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { NondisclosureAgreement } from "@/components/NondisclosureAgreement";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 
 export const metadata: Metadata = {
   title: "Nondisclosure Agreement",
@@ -40,9 +39,6 @@ export default function NondisclosurePage() {
           <NondisclosureAgreement />
         </div>
 
-        <div className="mt-8">
-          <DisclaimerBanner />
-        </div>
       </div>
     </div>
   );

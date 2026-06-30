@@ -246,8 +246,7 @@ export function IntakeWizard() {
           </div>
 
           <p className="mt-6 text-center text-xs leading-relaxed text-muted-foreground">
-            This submission does not create an attorney-client relationship
-            and does not guarantee services, funding, or representation.
+            {DISCLAIMERS.intakeSubmittedNote}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -284,10 +283,9 @@ export function IntakeWizard() {
                 Before you begin
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {DISCLAIMERS.intakeIntro}
+                {DISCLAIMERS.intakeBeforeBegin}
               </p>
             </div>
-            <DisclaimerBanner />
             <div className="space-y-4">
               <label className="flex items-start gap-3 cursor-pointer">
                 <Checkbox
@@ -758,10 +756,10 @@ export function IntakeWizard() {
             <h2 className="font-heading text-xl font-bold text-slate-800">
               Review & submit
             </h2>
-            <DisclaimerBanner />
+            <DisclaimerBanner variant="compact" />
             <p className="text-sm leading-relaxed text-muted-foreground">
-              {DISCLAIMERS.formShort} {DISCLAIMERS.noGuarantee} Our team will
-              review your submission and respond within 5–7 business days.
+              {DISCLAIMERS.noGuarantee} Our team will review your submission and
+              respond within 5–7 business days.
             </p>
             <div className="space-y-4">
               <label className="flex items-start gap-3 cursor-pointer">

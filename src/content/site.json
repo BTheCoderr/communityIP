@@ -12,22 +12,39 @@
   "mission": {
     "statement": "Community IP's mission is to help underserved inventors obtain intellectual property.",
     "extended": "Community IP wants to change the access gap. Started by two patent professionals in 2024, our goal is to help the vast, untapped well of talent by providing intellectual-property support to inventors who are historically underrepresented.",
-    "democratize": "Community IP will democratize access to intellectual property by offering expert patent services to innovators who might otherwise be unable to afford them — alongside education, mentoring, and needs-based support, subject to program capacity.",
+    "democratize": "Community IP works to expand access to intellectual property by offering patent services, education, and mentoring to innovators who might otherwise be unable to afford them — subject to program capacity and when services are confirmed separately.",
     "nonprofitNote": "Community IP is a 501(c)(3) organization."
   },
   "programs": [
     "Raising awareness by hosting events and seminars about IP, specifically for women and younger adults",
     "Offering low-cost IP services",
-    "Mentoring and supporting entrepreneurs and business owners in underrepresented communities",
-    "Providing needs-based funding for IP projects"
+    "Mentoring and supporting entrepreneurs and business owners in underrepresented communities"
   ],
   "donate": {
     "title": "Help more inventors get through the first door",
-    "intro": "Community IP is a 501(c)(3) nonprofit. Your support helps us reach underserved inventors with education, mentoring, and needs-based IP programs — subject to available capacity.",
-    "spotfundCampaignNote": "Community IP wants to change this. Started by two patent professionals in 2024, Community IP's goal is to help the vast, untapped well of talent by providing intellectual-property support to inventors who are historically underrepresented.",
-    "spotfundClosing": "Community IP will democratize access to intellectual property by offering expert patent services to innovators who might otherwise be unable to afford them.",
+    "intro": "Your support helps Community IP expand access to intellectual-property education, mentoring, and patent support for underserved inventors.",
+    "spotfundCampaignNote": "Community IP wants to change the access gap. Started by two patent professionals in 2024, our goal is to help the vast, untapped well of talent by providing intellectual-property support to inventors who are historically underrepresented.",
+    "spotfundClosing": "Community IP works to expand access to intellectual property for innovators who might otherwise be unable to afford support — subject to program capacity.",
     "ctaPrimary": "Contribute via Spotfund",
-    "ctaSecondary": "Support Community IP"
+    "ctaSecondary": "Support Community IP",
+    "impactItems": [
+      {
+        "title": "Education workshops",
+        "description": "Free IP seminars and resources for inventors, students, and community groups."
+      },
+      {
+        "title": "Patent support",
+        "description": "Helping qualifying inventors connect with patent guidance and application support where appropriate — subject to capacity and eligibility."
+      },
+      {
+        "title": "Mentoring access",
+        "description": "Connecting inventors with volunteer professionals for guidance through the IP journey."
+      },
+      {
+        "title": "Program operations",
+        "description": "Intake, events, volunteer coordination, and outreach that help more inventors connect with support."
+      }
+    ]
   },
   "board": {
     "title": "Board of Directors",

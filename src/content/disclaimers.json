@@ -1,14 +1,15 @@
 {
-  "shortForm": "Submitting this form does not create an attorney-client relationship. Formal services, if available, are confirmed separately.",
-  "longForm": "Submitting a form through this website does not create an attorney-client relationship. Community IP may provide education, intake support, mentoring, and, where appropriate, patent filing assistance through licensed patent practitioners. Any formal representation or patent services must be confirmed separately in writing. Please do not submit confidential or time-sensitive information unless and until Community IP confirms that it is appropriate to do so.",
-  "footer": "Submitting a form does not create an attorney-client relationship. Services, if available, are confirmed separately.",
-  "heroLine": "Submitting a form does not create an attorney-client relationship.",
-  "noGuarantee": "Community IP cannot guarantee funding, services, filing assistance, or any particular outcome.",
-  "ctaHeading": "Not sure what you need yet? That's okay.",
-  "ctaBody": "Start with a question. We'll help you find a sensible next step.",
-  "ctaLegal": "Submitting a form does not create an attorney-client relationship. Services, if available, are confirmed separately.",
-  "educationFooter": "This guide is for general orientation. Submitting a form does not create an attorney-client relationship. Formal services, if available, are confirmed separately.",
-  "intakeIntro": "Community IP may provide education, intake support, mentoring, and, where appropriate, patent filing assistance through licensed patent practitioners. Submitting this form does not create an attorney-client relationship.",
-  "intakeConsentLabel": "I understand that submitting this form does not create an attorney-client relationship, and that any formal services must be confirmed separately in writing.",
-  "contactFormNote": "For inventor support, use Apply for Help. Submitting a form does not create an attorney-client relationship."
+  "shortForm": "Submitting a form does not, by itself, create an attorney-client relationship. Any formal services must be confirmed separately.",
+  "longForm": "Submitting a form through this website does not, by itself, create an attorney-client relationship. Community IP's staff and volunteers include licensed patent practitioners recognized by the U.S. Patent and Trademark Office to prosecute patent applications. Any formal representation or patent services must be confirmed separately.",
+  "footer": "Submitting a form does not, by itself, create an attorney-client relationship. Any formal services must be confirmed separately.",
+  "noGuarantee": "Community IP cannot guarantee services, funding, filing assistance, pro bono representation, or any particular outcome.",
+  "intakeBeforeBegin": "Before you submit: Community IP uses this form to understand your situation and determine what next step may be appropriate. Submitting this form does not, by itself, create an attorney-client relationship. Any formal services or representation must be confirmed separately.",
+  "intakeConsentLabel": "I understand that submitting this form does not, by itself, create an attorney-client relationship, and that any formal services must be confirmed separately.",
+  "contactFormNote": "For inventor support, use Apply for Help. Submitting a form does not, by itself, create an attorney-client relationship. Any formal services must be confirmed separately.",
+  "volunteerFormNote": "Submitting this form does not, by itself, create an attorney-client relationship. Any formal services must be confirmed separately.",
+  "educationFooter": "This guide is for general orientation. Submitting a form does not, by itself, create an attorney-client relationship. Any formal services must be confirmed separately.",
+  "intakeSubmittedNote": "This submission does not, by itself, create an attorney-client relationship and does not guarantee services, funding, or representation.",
+  "legalIntro": "Community IP is a 501(c)(3) nonprofit organization.",
+  "legalPractitionerNotice": "Community IP's staff and volunteers include licensed patent practitioners recognized by the U.S. Patent and Trademark Office to prosecute patent applications. Submitting a form through this website does not, by itself, create an attorney-client relationship. Any formal representation or patent services must be confirmed separately.",
+  "legalNoGuaranteesDetail": "Program availability depends on capacity, funding, volunteer availability, and eligibility criteria that may change over time. Intake review does not constitute acceptance into any program."
 }

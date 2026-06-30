@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { InterestForm } from "@/components/forms/InterestForm";
 import {
   Scale,
@@ -157,9 +156,6 @@ export default function VolunteerPage() {
           </div>
         </section>
 
-        <div className="mt-12">
-          <DisclaimerBanner />
-        </div>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { InterestForm } from "@/components/forms/InterestForm";
 import {
   Building2,
@@ -137,9 +136,6 @@ export default function PartnersPage() {
           </CTAButton>
         </div>
 
-        <div className="mt-10">
-          <DisclaimerBanner />
-        </div>
       </div>
     </div>
   );

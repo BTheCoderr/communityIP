@@ -3,7 +3,6 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
-import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { ImpactMetric } from "@/components/ImpactMetric";
 import { StampLabel } from "@/components/brand/StampLabel";
@@ -133,10 +132,6 @@ export default function AboutPage() {
           </CTAButton>
         </div>
       </section>
-
-      <div className="mt-12">
-        <DisclaimerBanner />
-      </div>
     </PageShell>
   );
 }

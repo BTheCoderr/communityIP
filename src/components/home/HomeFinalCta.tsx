@@ -1,19 +1,21 @@
 import { CTAButton } from "@/components/CTAButton";
-import { DISCLAIMERS } from "@/lib/content/disclaimers";
+import { home } from "@/lib/content/home";
 
 export function HomeFinalCta() {
+  const { finalCta } = home;
+
   return (
     <section className="bg-community-700 py-16 sm:py-20">
       <div className="section-narrow text-center">
         <h2 className="font-display text-3xl font-semibold text-cream sm:text-4xl text-balance">
-          {DISCLAIMERS.ctaHeading}
+          {finalCta.heading}
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-cream/80">
-          {DISCLAIMERS.ctaBody}
+          {finalCta.body}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <CTAButton href="/apply" size="lg">
-            Get IP Help
+            {finalCta.primaryLabel}
           </CTAButton>
           <CTAButton
             href="/contact"
@@ -21,12 +23,9 @@ export function HomeFinalCta() {
             size="lg"
             className="border-cream/30 bg-transparent text-cream hover:bg-cream/10 hover:text-cream"
           >
-            Contact Community IP
+            {finalCta.secondaryLabel}
           </CTAButton>
         </div>
-        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-cream/55">
-          {DISCLAIMERS.ctaLegal}
-        </p>
       </div>
     </section>
   );

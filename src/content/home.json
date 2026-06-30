@@ -1,7 +1,8 @@
 {
   "heroTitle": "Your idea matters.",
   "heroSubtitle": "You shouldn't have to figure out IP alone.",
-  "subheadline": "Community IP helps underserved inventors understand intellectual property, connect with support, and take the next step toward protecting their ideas.",
+  "subheadline": "Community IP helps underserved inventors understand and navigate the patent process, connect with support, and take the next step toward protecting their ideas.",
+  "practitionerNote": "Community IP's licensed patent practitioners help inventors understand and navigate the patent process in the U.S. and internationally, including patent application support where appropriate and when services are confirmed separately.",
   "nonprofitTag": "501(c)(3) nonprofit · IP access for underserved inventors",
   "heroImage": {
     "src": "/images/hero/inventor-workbench.jpg",
@@ -10,7 +11,7 @@
   "missionText": "Community IP's mission is to help underserved inventors obtain intellectual property.",
   "whatCommunityIPDoes": {
     "title": "What Community IP does",
-    "description": "We connect inventors with education, mentoring, and needs-based IP support — so talent isn't lost for lack of access."
+    "description": "We connect inventors with education, mentoring, and patent support — so talent isn't lost for lack of access."
   },
   "ctaPrimary": {
     "label": "Get IP Help",
@@ -31,7 +32,7 @@
   },
   "supportSection": {
     "eyebrow": "Support the mission",
-    "description": "Your contribution funds education workshops, mentoring access, and needs-based IP support for inventors who might otherwise be left out — subject to program capacity.",
+    "description": "Your support helps Community IP expand access to intellectual-property education, mentoring, and patent support for underserved inventors.",
     "footnote": "Donations support our nonprofit mission. Program support depends on availability and eligibility."
   },
   "researchTeaser": {
@@ -40,5 +41,11 @@
     "linkText": "Read the access gap report",
     "primaryCta": "Explore research",
     "secondaryCta": "Get IP Help"
+  },
+  "finalCta": {
+    "heading": "Not sure what you need yet? That's okay.",
+    "body": "Start with a question. We'll help you find a sensible next step.",
+    "primaryLabel": "Get IP Help",
+    "secondaryLabel": "Contact Community IP"
   }
 }

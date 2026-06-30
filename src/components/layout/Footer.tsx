@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { mission } from "@/lib/site";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
 import { Logo } from "@/components/brand/Logo";
 
@@ -35,9 +36,7 @@ export function Footer() {
               <Logo variant="light" linked={false} />
             </Link>
             <p className="text-sm leading-relaxed text-cream/65">
-              Community IP helps underserved inventors obtain intellectual
-              property through education, intake support, and community
-              programs.
+              {mission.statement}
             </p>
             <p className="mt-4 text-xs font-medium uppercase tracking-wide text-sage-200">
               501(c)(3) nonprofit organization
@@ -101,7 +100,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-cream/10 pt-8">
           <p className="max-w-3xl text-xs leading-relaxed text-cream/45">
-            {DISCLAIMERS.compact} {DISCLAIMERS.noGuarantee}
+            {DISCLAIMERS.footer}
           </p>
           <p className="mt-4 text-xs text-cream/35">
             © {new Date().getFullYear()} Community IP. All rights reserved.
