@@ -17,7 +17,7 @@ export interface BrandLogoProps {
   variant?: "default" | "light";
   className?: string;
   linked?: boolean;
-  /** Icon-only mark for very narrow mobile headers */
+  /** Icon-only mark for mobile headers */
   iconOnly?: boolean;
 }
 
@@ -40,12 +40,13 @@ export function BrandLogo({
       <img
         src={iconOnly ? assets.mark : assets.full}
         alt="Community IP"
-        width={iconOnly ? 64 : 440}
-        height={iconOnly ? 72 : 80}
         className={cn(
-          "block shrink-0 object-contain object-left",
-          iconOnly ? "h-9 w-9 sm:h-10 sm:w-10" : "h-9 w-auto sm:h-10 md:h-11"
+          "block max-w-none shrink-0 object-contain object-left",
+          iconOnly
+            ? "h-9 w-9 sm:h-10 sm:w-10"
+            : "h-9 w-auto sm:h-10 md:h-11"
         )}
+        style={iconOnly ? undefined : { width: "auto", maxWidth: "none" }}
         decoding="async"
       />
     </span>

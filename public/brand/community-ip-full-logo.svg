@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" fill="none" role="img" aria-label="Community IP">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" fill="none" role="img" aria-label="Community IP">
   <!-- Tree-in-lightbulb mark (center) -->
   <g transform="translate(188 4)">
     <path
@@ -36,7 +36,7 @@
     COMMUNITY
   </text>
   <text
-    x="292"
+    x="300"
     y="58"
     font-family="Georgia, 'Times New Roman', 'Source Serif 4', serif"
     font-size="26"
