@@ -1,4 +1,7 @@
 backend:
+  # Option B (active): Netlify Identity + Git Gateway — easiest login for nontechnical editors.
+  # Git Gateway is deprecated by Netlify but still works on existing sites. See README → Low-cost stack.
+  # Option A (future-proof): GitHub backend — see public/admin/config.github.example.yml
   name: git-gateway
   branch: main
 

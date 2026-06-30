@@ -17,24 +17,61 @@ Open [http://localhost:3000](http://localhost:3000)
 
 Push to `main` on GitHub — Netlify builds automatically (`netlify.toml`).
 
+## Low-cost stack
+
+Community IP is built to run on **$0/month tooling** to start:
+
+| Tool | Purpose | Cost |
+|------|---------|------|
+| **[Decap CMS](https://decapcms.org/)** | `/admin` content editor | **Free** (open source) |
+| **GitHub** | Stores all editable content in `src/content/` | **Free** |
+| **Netlify Free** | Hosting, deploys, custom domain, SSL | **Free tier** is enough to start |
+| **Netlify Forms** | Contact, intake, volunteer, partner forms | **Included** on Free plan |
+
+Avoid paid CMS platforms (WordPress hosting, Contentful, etc.) unless requirements change later.
+
+**Forms stay separate from the CMS** — submissions go through Netlify Forms, not Decap.
+
+More detail: [`docs/CMS.md`](docs/CMS.md)
+
 ## Editing Community IP content
 
-Regina and the team can update site copy, images, news posts, and team profiles in **[Decap CMS](https://decapcms.org/)** — a simple editor at `/admin` (no WordPress required).
+Regina and the team can update site copy, images, news posts, and team profiles in **Decap CMS** at `/admin`.
+
+### Choosing a backend: GitHub vs Git Gateway
+
+The repo ships with **Option B** active. Either option is free.
+
+| | **Option A: GitHub backend** | **Option B: Git Gateway** *(current)* |
+|---|------------------------------|----------------------------------------|
+| **Editor login** | GitHub account at `/admin` | Netlify Identity email/password at `/admin` |
+| **Who it suits** | Future-proof; editors comfortable with GitHub | Regina and nontechnical staff |
+| **Setup** | GitHub OAuth App + repo **Write** access per editor | Netlify Identity + **Git Gateway** + email invites |
+| **Caveat** | Editors need GitHub accounts and collaborator invites | **Git Gateway is deprecated** by Netlify — still works on many sites today, but plan a move to Option A if it is retired |
+
+**Current config:** `public/admin/config.yml` uses `git-gateway`. To switch to GitHub, see [`docs/CMS.md`](docs/CMS.md) and `public/admin/config.github.example.yml`.
 
 ### `/admin` login URL
 
 **[https://www.communityip.org/admin](https://www.communityip.org/admin)**
 
-1. Log in with **Netlify Identity** (invite-only).
-2. Edit content in the CMS collections below.
-3. Click **Publish** — changes commit to GitHub and trigger a new Netlify deploy.
+**Option B (current):** Log in with **Netlify Identity** (invite-only).
 
-**First-time Netlify setup (admin only):**
+**Option A (GitHub):** Log in with **GitHub** — you must have **write access** to the `BTheCoderr/communityIP` repo.
+
+After login:
+
+1. Edit content in the CMS collections below.
+2. Click **Publish** — changes commit to GitHub and trigger a new Netlify deploy.
+
+**First-time Netlify setup for Option B (admin only):**
 
 - Netlify → **Identity** → Enable Identity
 - Identity → **Registration** → Invite only
 - Identity → **Services** → Enable **Git Gateway**
 - Invite Regina’s email from the Identity tab
+
+> **Note:** Git Gateway is **deprecated**. It remains the easiest nontechnical login today. For a longer-term path, migrate to the GitHub backend (Option A) — see [`docs/CMS.md`](docs/CMS.md).
 
 With `publish_mode: editorial_workflow`, drafts can be reviewed before publishing to `main`.
 

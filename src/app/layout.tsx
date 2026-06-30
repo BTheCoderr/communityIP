@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { NetlifyIdentityScripts } from "@/components/NetlifyIdentityScripts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen font-sans antialiased">
+        <NetlifyIdentityScripts />
         <Header />
         <main>{children}</main>
         <Footer />

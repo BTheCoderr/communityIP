@@ -1,0 +1,20 @@
+# Option A — GitHub backend (example)
+# Copy this backend block into public/admin/config.yml to replace git-gateway.
+# Requires a GitHub OAuth App and repo write access for each editor.
+# See docs/CMS.md for full setup steps.
+
+backend:
+  name: github
+  repo: BTheCoderr/communityIP
+  branch: main
+
+# Keep the rest of config.yml unchanged (media_folder, collections, etc.)
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+site_url: https://www.communityip.org
+display_url: https://www.communityip.org
+logo_url: /brand/community-ip-icon.svg
