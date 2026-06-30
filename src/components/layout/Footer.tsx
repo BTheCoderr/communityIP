@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { mission } from "@/lib/site";
 import { DISCLAIMERS } from "@/lib/content/disclaimers";
-import { Logo } from "@/components/brand/Logo";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const footerLinks = {
   getInvolved: [
@@ -28,13 +28,8 @@ export function Footer() {
     <footer className="overflow-visible border-t border-community-800/20 bg-community-800 text-cream/85">
       <div className="mx-auto max-w-6xl overflow-visible px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-12">
-          <div className="w-full shrink-0 overflow-visible sm:max-w-md lg:min-w-[15rem] lg:max-w-[18rem]">
-            <Link
-              href="/"
-              className="mb-5 inline-flex shrink-0 items-center overflow-visible"
-            >
-              <Logo variant="light" linked={false} />
-            </Link>
+          <div className="shrink-0 overflow-visible sm:max-w-md lg:max-w-sm">
+            <BrandLogo variant="light" className="mb-5" />
             <p className="text-sm leading-relaxed text-cream/65">
               {mission.statement}
             </p>
