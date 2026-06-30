@@ -1,34 +1,29 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-/** Original Community IP horizontal logo — icon between COMMUNITY and IP */
+/**
+ * Regina's original Community IP logo: green badge, tree-in-lightbulb icon,
+ * COMMUNITY IP wordmark below. Source: community-ip-original-logo.png
+ */
 const LOGO_ASSETS = {
-  default: {
-    full: "/brand/community-ip-full-logo.svg",
-    mark: "/brand/community-ip-logo-mark.svg",
-  },
-  light: {
-    full: "/brand/community-ip-full-logo-light.svg",
-    mark: "/brand/community-ip-logo-mark-light.svg",
-  },
+  /** Full original logo (green background + icon + wordmark) */
+  full: "/brand/community-ip-original-logo-400.png",
+  /** Cropped icon mark from original — mobile header */
+  mark: "/brand/community-ip-mark.png",
 } as const;
 
 export interface BrandLogoProps {
-  variant?: "default" | "light";
   className?: string;
   linked?: boolean;
-  /** Icon-only mark for mobile headers */
+  /** Icon-only mark for narrow mobile headers */
   iconOnly?: boolean;
 }
 
 export function BrandLogo({
-  variant = "default",
   className,
   linked = true,
   iconOnly = false,
 }: BrandLogoProps) {
-  const assets = LOGO_ASSETS[variant];
-
   const brand = (
     <span
       className={cn(
@@ -38,15 +33,15 @@ export function BrandLogo({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={iconOnly ? assets.mark : assets.full}
+        src={iconOnly ? LOGO_ASSETS.mark : LOGO_ASSETS.full}
         alt="Community IP"
         className={cn(
-          "block max-w-none shrink-0 object-contain object-left",
+          "block max-w-none shrink-0 object-contain",
           iconOnly
-            ? "h-9 w-9 sm:h-10 sm:w-10"
-            : "h-9 w-auto sm:h-10 md:h-11"
+            ? "h-9 w-9 rounded-md sm:h-10 sm:w-10"
+            : "h-10 w-auto sm:h-11 md:h-12"
         )}
-        style={iconOnly ? undefined : { width: "auto", maxWidth: "none" }}
+        style={{ width: iconOnly ? undefined : "auto", maxWidth: "none" }}
         decoding="async"
       />
     </span>
