@@ -7,10 +7,10 @@ interface LogoMarkProps {
 
 /** Tree-in-lightbulb mark — scales cleanly at any size */
 export function LogoMark({ className, variant = "default" }: LogoMarkProps) {
-  const stroke = variant === "light" ? "#FAFAF7" : "#14532D";
-  const fill = variant === "light" ? "#8FAF9A" : "#6B9478";
+  const stroke = variant === "light" ? "#FAF8F3" : "#0B5F40";
+  const fill = variant === "light" ? "#ABD5C1" : "#7BB99E";
   const bulbFill =
-    variant === "light" ? "rgba(250,250,247,0.12)" : "rgba(20,83,45,0.08)";
+    variant === "light" ? "rgba(250,248,243,0.12)" : "rgba(11,95,64,0.08)";
 
   return (
     <svg
@@ -26,8 +26,8 @@ export function LogoMark({ className, variant = "default" }: LogoMarkProps) {
         width="38"
         height="38"
         rx="6"
-        fill={variant === "light" ? "rgba(250,250,247,0.1)" : "#14532D"}
-        stroke={variant === "light" ? "rgba(250,250,247,0.25)" : "transparent"}
+        fill={variant === "light" ? "rgba(250,248,243,0.1)" : "#0B5F40"}
+        stroke={variant === "light" ? "rgba(250,248,243,0.25)" : "transparent"}
         strokeWidth="1"
       />
       <path

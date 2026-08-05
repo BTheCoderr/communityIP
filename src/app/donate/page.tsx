@@ -84,7 +84,7 @@ export default function DonatePage() {
         </p>
       </section>
 
-      <section className="mt-16 bg-navy-900 p-8 sm:p-10">
+      <section className="mt-16 bg-community-700 p-8 sm:p-10">
         <SectionHeading
           title="Other ways to give"
           description="Not ready to donate? You can still make a difference."
@@ -99,7 +99,7 @@ export default function DonatePage() {
             <Link
               key={item.title}
               href={item.href}
-              className="group flex flex-col bg-navy-800/50 p-5 transition-colors hover:bg-navy-800"
+              className="group flex flex-col bg-community-800/60 p-5 transition-colors hover:bg-community-800"
             >
               <span className="font-display font-bold text-cream">{item.title}</span>
               <span className="mt-1 text-xs text-cream/50">{item.desc}</span>

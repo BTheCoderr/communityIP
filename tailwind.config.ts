@@ -10,18 +10,22 @@ const BRAND = {
   muted: "#5C7268",
 } as const;
 
+/**
+ * 700 is the primary dark surface (header CTA, dark sections, footer) and is
+ * pinned to the exact logo green so those surfaces never differ from the badge.
+ */
 const communityScale = {
   DEFAULT: BRAND.green,
   50: "#EEF6F2",
   100: "#D5EAE0",
   200: "#ABD5C1",
   300: "#7BB99E",
-  400: "#4A9476",
-  500: BRAND.green,
-  600: "#0A5539",
-  700: BRAND.greenDark,
-  800: "#063D28",
-  900: "#042A1C",
+  400: "#3E8C68",
+  500: "#15774F",
+  600: "#0E6A47",
+  700: BRAND.green,
+  800: BRAND.greenDark,
+  900: "#063D28",
 };
 
 const config: Config = {
@@ -80,9 +84,9 @@ const config: Config = {
         },
         navy: {
           DEFAULT: BRAND.greenDark,
-          800: "#063D28",
+          800: BRAND.greenDark,
           900: BRAND.ink,
-          950: "#042A1C",
+          950: "#0C1A12",
         },
         blueprint: {
           DEFAULT: BRAND.green,
@@ -95,8 +99,8 @@ const config: Config = {
         sage: {
           DEFAULT: BRAND.muted,
           100: BRAND.greenSoft,
-          200: "#C5D9CB",
-          500: "#7BB99E",
+          200: communityScale[200],
+          500: communityScale[300],
           600: BRAND.muted,
           700: "#4A5E56",
         },
