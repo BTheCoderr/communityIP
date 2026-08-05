@@ -8,7 +8,7 @@ export function Header() {
   const { navLinks, ctaLabel, ctaHref } = header;
 
   return (
-    <header className="sticky top-0 z-50 overflow-visible border-b border-brand-green/10 bg-brand-cream/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 overflow-visible border-b border-brand-green-dark/40 bg-brand-green/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5">
         <div className="flex min-w-0 shrink-0 items-center overflow-visible">
           <BrandLogo iconOnly className="inline-flex max-[319px]:inline-flex min-[320px]:hidden" />
@@ -23,7 +23,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-2.5 py-2 text-sm font-medium text-brand-ink/85 transition-colors hover:bg-brand-green-soft hover:text-brand-green-dark xl:px-3"
+              className="rounded-lg px-2.5 py-2 text-sm font-medium text-brand-cream/85 transition-colors hover:bg-brand-cream/15 hover:text-brand-cream focus-visible:ring-brand-cream focus-visible:ring-offset-brand-green xl:px-3"
             >
               {link.label}
             </Link>
@@ -31,7 +31,11 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <CTAButton href={ctaHref} size="sm" className="hidden sm:inline-flex">
+          <CTAButton
+            href={ctaHref}
+            size="sm"
+            className="hidden bg-brand-cream text-brand-green hover:bg-white focus-visible:ring-brand-cream focus-visible:ring-offset-brand-green sm:inline-flex"
+          >
             {ctaLabel}
           </CTAButton>
           <MobileNav />

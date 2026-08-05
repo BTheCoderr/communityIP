@@ -17,14 +17,14 @@ export function MobileNav() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-center rounded-lg border border-brand-green/15 bg-white p-2.5 hover:bg-brand-green-soft"
+        className="flex items-center justify-center rounded-lg border border-brand-cream/20 bg-brand-cream p-2.5 hover:bg-white focus-visible:ring-brand-cream focus-visible:ring-offset-brand-green"
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
       >
         {open ? (
-          <X className="h-5 w-5 text-brand-ink" aria-hidden />
+          <X className="h-5 w-5 text-brand-green" aria-hidden />
         ) : (
-          <Menu className="h-5 w-5 text-brand-ink" aria-hidden />
+          <Menu className="h-5 w-5 text-brand-green" aria-hidden />
         )}
       </button>
 
