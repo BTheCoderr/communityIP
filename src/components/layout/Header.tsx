@@ -2,21 +2,17 @@ import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { MobileNav } from "@/components/layout/MobileNav";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/research", label: "Research" },
-  { href: "/contact", label: "Contact" },
-];
+import { header } from "@/lib/site";
 
 export function Header() {
+  const { navLinks, ctaLabel, ctaHref } = header;
+
   return (
-    <header className="sticky top-0 z-50 overflow-visible border-b border-community-700/10 bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3.5 sm:gap-4 sm:px-6 sm:py-4">
-        <div className="flex shrink-0 items-center overflow-visible">
-          <BrandLogo iconOnly className="inline-flex sm:hidden" />
-          <BrandLogo className="hidden sm:inline-flex" />
+    <header className="sticky top-0 z-50 overflow-visible border-b border-brand-green/10 bg-brand-cream/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5">
+        <div className="flex min-w-0 shrink-0 items-center overflow-visible">
+          <BrandLogo iconOnly className="inline-flex max-[319px]:inline-flex min-[320px]:hidden" />
+          <BrandLogo className="hidden min-[320px]:inline-flex" />
         </div>
 
         <nav
@@ -27,7 +23,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-2.5 py-2 text-sm font-medium text-forest-800 transition-colors hover:bg-community-50 hover:text-community-700 xl:px-3"
+              className="rounded-lg px-2.5 py-2 text-sm font-medium text-brand-ink/85 transition-colors hover:bg-brand-green-soft hover:text-brand-green-dark xl:px-3"
             >
               {link.label}
             </Link>
@@ -35,8 +31,8 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <CTAButton href="/apply" size="sm" className="hidden sm:inline-flex">
-            Get IP Help
+          <CTAButton href={ctaHref} size="sm" className="hidden sm:inline-flex">
+            {ctaLabel}
           </CTAButton>
           <MobileNav />
         </div>

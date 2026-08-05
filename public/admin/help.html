@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Community IP — Admin Help</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --green: #0b5f40;
+        --cream: #faf8f3;
+        --ink: #14261c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        line-height: 1.6;
+        color: var(--ink);
+        background: var(--cream);
+      }
+      header {
+        background: var(--green);
+        color: var(--cream);
+        padding: 1.25rem 1.5rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      header p {
+        margin: 0.35rem 0 0;
+        opacity: 0.85;
+        font-size: 0.95rem;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      h2 {
+        margin-top: 2rem;
+        font-size: 1.1rem;
+        color: var(--green);
+      }
+      ol,
+      ul {
+        padding-left: 1.25rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      a {
+        color: var(--green);
+      }
+      .tip {
+        background: #eef6f2;
+        border-left: 4px solid var(--green);
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+      }
+      .back {
+        display: inline-block;
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Community IP — Content Manager Help</h1>
+      <p>Quick answers for editing the website at /admin</p>
+    </header>
+    <main>
+      <div class="tip">
+        Form submissions (contact, apply, volunteer, partner) are <strong>not</strong>
+        edited here. Those go to Netlify Forms in the site dashboard.
+      </div>
+
+      <h2>Sign in</h2>
+      <ol>
+        <li>Open <a href="/admin/">/admin</a> on the live site.</li>
+        <li>Click <strong>Login with Netlify Identity</strong>.</li>
+        <li>Use the email and password from your Netlify invite.</li>
+      </ol>
+
+      <h2>Edit a page</h2>
+      <ol>
+        <li>Choose a collection on the left (Home Page, About Page, etc.).</li>
+        <li>Change the text or image fields.</li>
+        <li>Click <strong>Save</strong> (draft) or <strong>Publish</strong> when ready.</li>
+      </ol>
+
+      <h2>Update the logo or an image</h2>
+      <ul>
+        <li><strong>Site logo:</strong> Site Settings → Logo → upload → Publish.</li>
+        <li><strong>Hero or news images:</strong> open the page or post → Image field → upload.</li>
+        <li>Uploaded files are saved to the site automatically after Publish.</li>
+      </ul>
+
+      <h2>Leadership &amp; board</h2>
+      <ul>
+        <li><strong>Co-Presidents</strong> — names, photos, bios, order.</li>
+        <li><strong>Board Members</strong> — same fields for directors.</li>
+      </ul>
+
+      <h2>News posts</h2>
+      <ol>
+        <li>News Posts → <strong>New News Posts</strong>.</li>
+        <li>Fill title, date, excerpt, and body.</li>
+        <li>Publish when ready.</li>
+      </ol>
+
+      <h2>Drafts vs. published</h2>
+      <ul>
+        <li><strong>Save</strong> keeps a draft for review.</li>
+        <li><strong>Publish</strong> sends changes to the live website (usually within a few minutes).</li>
+      </ul>
+
+      <h2>Sign out</h2>
+      <p>Use the account menu in the top-right of the admin screen → Log out.</p>
+
+      <h2>Need more help?</h2>
+      <p>
+        See the full guide:
+        <a href="https://github.com/BTheCoderr/communityIP/blob/main/docs/REGINA_ADMIN_GUIDE.md"
+          >Regina Admin Guide (GitHub)</a
+        >
+        or contact Baheem if login fails.
+      </p>
+
+      <a class="back" href="/admin/">← Back to Content Manager</a>
+    </main>
+  </body>
+</html>

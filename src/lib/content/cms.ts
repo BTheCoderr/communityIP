@@ -27,6 +27,8 @@ export const HERO_IMAGE = {
 
 export const siteName = siteJson.siteName;
 export const siteLogo = siteJson.logo;
+export const header = siteJson.header;
+export const footer = siteJson.footer;
 
 export const mission = siteJson.mission;
 export const donate = siteJson.donate;

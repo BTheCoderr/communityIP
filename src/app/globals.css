@@ -6,25 +6,25 @@
 
 @layer base {
   :root {
-    --background: 60 20% 98%;
+    /* Sampled from community-ip-original-logo-400.png (#0B5F40, #FAF8F3, #14261C) */
+    --background: 40 33% 97%;
     --foreground: 150 30% 12%;
-    --card: 60 25% 99%;
+    --card: 40 33% 99%;
     --card-foreground: 150 30% 12%;
-    --primary: 152 58% 27%;
-    --primary-foreground: 60 20% 98%;
+    --primary: 156 79% 21%;
+    --primary-foreground: 40 33% 97%;
     --secondary: 150 30% 12%;
-    --secondary-foreground: 60 20% 98%;
-    --muted: 140 15% 93%;
-    --muted-foreground: 150 12% 42%;
-    --accent: 140 18% 62%;
+    --secondary-foreground: 40 33% 97%;
+    --muted: 150 15% 93%;
+    --muted-foreground: 156 12% 40%;
+    --accent: 156 25% 62%;
     --accent-foreground: 150 30% 12%;
-    --border: 140 12% 88%;
-    --ring: 152 58% 27%;
+    --border: 150 12% 88%;
+    --ring: 156 79% 21%;
     --radius: 0.625rem;
-    --navy: 152 58% 20%;
-    --cream: 60 20% 98%;
-    --blueprint: 152 58% 27%;
-    --stamp: 140 18% 50%;
+    --brand-green: 156 79% 21%;
+    --brand-cream: 40 33% 97%;
+    --brand-ink: 150 30% 12%;
   }
 
   * {
@@ -36,7 +36,7 @@
   }
 
   body {
-    @apply bg-cream text-forest-900 antialiased;
+    @apply bg-brand-cream text-brand-ink antialiased;
   }
 
   h1,
@@ -45,21 +45,20 @@
   h4,
   h5,
   h6 {
-    @apply font-display font-semibold text-forest-900;
+    @apply font-display font-semibold text-brand-ink;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-community-600 ring-offset-2 ring-offset-cream;
+    @apply outline-none ring-2 ring-brand-green ring-offset-2 ring-offset-brand-cream;
   }
 }
 
 @layer components {
-  /* Legacy product-style utilities — avoid on new Community IP sections */
   .blueprint-grid {
-    background-color: hsl(var(--cream));
+    background-color: hsl(var(--brand-cream));
     background-image:
-      linear-gradient(rgba(27, 107, 68, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(27, 107, 68, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(11, 95, 64, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 95, 64, 0.04) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
@@ -80,19 +79,19 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold uppercase tracking-wide text-community-600;
+    @apply text-sm font-semibold uppercase tracking-wide text-brand-green;
   }
 
   .prose-lead {
-    @apply text-lg leading-relaxed text-forest-800/80;
+    @apply text-lg leading-relaxed text-brand-ink/80;
   }
 
   .link-arrow {
-    @apply inline-flex items-center gap-1.5 font-medium text-community-700 hover:underline;
+    @apply inline-flex items-center gap-1.5 font-medium text-brand-green-dark hover:underline;
   }
 
   .nonprofit-card {
-    @apply rounded-xl border border-community-700/10 bg-white p-6 shadow-sm transition-colors hover:border-community-600/25 hover:bg-community-50/40 sm:p-8;
+    @apply rounded-xl border border-brand-green/10 bg-white p-6 shadow-sm transition-colors hover:border-brand-green/25 hover:bg-brand-green-soft/40 sm:p-8;
   }
 }
 

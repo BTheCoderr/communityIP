@@ -49,5 +49,49 @@
   "board": {
     "title": "Board of Directors",
     "intro": "Community IP is guided by leaders committed to expanding intellectual property access for underserved inventors and entrepreneurs."
+  },
+  "header": {
+    "navLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Research", "href": "/research" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "ctaLabel": "Get IP Help",
+    "ctaHref": "/apply"
+  },
+  "footer": {
+    "nonprofitLabel": "501(c)(3) nonprofit organization",
+    "showContactEmail": true,
+    "contactEmailLabel": "Email",
+    "copyrightName": "Community IP",
+    "columns": [
+      {
+        "title": "Get involved",
+        "links": [
+          { "label": "Get IP Help", "href": "/apply" },
+          { "label": "Volunteer", "href": "/volunteer" },
+          { "label": "Partner", "href": "/partners" },
+          { "label": "Support the Mission", "href": "/donate" }
+        ]
+      },
+      {
+        "title": "Organization",
+        "links": [
+          { "label": "About", "href": "/about" },
+          { "label": "Research", "href": "/research" },
+          { "label": "Board", "href": "/board" },
+          { "label": "News", "href": "/news" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Legal & Disclaimers", "href": "/legal" },
+          { "label": "Nondisclosure Agreement", "href": "/legal/nondisclosure" }
+        ]
+      }
+    ]
   }
 }

@@ -114,7 +114,7 @@ News files live in `src/content/news/*.md`.
 
 | Collection | What it controls |
 |------------|------------------|
-| **Site Settings** | Site name, logo, contact email, donate link, social links, mission, programs |
+| **Site Settings** | Site name, logo, contact email, donate link, social links, mission, programs, **header navigation**, **footer links** |
 | **Home Page** | Hero, CTAs, get-involved copy, support section, research teaser |
 | **About Page** | Intro, origin story, leadership copy |
 | **Research Page** | Access gap report, stats, sources, Lost Einsteins |
@@ -156,14 +156,20 @@ Form submissions are **not** edited in Decap CMS. They are handled by **Netlify 
 
 Detection forms live in `public/forms.html` (do not remove). See `docs/FORMS.md` for technical details.
 
-### Local CMS testing (optional)
+## Local CMS testing (optional — developers only)
+
+Production `public/admin/config.yml` does **not** include `local_backend`. For local editing:
 
 ```bash
 npx decap-server
 npm run dev
 ```
 
-Visit `/admin` with `local_backend: true` in `public/admin/config.yml`.
+Use `public/admin/config.local.yml` (copy with `local_backend: true`) **only on your machine**. Do not commit a production config with `local_backend: true`.
+
+**Editor guide:** [`docs/REGINA_ADMIN_GUIDE.md`](docs/REGINA_ADMIN_GUIDE.md)  
+**Launch checklist:** [`docs/NETLIFY_LAUNCH_CHECKLIST.md`](docs/NETLIFY_LAUNCH_CHECKLIST.md)  
+**In-admin help:** [/admin/help.html](https://www.communityip.org/admin/help.html)
 
 ## Site map
 

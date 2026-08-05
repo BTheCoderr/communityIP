@@ -11,6 +11,8 @@ export {
   home,
   siteName,
   siteLogo,
+  header,
+  footer,
   HERO_IMAGE,
   DISCLAIMERS,
   coPresidents,

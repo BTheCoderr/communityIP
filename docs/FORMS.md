@@ -49,4 +49,17 @@ Fields: orgName, contactName, email, role, message
 
 ## After deploy
 
-New forms register on the **next Netlify build**. Test each form once, then confirm submissions appear under **Forms** in the Netlify dashboard.
+New forms register on the **next Netlify build**. Test each form once on the live site, then confirm submissions appear under **Forms** in the Netlify dashboard.
+
+Use [`docs/NETLIFY_LAUNCH_CHECKLIST.md`](NETLIFY_LAUNCH_CHECKLIST.md) for the full verification list.
+
+### Form audit (code)
+
+| Form | `form-name` | Hidden detection | Honeypot | Submit path |
+|------|-------------|------------------|----------|-------------|
+| `contact` | ✓ | ✓ `public/forms.html` | ✓ `bot-field` | `POST /forms.html` via JS |
+| `intake` | ✓ (programmatic) | ✓ | ✓ | `POST /forms.html` via JS |
+| `volunteer-interest` | ✓ | ✓ | ✓ | `POST /forms.html` via JS |
+| `partner-interest` | ✓ | ✓ | ✓ | `POST /forms.html` via JS |
+
+Intake reference numbers are generated client-side and submitted with the form — they are not logged to the console. Invention details are posted only in the Netlify form body (not URL query strings).

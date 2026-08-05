@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTAButton } from "@/components/CTAButton";
@@ -41,6 +41,25 @@ export default function AboutPage() {
               {about.story.map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
+            </div>
+            <div className="mt-8 rounded-xl border border-navy-900/10 bg-white p-6">
+              <p className="text-xs font-medium uppercase tracking-wide text-navy-800/50">
+                Accelerator partner
+              </p>
+              <a
+                href="https://segri.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block transition-opacity hover:opacity-80"
+              >
+                <Image
+                  src="/images/partners/social-enterprise-greenhouse.png"
+                  alt="Social Enterprise Greenhouse"
+                  width={200}
+                  height={90}
+                  className="h-auto w-44"
+                />
+              </a>
             </div>
           </div>
           <div className="patent-file p-8">

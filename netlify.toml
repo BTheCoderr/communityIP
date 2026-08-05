@@ -58,7 +58,7 @@
   to = "/apply"
   status = 301
 
-# Decap CMS admin
+# Redirect Decap CMS admin and help
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"
@@ -67,4 +67,9 @@
 [[redirects]]
   from = "/admin/"
   to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/help"
+  to = "/admin/help.html"
   status = 200

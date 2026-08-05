@@ -66,6 +66,8 @@ Active config: `public/admin/config.yml` uses `backend.name: git-gateway`.
 All via `/admin` collections (see README → Editing Community IP content):
 
 - Home, About, Research, Contact page copy  
+- **Header navigation** and **Get IP Help** button (Site Settings)  
+- **Footer** link columns, nonprofit label, and contact display (Site Settings)  
 - News/blog posts (`src/content/news/*.md`)  
 - Board members and co-presidents (photos, bios, order)  
 - Hero images and uploads (`public/uploads/`)  
@@ -88,9 +90,11 @@ See `docs/FORMS.md`.
 
 ## Local testing
 
+Production config (`public/admin/config.yml`) does **not** use `local_backend`.
+
+For local development, use `public/admin/config.local.yml` (includes `local_backend: true`) or temporarily add that flag — **never deploy local_backend to production**.
+
 ```bash
 npx decap-server
 npm run dev
 ```
-
-With `local_backend: true` in `config.yml`, `/admin` writes to the local repo without Netlify.

@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Community IP Content Manager</title>
+    <style>
+      #admin-help-link {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        padding: 0.5rem 0.85rem;
+        border-radius: 999px;
+        background: #0b5f40;
+        color: #faf8f3;
+        font: 600 0.8125rem/1.2 system-ui, sans-serif;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(11, 95, 64, 0.25);
+      }
+      #admin-help-link:hover {
+        background: #084a32;
+      }
+    </style>
     <script>
       (function () {
         var hash = window.location.hash;
@@ -33,6 +51,7 @@
     </script>
   </head>
   <body>
+    <a id="admin-help-link" href="/admin/help.html">Help for editors</a>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
