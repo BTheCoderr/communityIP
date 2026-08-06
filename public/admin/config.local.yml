@@ -64,6 +64,19 @@ collections:
                 fields:
                   - { label: Title, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
+          - label: Partner logos (homepage, About, Research)
+            name: partners
+            widget: object
+            fields:
+              - { label: Label above logos, name: label, widget: string }
+              - label: Partners
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - { label: Partner name, name: name, widget: string }
+                  - { label: Logo, name: logo, widget: image }
+                  - { label: Website URL, name: url, widget: string, required: false }
           - label: Board page header
             name: board
             widget: object

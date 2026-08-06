@@ -30,6 +30,8 @@ export const siteLogo = siteJson.logo;
 export const header = siteJson.header;
 export const footer = siteJson.footer;
 
+export const partners = siteJson.partners;
+
 export const mission = siteJson.mission;
 export const donate = siteJson.donate;
 export const board = siteJson.board;

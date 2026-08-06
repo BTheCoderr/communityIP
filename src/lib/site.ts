@@ -13,6 +13,7 @@ export {
   siteLogo,
   header,
   footer,
+  partners,
   HERO_IMAGE,
   DISCLAIMERS,
   coPresidents,

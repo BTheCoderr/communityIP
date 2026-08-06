@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
+import { PartnerLogos } from "@/components/PartnerLogos";
 import { research } from "@/lib/content/cms";
 
 export function CredibilitySection() {
@@ -51,25 +51,7 @@ export function CredibilitySection() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 border-t border-community-700/10 pt-6">
-              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                Accelerator partner
-              </p>
-              <a
-                href="https://segri.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-block transition-opacity hover:opacity-80"
-              >
-                <Image
-                  src="/images/partners/social-enterprise-greenhouse.png"
-                  alt="Social Enterprise Greenhouse"
-                  width={200}
-                  height={90}
-                  className="h-auto w-44"
-                />
-              </a>
-            </div>
+            <PartnerLogos className="mt-8 border-t border-community-700/10 pt-6" />
           </div>
         </div>
       </div>

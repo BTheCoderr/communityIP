@@ -1,4 +1,5 @@
 import { HeroBrand } from "@/components/home/HeroBrand";
+import { PartnerBand } from "@/components/home/PartnerBand";
 import { MissionBlock } from "@/components/home/MissionBlock";
 import { GetInvolvedBand } from "@/components/home/GetInvolvedBand";
 import { ResearchTeaser } from "@/components/home/ResearchTeaser";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <HeroBrand />
+      <PartnerBand />
       <MissionBlock />
       <GetInvolvedBand />
       <ResearchTeaser />

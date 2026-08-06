@@ -46,6 +46,16 @@
       }
     ]
   },
+  "partners": {
+    "label": "Accelerator partner",
+    "items": [
+      {
+        "name": "Social Enterprise Greenhouse",
+        "logo": "/images/partners/social-enterprise-greenhouse.png",
+        "url": "https://segri.org/"
+      }
+    ]
+  },
   "board": {
     "title": "Board of Directors",
     "intro": "Community IP is guided by leaders committed to expanding intellectual property access for underserved inventors and entrepreneurs."

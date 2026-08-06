@@ -35,7 +35,7 @@ If the invite link expires, ask Baheem to resend the invite from the Netlify das
 
 | Collection | What it controls |
 |------------|------------------|
-| **Site Settings** | Site name, logo, contact email, donate link, social links, mission text, header navigation, footer links |
+| **Site Settings** | Site name, logo, contact email, donate link, social links, mission text, header navigation, footer links, partner logos |
 | **Home Page** | Hero, mission block, get-involved copy, research teaser, support section |
 | **About Page** | Intro, origin story, leadership copy |
 | **Research Page** | Access gap stats, sources, credibility section |
@@ -64,6 +64,7 @@ If the invite link expires, ask Baheem to resend the invite from the Netlify das
 2. **Homepage hero:** **Home Page** → **Hero image** → upload → update alt text → **Publish**
 3. **Team photos:** **Co-Presidents** or **Board Members** → open a person → **Photo** → upload → **Publish**
 4. **News featured image:** open a **News Posts** entry → **Featured image** → upload → **Publish**
+5. **Partner logos:** **Site Settings** → **Partner logos** → **Publish**
 
 Uploaded images are stored automatically when you publish. You do not need to upload files anywhere else.
 
@@ -80,6 +81,20 @@ Uploaded images are stored automatically when you publish. You do not need to up
 3. **Publish** when finished
 
 Mission text in the footer comes from **Site Settings → Mission (site-wide) → Statement**.
+
+---
+
+## Add or change a partner logo
+
+Partner logos appear in three places at once: the homepage (under the hero), the About page, and the Research page.
+
+1. **Site Settings** → **Partner logos**
+2. Edit **Label above logos** if the wording should change (currently "Accelerator partner")
+3. Under **Partners**, click **Add** to add an organization — enter its name, upload its logo, and paste its website URL (the URL is optional)
+4. Use the drag handle to reorder, or the trash icon to remove one
+5. **Publish** when finished
+
+If you remove every partner, the section disappears from all three pages automatically.
 
 ---
 
