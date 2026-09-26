@@ -2,7 +2,7 @@
 const SUBMIT_URL = "/forms.html";
 
 export const NETLIFY_FORM_ERROR =
-  "Something went wrong. Please email hello@communityip.org directly.";
+  "Something went wrong. Please email scott@communityip.org directly.";
 
 function encodeFormData(formData: FormData): string {
   const params = new URLSearchParams();
