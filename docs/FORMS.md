@@ -7,8 +7,9 @@ All public forms use **Netlify Forms**. Submissions appear in:
 Configure email alerts once for all forms:
 
 1. Netlify → **Site configuration** → **Forms** → **Form notifications**
-2. Add **Email notification** → `hello@communityip.org`
-3. Optional: separate notifications per form (`contact`, `intake`, `volunteer-interest`, `partner-interest`)
+2. Add **Email notification** → `scott@communityip.org`
+3. Add a second **Email notification** → `scott@keeleydeangelo.com`
+4. Optional: separate notifications per form (`contact`, `intake`, `volunteer-interest`, `partner-interest`)
 
 Hidden detection forms live in `public/forms.html` (required at build time).
 
@@ -45,7 +46,11 @@ Fields: orgName, contactName, email, role, message
 
 ## Direct email
 
-`hello@communityip.org` — DreamHost mail (MX records). Separate from form notifications; configure both.
+`scott@communityip.org` — primary public Community IP contact.
+
+`scott@keeleydeangelo.com` — secondary notification recipient for form submissions.
+
+Direct email and Netlify form notifications are configured separately; keep both Scott addresses on the Netlify form-notification list.
 
 ## After deploy
 
