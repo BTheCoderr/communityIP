@@ -1,5 +1,11 @@
 # Community IP
 
+<!-- repo-intro:start -->
+**Project snapshot:** Community IP is a production nonprofit website helping underserved inventors access intellectual-property education and support through editable content, intake/contact forms, and a low-cost publishing stack.
+
+**What it demonstrates:** Next.js · Decap CMS · GitHub-backed content · Netlify Forms · nonprofit product delivery.
+<!-- repo-intro:end -->
+
 Public nonprofit website for Community IP — helping underserved inventors access intellectual property education and support.
 
 **Live:** https://www.communityip.org
