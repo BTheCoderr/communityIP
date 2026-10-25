@@ -49,6 +49,10 @@ interface FormData {
   seekingFunding: string;
   ideaTitle: string;
   ideaDescription: string;
+  problemSolved: string;
+  coreComponents: string;
+  howItWorks: string;
+  prototypeDetails: string;
   ideaStage: string;
   industry: string;
   publiclyDisclosed: string;
@@ -81,6 +85,10 @@ const initialFormData: FormData = {
   seekingFunding: "",
   ideaTitle: "",
   ideaDescription: "",
+  problemSolved: "",
+  coreComponents: "",
+  howItWorks: "",
+  prototypeDetails: "",
   ideaStage: "",
   industry: "",
   publiclyDisclosed: "",
@@ -531,6 +539,62 @@ export function IntakeWizard() {
                 }
                 className="mt-1.5"
               />
+            </div>
+            <div className="rounded-2xl border border-teal-100 bg-teal-50/50 p-5 space-y-5">
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-slate-800">
+                  Invention details (optional)
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  If you are asking about a product, device, or process, these
+                  details help our team prepare for a more useful first conversation.
+                  Rough notes are fine. Skip anything you are not ready to share.
+                </p>
+              </div>
+              <div>
+                <Label htmlFor="problemSolved">What problem does it solve?</Label>
+                <Textarea
+                  id="problemSolved"
+                  placeholder="What is difficult today, and what would your invention improve?"
+                  value={formData.problemSolved}
+                  onChange={(e) => updateField("problemSolved", e.target.value)}
+                  maxLength={2000}
+                  className="mt-1.5 bg-white"
+                />
+              </div>
+              <div>
+                <Label htmlFor="coreComponents">What are its main parts or components?</Label>
+                <Textarea
+                  id="coreComponents"
+                  placeholder="List the main pieces, materials, or components, even if the design is still changing."
+                  value={formData.coreComponents}
+                  onChange={(e) => updateField("coreComponents", e.target.value)}
+                  maxLength={2000}
+                  className="mt-1.5 bg-white"
+                />
+              </div>
+              <div>
+                <Label htmlFor="howItWorks">How do those parts work together?</Label>
+                <Textarea
+                  id="howItWorks"
+                  placeholder="Describe what happens when the invention is used, step by step."
+                  value={formData.howItWorks}
+                  onChange={(e) => updateField("howItWorks", e.target.value)}
+                  maxLength={2000}
+                  className="mt-1.5 bg-white"
+                />
+              </div>
+              <div>
+                <Label htmlFor="prototypeDetails">What have you built or tested so far?</Label>
+                <Textarea
+                  id="prototypeDetails"
+                  placeholder="For example: sketches, a mockup, a working prototype, or results from early testing."
+                  value={formData.prototypeDetails}
+                  onChange={(e) => updateField("prototypeDetails", e.target.value)}
+                  maxLength={2000}
+                  className="mt-1.5 bg-white"
+                />
+              </div>
             </div>
             <div>
               <Label>What stage are you at?</Label>
