@@ -27,6 +27,8 @@ Full inventor intake wizard including NDA consent. Includes a generated **refere
 
 Key fields: contact info, idea details, disclosure history, support needed, consent flags.
 
+The optional invention detail prompts help Scott's team prepare before an inventor meeting: problem solved, components, how components operate together, and prototype/testing status. These are optional to avoid blocking applicants who are early in the invention process. Verify the submitted values in Netlify Forms during pre-release QA. The existing NDA/privacy and confidential-intake workflow must be reviewed and approved by the receiving organization before launch.
+
 ## Volunteer (`/volunteer`) — form name: `volunteer-interest`
 
 Fields: firstName, lastName, email, role, message
